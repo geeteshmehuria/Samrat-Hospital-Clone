@@ -1,28 +1,56 @@
-import { Box, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  IconButton,
+  Link,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <nav className="n-navbar font-normal flex justify-center items-center bg-bodyColor">
+    <Box
+      className="n-navbar font-normal bg-bodyColor"
+      boxShadow="dark-lg"
+      position="sticky"
+      top="0"
+      zIndex="1000"
+      p={4}
+    >
       <Box
-        className="n-navbar-innerContainer flex flex-col md:flex-row justify-between"
+        className="n-navbar-innerContainer flex justify-between items-center"
         w="80%"
+        margin="0 auto"
       >
-        <Box className="text-xl font-bold" p={4} color="#2f4e44">
-          <a href="#">HOSPITAL LOGO</a>
+        <Box className="text-xl font-bold" color="#2f4e44">
+          <a href="/">HOSPITAL LOGO</a>
         </Box>
+
+        <IconButton
+          icon={<HamburgerIcon color="#fafaf1" />}
+          aria-label="Open navigation"
+          onClick={onOpen}
+          display={{ base: "flex", md: "none" }}
+          bgColor="#658a71"
+        />
+
         <Box
-          className="flex flex-col md:flex-row gap-4 md:gap-12"
-          p={4}
-          color="#2f4e44"
+          className="font-medium flex flex-row justify-between items-center gap-4 md:gap-12"
+          display={{ base: "none", md: "flex" }}
         >
-          <Box className="font-medium flex flex-row justify-between items-center gap-4 md:gap-12">
-            <a className="hover:bg-primeGreen-600" href="#">
-              Home
-            </a>
-            <a href="#">About us</a>
-            <a href="#">Services</a>
-            <a href="#">Appointment</a>
-          </Box>
+          <a href="/">Home</a>
+          <a href="/aboutus">About us</a>
+          <a href="/services">Services</a>
+          <a href="appointment">Appointment</a>
+
           <Button
             className="font-semibold"
             _hover={{ bg: "#658a71", color: "#fafaf1" }}
@@ -35,9 +63,82 @@ const Navbar = () => {
           >
             Sign Up
           </Button>
+          <Button
+            className="font-semibold"
+            _hover={{ bg: "#658a71", color: "#fafaf1" }}
+            size="md"
+            height="38px"
+            width="80px"
+            border="2px"
+            variant="outline"
+            borderColor="#2f4e44"
+          >
+            Login
+          </Button>
         </Box>
       </Box>
-    </nav>
+
+      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerBody>
+            <Box>
+              <Link
+                className="hover:bg-primeGreen-600 block py-2"
+                color="#2f4e44"
+                href="#"
+                onClick={onClose}
+              >
+                Home
+              </Link>
+              <Link
+                className="block py-2"
+                color="#2f4e44"
+                href="#"
+                onClick={onClose}
+              >
+                About us
+              </Link>
+              <Link
+                className="block py-2"
+                color="#2f4e44"
+                href="#"
+                onClick={onClose}
+              >
+                Services
+              </Link>
+              <Link
+                className="block py-2"
+                color="#2f4e44"
+                href="#"
+                onClick={onClose}
+              >
+                Appointment
+              </Link>
+            </Box>
+
+            <Link
+              className="font-semibold block mt-4 hover:bg-primeGreen-600 py-2"
+              color="#2f4e44"
+              href="#"
+              onClick={onClose}
+            >
+              Sign Up
+            </Link>
+            <Link
+              className="font-semibold block mt-2 hover:bg-primeGreen-600 py-2"
+              color="#2f4e44"
+              href="#"
+              onClick={onClose}
+            >
+              Login
+            </Link>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </Box>
   );
 };
 
