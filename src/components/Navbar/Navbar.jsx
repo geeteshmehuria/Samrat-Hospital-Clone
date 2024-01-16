@@ -13,8 +13,11 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
+
 const Navbar = () => {
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+
 
   return (
     <Box
