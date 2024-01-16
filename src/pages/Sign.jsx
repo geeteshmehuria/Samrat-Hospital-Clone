@@ -1,7 +1,6 @@
-
 import React from 'react'
 
-const Navbar = () => {
+const Sign = () => {
   return (
     <div>
       
@@ -9,4 +8,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Sign

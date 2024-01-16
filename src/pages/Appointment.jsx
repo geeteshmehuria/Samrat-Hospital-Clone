@@ -1,7 +1,6 @@
-
 import React from 'react'
 
-const Navbar = () => {
+const Appointment = () => {
   return (
     <div>
       
@@ -9,4 +8,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Appointment
