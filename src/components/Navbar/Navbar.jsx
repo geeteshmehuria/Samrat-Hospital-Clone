@@ -1,6 +1,8 @@
 import { Box, Button } from "@chakra-ui/react";
 
+
 const Navbar = () => {
+
   return (
     <nav className="n-navbar font-normal flex justify-center items-center bg-bodyColor">
       <Box
