@@ -1,0 +1,1114 @@
+{
+  "doctors": {
+    "cardiologists": [
+      {
+        "id": 1,
+        "name": "Dr. Devi Prasad Shetty",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
+        "education": "MBBS, MS, FRCS (Royal College of Surgeons of England)",
+        "rating": 5,
+        "fee": 1000,
+        "contact": 9987654563,
+        "about-doctor": "Dr. Devi Prasad Shetty is a great and experienced cardiac surgeon. He is one of the most accomplished doctors globally in bypass grafting operation on a beating heart. He has performed over 15,000 heart surgeries.",
+        "available": [
+          "Monday",
+          "Tuesday",
+          "Wednesday,"
+        ],
+        "reviews": [
+          {
+            "Amit Verma": "He is not only an Excellent Doctor, he is simple, superb Human being, Sober, approachable, a Great Social Worker, friendly approach with smiling face with his selfless service with his selfless services. Always amazing treatment. He is an extraordinary intelligent Doctor with human values"
+          },
+          {
+            "Kamal Singh": "I had the most wonderful experience at this practice! The facility is clean, the staff is welcoming, and I was seen right at the time of my appointment. The doctor really listened to my concerns and helped me feel at ease"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dr. Sankar Dixit",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
+        "education": "MBBS, MS, FRCS (Royal College of Surgeons of England)",
+        "rating": 5,
+        "fee": 1000,
+        "contact": 9987654563,
+        "about-doctor": "Dr. Sankar Dixit is a great and experienced cardiac surgeon. He is one of the most accomplished doctors globally in bypass grafting operation on a beating heart. He has performed over 15,000 heart surgeries.",
+        "available": [
+          "Monday",
+          "Tuesday",
+          "Wednesday,"
+        ],
+        "reviews": [
+          {
+            "Amit Verma": "He is not only an Excellent Doctor, he is simple, superb Human being, Sober, approachable, a Great Social Worker, friendly approach with smiling face with his selfless service with his selfless services. Always amazing treatment. He is an extraordinary intelligent Doctor with human values"
+          },
+          {
+            "Kamal Singh": "I had the most wonderful experience at this practice! The facility is clean, the staff is welcoming, and I was seen right at the time of my appointment. The doctor really listened to my concerns and helped me feel at ease"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Dr. Priya Patel",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/20/30/45/1000_F_220304581_3BRbk3UhoYrcVlt72fdBcVRHBtHAKuvD.jpg",
+        "education": "MBBS, MD, FACC",
+        "rating": 4.7,
+        "fee": 950,
+        "contact": 9987654781,
+        "about-doctor": "Dr. Priya Patel is a dedicated cardiologist with expertise in interventional cardiology. She is known for her compassionate patient care and innovative treatment approaches.",
+        "available": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rahul Kapoor": "Dr. Patel is a brilliant cardiologist. She goes above and beyond to ensure her patients receive the best care possible. I highly recommend her."
+          },
+          {
+            "Neha Sharma": "I had a positive experience with Dr. Patel. She thoroughly explained my condition and treatment options, making me feel confident in her care."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Dr. Arjun Sharma",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.5,
+        "fee": 900,
+        "contact": 9987654905,
+        "about-doctor": "Dr. Anuj Sharma is a dynamic and skilled cardiologist specializing in electrophysiology. With a focus on diagnosing and treating heart rhythm disorders, Dr. Sharma employs advanced techniques to ensure optimal cardiac function. His expertise in electrophysiological studies and ablation procedures has positioned him as a leader in the field. Dr. Sharma's commitment to precision and patient-centered care makes him a trusted professional in the realm of electrophysiology.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Sneha Gupta": "Dr. Sharma is an exceptional cardiologist. His expertise and caring nature make him a trusted choice for heart health."
+          },
+          {
+            "Rajiv Mehta": "I appreciate Dr. Sharma's dedication to his patients. He takes the time to explain medical concepts in an understandable way."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Dr. Naina Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "MBBS, MS, DNB Cardiology",
+        "rating": 4.8,
+        "fee": 980,
+        "contact": 9987654987,
+        "about-doctor": "Dr. Neha Kapoor is a compassionate cardiologist specializing in the management of cardiovascular diseases in women. With a focus on gender-specific cardiac care, Dr. Kapoor addresses the unique needs and risk factors associated with heart health in women. Her empathetic approach, coupled with a deep understanding of gender disparities in heart disease, contributes to improved outcomes for her female patients. Dr. Kapoor's commitment to raising awareness about women's heart health reflects her advocacy for inclusive and personalized cardiology.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Ankit Singh": "Dr. Kapoor is a compassionate cardiologist. She listens to her patients and provides thorough explanations of medical conditions."
+          },
+          {
+            "Meera Joshi": "I've had a positive experience under Dr. Kapoor's care. She ensures that her patients are comfortable and well-informed."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Dr. Sneha Reddy",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/15/29/22/1000_F_215292256_xQyNUAhN8fFGqQUIWG9kQRoUFRe74czs.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.9,
+        "fee": 1050,
+        "contact": 9987654120,
+        "about-doctor": "Dr. Sneha Reddy is a compassionate cardiologist specializing in heart failure and transplantation. With a focus on advanced heart therapies, Dr. Sharma is dedicated to improving the lives of patients with heart failure. Her expertise in transplant evaluations and managing post-transplant care ensures comprehensive and holistic patient support. Dr. Reddy's commitment to excellence and patient advocacy make her a respected figure in the field of heart failure and transplantation.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Akhil Sharma": "Dr. Reddy is an excellent cardiologist. Her personalized approach to patient care and expertise are commendable."
+          },
+          {
+            "Pooja Verma": "I feel fortunate to have Dr. Reddy as my cardiologist. She is thorough, caring, and dedicated to her patients' well-being."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Dr. Rajiv Malhotra",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "MBBS, MS, DNB Cardiology",
+        "rating": 4.7,
+        "fee": 980,
+        "contact": 9987654210,
+        "about-doctor": "Dr. Rajiv Malhotra is an accomplished interventional cardiologist recognized for his proficiency in cutting-edge cardiac procedures. With a passion for staying abreast of the latest advancements in cardiology, Dr. Malhotra is committed to providing state-of-the-art care to his patients. His skill in minimally invasive interventions has contributed to successful outcomes for numerous cardiac cases. Dr. Malhotra's dedication to precision and innovation makes him a respected figure in the field of interventional cardiology.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Mehak Choudhary": "Dr. Malhotra is a caring and skilled cardiologist. He explains medical conditions in simple terms and ensures patient comfort."
+          },
+          {
+            "Arun Kumar": "I appreciate Dr. Malhotra's professionalism and attention to detail. He is thorough in his examinations and treatment recommendations."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Dr. Anushka Sharma",
+        "image": "https://as1.ftcdn.net/v2/jpg/06/30/10/78/1000_F_630107829_a8oQfo2hWRiuk7chNSEJqL44DpLQij45.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.6,
+        "fee": 950,
+        "contact": 9987654310,
+        "about-doctor": "Dr. Anushka Sharma is a compassionate cardiologist specializing in heart failure and transplantation. With a focus on advanced heart therapies, Dr. Sharma is dedicated to improving the lives of patients with heart failure. Her expertise in transplant evaluations and managing post-transplant care ensures comprehensive and holistic patient support. Dr. Sharma's commitment to excellence and patient advocacy make her a respected figure in the field of heart failure and transplantation.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rohit Kapoor": "Dr. Sharma is a knowledgeable cardiologist. She has a warm approach, and her dedication to patient care is evident."
+          },
+          {
+            "Nisha Singh": "I highly recommend Dr. Anushka Sharma. She provides excellent care and takes the time to address patient concerns."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Dr.Shivani Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.8,
+        "fee": 1000,
+        "contact": 9987654422,
+        "about-doctor": "Dr. Shivani Kapoor is a seasoned cardiologist known for her expertise in preventive cardiology. With a focus on promoting heart health and wellness, Dr. Kapoor has dedicated her career to educating patients on lifestyle modifications and personalized cardiac care. Her holistic approach, coupled with a wealth of experience, ensures comprehensive and effective cardiovascular management for her patients. Dr. Kapoor's commitment to preventive medicine sets her apart as a compassionate advocate for heart health in the medical community.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rahul Mehra": "Dr. Kapoor is an excellent cardiologist. Her thoroughness and dedication to patient well-being are commendable."
+          },
+          {
+            "Sonia Agarwal": "I had a positive experience under Dr. Kapoor's care. She provides clear explanations and ensures a comfortable environment for patients."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Dr. Aarav Kumar",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "MBBS, MS, DNB Cardiology",
+        "rating": 4.6,
+        "fee": 970,
+        "contact": 9987654983,
+        "about-doctor": "Dr. Aarav Kumar is a dedicated and compassionate cardiologist specializing in cardiovascular interventions. With a focus on interventional cardiology, Dr. Kumar is committed to providing state-of-the-art care for patients with complex cardiac conditions. His expertise in performing angioplasty and stent placements has contributed to successful outcomes for numerous patients. Dr. Kumar's patient-centric approach, coupled with a deep understanding of cardiovascular diseases, makes him a trusted professional in the field. His commitment to advancing cardiology and improving patient outcomes reflects his passion for excellence and holistic patient care.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Sofia Patel": "Dr. Kumar is a compassionate cardiologist. His dedication to patient well-being and expertise in cardiac care make him an excellent choice."
+          },
+          {
+            "Rohan Singh": "I highly recommend Dr. Aarav Kumar. He takes the time to explain medical conditions, ensuring that patients are well-informed and comfortable."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Dr. Ananya Desai",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.6,
+        "fee": 950,
+        "contact": 9987654389,
+        "about-doctor": "Dr. Ananya Desai is a highly skilled and compassionate cardiologist with a focus on preventive cardiology. Committed to promoting heart health and wellness, Dr. Desai emphasizes lifestyle modifications and personalized care for her patients. Her expertise in cardiovascular risk assessment and management has contributed to positive outcomes for those under her care. Dr. Desai's dedication to patient education and community health initiatives makes her a respected figure in preventive cardiology. With a warm and empathetic approach, she strives to empower individuals to take control of their heart health and lead fulfilling lives.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rohan Gupta": "Dr. Desai is a dedicated cardiologist. Her patient-centric approach and expertise make her a trustworthy healthcare professional."
+          },
+          {
+            "Nisha Sharma": "I've had positive experiences with Dr. Ananya Desai. She explains medical conditions clearly and ensures patient comfort throughout the treatment."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Dr. Sameer Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.9,
+        "fee": 1050,
+        "contact": 9987654478,
+        "about-doctor": "Dr. Sameer Kapoor is a distinguished cardiologist known for his expertise in cardiac electrophysiology. Specializing in the diagnosis and treatment of heart rhythm disorders, Dr. Kapoor utilizes advanced techniques to ensure optimal cardiac function. His proficiency in performing electrophysiological studies, catheter ablations, and device implantations has positioned him as a leader in the field. Dr. Kapoor's commitment to precision, patient-centered care, and staying abreast of technological advancements make him a trusted professional in the realm of cardiac electrophysiology.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Kavita Singh": "Dr. Kapoor is an excellent cardiologist. His attention to detail and commitment to patient well-being are commendable."
+          },
+          {
+            "Raj Mehra": "I highly recommend Dr. Sameer Kapoor. He takes the time to address patient concerns and provides comprehensive cardiac care."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Dr. Nandini Mehta",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/15/29/22/1000_F_215292256_xQyNUAhN8fFGqQUIWG9kQRoUFRe74czs.jpg",
+        "education": "MBBS, MS, DNB Cardiology",
+        "rating": 4.8,
+        "fee": 980,
+        "contact": 9987654567,
+        "about-doctor": "Dr. Nandini Mehta is a dedicated and compassionate cardiologist specializing in women's heart health. With a focus on gender-specific cardiac care, Dr. Mehta addresses the unique cardiovascular needs and risk factors in women. Her empathetic approach, coupled with a deep understanding of gender disparities in heart disease, contributes to improved outcomes for her female patients. Dr. Mehta's commitment to raising awareness about women's heart health and providing personalized, evidence-based care makes her a trusted figure in the field of cardiology.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Kunal Agarwal": "Dr. Mehta is a caring cardiologist. Her expertise and compassionate approach to patient care set her apart."
+          },
+          {
+            "Priya Choudhary": "I feel fortunate to have Dr. Nandini Mehta as my cardiologist. She is thorough, professional, and genuinely concerned about her patients."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Dr. Arnav Khanna",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.7,
+        "fee": 990,
+        "contact": 9987654654,
+        "about-doctor": "Dr. Arnav Khanna is a dynamic and skilled cardiologist with a focus on interventional cardiology. Committed to providing state-of-the-art care for patients with complex cardiac conditions, Dr. Khanna specializes in performing angioplasty and stent placements. His expertise and precision in interventional procedures contribute to successful outcomes for numerous patients. Dr. Khanna's patient-centric approach, coupled with a deep understanding of cardiovascular diseases, makes him a trusted professional in the field. His commitment to advancing cardiology and improving patient outcomes reflects his passion for excellence and holistic patient care.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Riya Kapoor": "Dr. Khanna is a knowledgeable cardiologist. He is thorough in his examinations and provides clear explanations."
+          },
+          {
+            "Amit Joshi": "I've had a positive experience with Dr. Arnav Khanna. He is attentive, professional, and genuinely cares about his patients."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Dr. Preeti Sharma",
+        "image": "https://as1.ftcdn.net/v2/jpg/06/30/10/78/1000_F_630107829_a8oQfo2hWRiuk7chNSEJqL44DpLQij45.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.9,
+        "fee": 1020,
+        "contact": 9987654732,
+        "about-doctor": "Dr. Preeti Sharma is a compassionate and dedicated cardiologist specializing in preventive cardiology. Committed to promoting heart health and wellness, Dr. Sharma emphasizes lifestyle modifications and personalized care for her patients. Her expertise in cardiovascular risk assessment and management has contributed to positive outcomes for those under her care. Dr. Sharma's dedication to patient education and community health initiatives makes her a respected figure in preventive cardiology. With a warm and empathetic approach, she strives to empower individuals to take control of their heart health and lead fulfilling lives.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Amit Mehta": "Dr. Sharma is an exceptional cardiologist. Her dedication to patient care and expertise in the field are commendable."
+          },
+          {
+            "Sanya Verma": "I highly recommend Dr. Preeti Sharma. She takes the time to explain medical conditions and ensures that patients feel comfortable and informed."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Dr. Yash Gupta",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "MBBS, MD, DM Cardiology",
+        "rating": 4.8,
+        "fee": 1010,
+        "contact": 9987654896,
+        "about-doctor": "Dr. Yash Gupta is a highly skilled and dedicated cardiologist known for his expertise in interventional cardiology. Specializing in advanced cardiac procedures, Dr. Gupta is committed to providing comprehensive and personalized care for patients with complex cardiovascular conditions. His proficiency in angioplasty, stent placements, and other interventional techniques contributes to successful outcomes for numerous patients. Dr. Gupta's patient-centered approach, coupled with a deep understanding of cardiac diseases, makes him a trusted professional in the field. His commitment to advancing cardiology and improving patient outcomes reflects his passion for excellence and holistic patient care.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Aarav Singh": "Dr. Gupta is a skilled cardiologist. His friendly demeanor and thorough approach to patient care make him a trusted healthcare professional."
+          },
+          {
+            "Zara Khan": "I've had positive experiences with Dr. Yash Gupta. He is attentive, knowledgeable, and genuinely cares about the well-being of his patients."
+          }
+        ]
+      }
+    ],
+    "dentists": [
+      {
+        "id": 1,
+        "name": "Dr. Emily White",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/82/72/13/1000_F_282721302_ASa8MKXhTukl1TnIxGl56eiOQkrvK5zL.jpg",
+        "education": "DDS, DMD",
+        "rating": 4.8,
+        "fee": 800,
+        "contact": 9987654501,
+        "about-doctor": "Dr. Emily White is an experienced dentist specializing in general dentistry. She is dedicated to providing comprehensive dental care for patients of all ages.",
+        "available": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "John Smith": "Dr. White is an excellent dentist. She explains everything thoroughly and takes the time to answer all your questions. I highly recommend her."
+          },
+          {
+            "Lisa Johnson": "I've been seeing Dr. White for years, and she's always been professional and caring. The staff is friendly, and the office is clean."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dr. Michael Johnson",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.5,
+        "fee": 850,
+        "contact": 9987654902,
+        "about-doctor": "Dr. Michael Johnson is a skilled dentist specializing in prosthodontics. He is committed to delivering high-quality dental care to enhance patients' oral health and aesthetics.",
+        "available": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Jennifer Williams": "Dr. Johnson is an outstanding dentist. His attention to detail and friendly demeanor make each dental visit a positive experience. I highly recommend him."
+          },
+          {
+            "Mark Davis": "I've been a patient of Dr. Johnson for years. He and his team provide top-notch dental care in a comfortable environment."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Dr. Natasha Gupta",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "DDS, DMD",
+        "rating": 4.9,
+        "fee": 900,
+        "contact": 9987654601,
+        "about-doctor": "Dr. Natasha Gupta is a dedicated dentist with a focus on periodontics. Specializing in the prevention, diagnosis, and treatment of gum diseases, Dr. Gupta is committed to promoting optimal oral health for her patients. Her expertise in periodontal procedures and dental implantology contributes to comprehensive and effective care. Dr. Gupta's patient-centered approach, coupled with a gentle and friendly demeanor, ensures a positive dental experience. Her commitment to staying updated with the latest advancements in periodontics reflects her dedication to providing the highest standard of care for her patients.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rahul Kapoor": "Dr. Gupta is an exceptional dentist. She is thorough in her examinations and provides personalized dental care."
+          },
+          {
+            "Sneha Sharma": "I highly recommend Dr. Natasha Gupta. She has a gentle approach and ensures a positive dental experience for her patients."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Dr. Vikram Singh",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654723,
+        "about-doctor": "Dr. Vikram Singh is a highly skilled dentist with expertise in oral and maxillofacial surgery. Specializing in surgical procedures related to the mouth, jaw, and face, Dr. Singh is dedicated to providing comprehensive and compassionate care. His proficiency in complex dental extractions, implant placement, and corrective jaw surgeries contributes to positive outcomes for his patients. Dr. Singh's commitment to staying abreast of the latest advancements in oral and maxillofacial surgery ensures that his patients receive the highest standard of surgical care in a comfortable and supportive environment.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Amita Patel": "Dr. Singh is an excellent dentist. He is knowledgeable, and his friendly demeanor puts patients at ease."
+          },
+          {
+            "Rajesh Kapoor": "I've been a patient of Dr. Singh for years. His expertise in dentistry and commitment to patient care are commendable."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Dr. Priyanka Sharma",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "DDS, MDS",
+        "rating": 4.8,
+        "fee": 950,
+        "contact": 9987654845,
+        "about-doctor": "Dr. Priyanka Sharma is a compassionate dentist specializing in pediatric dentistry. Committed to providing gentle and comprehensive dental care for children, Dr. Sharma creates a positive and comfortable environment for her young patients. Her expertise in preventive and restorative pediatric dentistry ensures that children receive personalized and age-appropriate dental treatments. Dr. Sharma's friendly and approachable demeanor, coupled with her commitment to pediatric oral health, makes her a trusted and caring professional in the field.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rajat Mehra": "Dr. Sharma is an excellent dentist. Her attention to detail and commitment to patient comfort are remarkable."
+          },
+          {
+            "Swati Gupta": "I've had positive experiences with Dr. Priyanka Sharma. She provides personalized dental care, and her team is friendly and professional."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Dr. Rohan Patel",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.6,
+        "fee": 900,
+        "contact": 9987654978,
+        "about-doctor": "Dr. Rohan Patel is a dedicated dentist with a focus on cosmetic and restorative dentistry. Specializing in enhancing smiles and improving oral aesthetics, Dr. Patel is committed to providing personalized and high-quality dental care. His expertise in procedures such as teeth whitening, veneers, and smile makeovers contributes to creating confident and beautiful smiles for his patients. Dr. Patel's friendly and patient-centric approach ensures a positive dental experience, and his commitment to staying updated with the latest advancements in cosmetic dentistry reflects his dedication to achieving optimal results for his patients.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Ananya Singh": "Dr. Patel is a skilled dentist. His expertise and friendly approach make dental visits comfortable and stress-free."
+          },
+          {
+            "Vikrant Choudhary": "I highly recommend Dr. Rohan Patel. He takes the time to explain procedures and ensures a positive experience for his patients."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Dr. Aisha Khan",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/15/29/22/1000_F_215292256_xQyNUAhN8fFGqQUIWG9kQRoUFRe74czs.jpg",
+        "education": "DDS, MDS",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654865,
+        "about-doctor": "Dr. Aisha Khan is a dynamic and dedicated dentist specializing in prosthodontics. Committed to delivering high-quality dental care, Dr. Khan focuses on restoring and enhancing the functionality and appearance of her patients' smiles. Her expertise in prosthetic dentistry, including crowns, bridges, and dentures, contributes to comprehensive and personalized treatment plans. Dr. Khan's attention to detail, combined with a compassionate and patient-centered approach, ensures that each dental restoration meets the highest standards. Her commitment to patient satisfaction and oral health makes her a trusted professional in the field of prosthodontics.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Aryan Kapoor": "Dr. Aisha Khan is an excellent dentist. She is thorough in her examinations and provides clear explanations of dental procedures."
+          },
+          {
+            "Zoya Ahmed": "I've been a patient of Dr. Khan for years. She and her team provide top-notch dental care with a focus on patient comfort."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Dr. Rahul Malhotra",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/36/77/75/1000_F_136777517_BjE69B2mKBF1ax7E8k6b3YMr0C95A5RC.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.9,
+        "fee": 950,
+        "contact": 9987654923,
+        "about-doctor": "Dr. Rahul Malhotra is a highly skilled and compassionate dentist specializing in endodontics. Committed to providing specialized care for the treatment of dental pulp and root canal therapy, Dr. Malhotra ensures optimal outcomes for his patients. His expertise in diagnosing and treating dental infections and preserving natural teeth reflects his dedication to maintaining oral health. Dr. Malhotra's patient-centric approach, coupled with advanced techniques in endodontics, contributes to positive and comfortable experiences for his patients. His commitment to excellence and ongoing education in endodontics positions him as a trusted professional in the field.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Sara Patel": "Dr. Malhotra is an outstanding dentist. His attention to detail and commitment to patient well-being are commendable."
+          },
+          {
+            "Arjun Singh": "I highly recommend Dr. Rahul Malhotra. He ensures a positive dental experience, and his expertise in dentistry is impressive."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Dr. Natasha Gupta",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "DDS, DMD",
+        "rating": 4.9,
+        "fee": 900,
+        "contact": 9987654601,
+        "about-doctor": "Dr. Natasha Gupta is a dedicated dentist with a passion for pediatric dentistry. Specializing in providing gentle and comprehensive dental care for children, Dr. Gupta creates a warm and friendly environment to ensure positive experiences for her young patients. Her expertise in preventive and restorative pediatric dentistry emphasizes the importance of early oral health habits. Dr. Gupta's patient-centric approach, coupled with her ability to connect with children, ensures that dental visits are not only effective but also enjoyable. Her commitment to promoting lifelong oral health in children makes her a trusted and caring professional in the field of pediatric dentistry.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rahul Kapoor": "Dr. Gupta is an exceptional dentist. She is thorough in her examinations and provides personalized dental care."
+          },
+          {
+            "Sneha Sharma": "I highly recommend Dr. Natasha Gupta. She has a gentle approach and ensures a positive dental experience for her patients."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Dr. Arjun Choudhary",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/97/48/63/1000_F_197486311_wuiWywgaJpJ3rErejuyifnOVSM27aBaN.jpg",
+        "education": "DDS, MDS",
+        "rating": 4.7,
+        "fee": 930,
+        "contact": 9987654782,
+        "about-doctor": "Dr. Arjun Choudhary is a dedicated and skilled dentist specializing in oral and maxillofacial surgery. Committed to providing comprehensive and compassionate care, Dr. Choudhary focuses on surgical procedures related to the mouth, jaw, and face. His expertise in oral surgeries, including extractions, jaw reconstructions, and corrective procedures, ensures positive outcomes for his patients. Dr. Choudhary's patient-centered approach, coupled with a caring demeanor, creates a supportive environment for individuals seeking oral and maxillofacial surgical treatments. His commitment to staying updated with the latest advancements in the field reflects his dedication to delivering high-quality care.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Zara Patel": "Dr. Choudhary is an excellent dentist. His friendly demeanor and expertise in dentistry make each visit a positive experience."
+          },
+          {
+            "Arjun Kumar": "I highly recommend Dr. Arjun Choudhary. He is attentive, professional, and genuinely cares about the well-being of his patients."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Dr. Aryan Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/57/48/67/1000_F_257486764_GnnrHRNIBV93mAwR0aiNkS0x5UjDfIcl.jpg",
+        "education": "DDS, DMD",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654956,
+        "about-doctor": "Dr. Aryan Kapoor is a dynamic and skilled dentist with a focus on prosthodontics. Specializing in the restoration and replacement of damaged or missing teeth, Dr. Kapoor is committed to providing comprehensive and personalized dental care. His expertise in prosthodontic procedures, including crowns, bridges, and dentures, contributes to restoring optimal oral function and aesthetics for his patients. Dr. Kapoor's patient-centric approach, coupled with a friendly demeanor, ensures that each dental treatment is tailored to meet the unique needs of his patients. His commitment to excellence and staying current with advancements in prosthodontics makes him a trusted professional in the field.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Sara Mehra": "Dr. Kapoor is an excellent dentist. His attention to detail and commitment to patient well-being are commendable."
+          },
+          {
+            "Arjun Choudhary": "I highly recommend Dr. Aryan Kapoor. He takes the time to address patient concerns and provides comprehensive dental care."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Dr. Siya Sharma",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.9,
+        "fee": 950,
+        "contact": 9987654678,
+        "about-doctor": "Dr. Siya Sharma is a compassionate and skilled dentist specializing in oral surgery. With a focus on surgical procedures related to the mouth and jaws, Dr. Sharma is dedicated to providing comprehensive and personalized care. Her expertise in complex dental extractions, implant surgeries, and oral surgical interventions contributes to positive outcomes for her patients. Dr. Sharma's patient-centric approach, coupled with a gentle and friendly demeanor, ensures a comfortable and supportive environment for those undergoing oral surgery. Her commitment to excellence and continuous education in oral surgery positions her as a trusted professional in the field.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rohan Agarwal": "Dr. Siya Sharma is an exceptional dentist. Her attention to detail and commitment to patient comfort make her a trusted healthcare professional."
+          },
+          {
+            "Aarav Mehra": "I've had positive experiences with Dr. Siya Sharma. She explains dental procedures clearly and ensures a positive experience for her patients."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Dr. Ansh Malhotra",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/97/48/63/1000_F_197486311_wuiWywgaJpJ3rErejuyifnOVSM27aBaN.jpg",
+        "education": "DDS, MDS",
+        "rating": 4.8,
+        "fee": 930,
+        "contact": 9987654789,
+        "about-doctor": "Dr. Ansh Malhotra is a dedicated and skilled dentist specializing in orthodontics. Committed to enhancing smiles and improving dental aesthetics, Dr. Malhotra focuses on providing comprehensive and personalized orthodontic care. His expertise in diagnosing and treating misalignments and malocclusions ensures optimal outcomes for patients seeking orthodontic solutions. Dr. Malhotra's patient-centric approach, combined with the latest techniques in orthodontics, creates a positive and comfortable experience for individuals undergoing orthodontic treatment. His commitment to excellence and achieving optimal oral health through orthodontics makes him a trusted professional in the field.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Zara Patel": "Dr. Malhotra is an excellent dentist. His friendly demeanor and expertise in dentistry make each visit a positive experience."
+          },
+          {
+            "Arjun Kumar": "I highly recommend Dr. Ansh Malhotra. He is attentive, professional, and genuinely cares about the well-being of his patients."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Dr. Aisha Verma",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/15/29/22/1000_F_215292256_xQyNUAhN8fFGqQUIWG9kQRoUFRe74czs.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654890,
+        "about-doctor": "Dr. Aisha Verma is a compassionate and dedicated dentist specializing in endodontics. With a focus on the diagnosis and treatment of dental pulp and root canal therapy, Dr. Verma is committed to providing specialized and high-quality care. Her expertise in endodontic procedures ensures optimal outcomes for patients experiencing dental infections or requiring root canal treatment. Dr. Verma's patient-centric approach, coupled with her gentle demeanor, creates a positive and comfortable experience for individuals undergoing endodontic procedures. Her commitment to excellence and staying abreast of the latest advancements in endodontics positions her as a trusted professional in the field.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Sanya Mehra": "Dr. Verma is a skilled dentist. Her expertise and dedication to patient comfort make dental visits stress-free."
+          },
+          {
+            "Rahul Choudhary": "I've had positive experiences with Dr. Aisha Verma. She explains dental procedures clearly and ensures a positive experience for her patients."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Dr. Vikrant Kapoor",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "DDS, MDS",
+        "rating": 4.9,
+        "fee": 970,
+        "contact": 9987654975,
+        "about-doctor": "Dr. Vikrant Kapoor is a highly skilled dentist with a focus on oral and maxillofacial surgery. Specializing in surgical procedures related to the mouth, jaw, and face, Dr. Kapoor is committed to providing comprehensive and compassionate care. His proficiency in complex dental extractions, implant placement, and corrective jaw surgeries contributes to positive outcomes for his patients. Dr. Kapoor's commitment to staying abreast of the latest advancements in oral and maxillofacial surgery ensures that his patients receive the highest standard of surgical care in a comfortable and supportive environment.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Anaya Patel": "Dr. Kapoor is an excellent dentist. His attention to detail and commitment to patient well-being are commendable."
+          },
+          {
+            "Riya Joshi": "I highly recommend Dr. Vikrant Kapoor. He takes the time to address patient concerns and provides comprehensive dental care."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Dr. Natasha Singh",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "DMD, MSD",
+        "rating": 4.8,
+        "fee": 980,
+        "contact": 9987654659,
+        "about-doctor": "Dr. Natasha Singh is a compassionate and dedicated dentist with a focus on pediatric dentistry. Committed to providing gentle and comprehensive dental care for children, Dr. Singh creates a warm and friendly environment to ensure positive experiences for her young patients. Her expertise in preventive and restorative pediatric dentistry emphasizes the importance of early oral health habits. Dr. Singh's patient-centric approach, coupled with her ability to connect with children, ensures that dental visits are not only effective but also enjoyable. Her commitment to promoting lifelong oral health in children makes her a trusted and caring professional in the field of pediatric dentistry.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rohan Agarwal": "Dr. Singh is an exceptional dentist. Her attention to detail and commitment to patient comfort make her a trusted healthcare professional."
+          },
+          {
+            "Aarav Mehra": "I've had positive experiences with Dr. Natasha Singh. She explains dental procedures clearly and ensures a positive experience for her patients."
+          }
+        ]
+      }
+    ],
+    "pediatric": [
+      {
+        "id": 1,
+        "name": "Dr. Sarah Miller",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/65/13/75/1000_F_265137512_Oh1Bwar4BE4N6nnsvgkIse8SMkYHSn1h.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.9,
+        "fee": 900,
+        "contact": 9987654789,
+        "about-doctor": "Dr. Sarah Miller is a compassionate pediatrician dedicated to the health and well-being of children. She has extensive experience in pediatric care and preventive medicine.",
+        "available": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Amy Brown": "Dr. Miller is amazing with kids. She takes the time to explain things to both parents and children. I'm so grateful to have her as our pediatrician."
+          },
+          {
+            "David Taylor": "Our family loves Dr. Miller. She is knowledgeable, kind, and always puts the children at ease during appointments."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dr. Jessica Martinez",
+        "image": "https://as2.ftcdn.net/v2/jpg/02/76/94/29/1000_F_276942923_vRe2zKQBgaQj0MyNOjqD8f7eVMyKZ2eL.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654456,
+        "about-doctor": "Dr. Jessica Martinez is a dedicated pediatrician with a focus on neonatology. She is committed to providing exceptional care for newborns and infants.",
+        "available": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Samantha Turner": "Dr. Martinez is wonderful with babies. She helped us navigate the challenges of having a premature baby with compassion and expertise."
+          },
+          {
+            "Carlos Ramirez": "Our family is grateful for Dr. Martinez's support. Her dedication to the well-being of our child is evident in every visit."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Dr. Brian Mitchell",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/72/38/25/1000_F_172382536_GLOspuArqWqoq66wVRo2MMzYIocUvnY2.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.9,
+        "fee": 900,
+        "contact": 9987654123,
+        "about-doctor": "Dr. Brian Mitchell is a compassionate pediatrician specializing in pediatric infectious diseases. He is passionate about preventing and treating childhood infections.",
+        "available": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Melissa Anderson": "Dr. Mitchell is excellent in his field. He takes the time to educate parents on preventing infections and ensures thorough care for sick children."
+          },
+          {
+            "Kevin Foster": "Our experience with Dr. Mitchell has been fantastic. He is knowledgeable, patient, and genuinely cares about his young patients."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Dr. Priya Verma",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.8,
+        "fee": 950,
+        "contact": 9987654345,
+        "about-doctor": "Dr. Priya Verma is a compassionate and dedicated pediatrician with a focus on neonatology. Committed to providing exceptional care for newborns and infants, Dr. Verma has extensive experience in managing the unique healthcare needs of the youngest patients. Her expertise in neonatal care, including preterm infants, ensures that families receive comprehensive and supportive healthcare during the critical early stages of a child's life. Dr. Verma's commitment to staying updated with the latest advancements in neonatology reflects her dedication to providing the highest standard of care for newborns and their families.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Amit Sharma": "Dr. Verma is a wonderful pediatrician. She is thorough in her examinations and has a warm approach that puts children at ease."
+          },
+          {
+            "Sneha Kapoor": "I highly recommend Dr. Priya Verma. She is knowledgeable, caring, and dedicated to the well-being of her young patients."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Dr. Rohan Gupta",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/97/48/63/1000_F_197486311_wuiWywgaJpJ3rErejuyifnOVSM27aBaN.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.7,
+        "fee": 920,
+        "contact": 9987654189,
+        "about-doctor": "Dr. Rohan Gupta is a compassionate and experienced pediatrician committed to the health and well-being of children. With a focus on preventive care and comprehensive healthcare for pediatric patients, Dr. Gupta provides personalized and empathetic medical services. His dedication to building strong doctor-patient relationships ensures that families feel supported and well-informed about their child's health. Dr. Gupta's expertise in managing a wide range of pediatric conditions, coupled with his friendly and approachable demeanor, contributes to a positive healthcare experience for children and their families.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Neha Sharma": "Dr. Gupta is excellent with children. His friendly demeanor and expertise make him a trusted choice for pediatric care."
+          },
+          {
+            "Rajat Kapoor": "Our family has had positive experiences with Dr. Rohan Gupta. He is patient, understanding, and provides comprehensive care for children."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Dr. Zara Ahmed",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.9,
+        "fee": 1020,
+        "contact": 9987654402,
+        "about-doctor": "Dr. Zara Ahmed is a dedicated pediatrician with a focus on infectious diseases in children. Committed to preventing and treating childhood infections, Dr. Ahmed has extensive experience in managing a wide range of infectious conditions affecting pediatric patients. Her expertise in infectious diseases ensures that families receive comprehensive and effective care for their children. Dr. Ahmed's commitment to staying updated with the latest advancements in pediatric infectious diseases reflects her dedication to providing the highest standard of care for young patients. Her caring and empathetic approach contribute to a positive healthcare experience for both children and their families.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Aryan Kapoor": "Dr. Zara Ahmed is an excellent pediatrician. Her expertise, compassion, and friendly approach make each visit a positive experience for children."
+          },
+          {
+            "Sara Patel": "We highly recommend Dr. Ahmed. She is thorough, patient, and ensures that parents are well-informed about their child's health."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Dr. Aarav Singh",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/97/95/66/1000_F_297956690_OMymV1MsaWkAPYOeVVLsR6B5QD1jnp62.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.7,
+        "fee": 1030,
+        "contact": 9987654445,
+        "about-doctor": "Dr. Aarav Singh is a dedicated pediatrician committed to providing comprehensive and compassionate care for children. His focus on preventive medicine, routine check-ups, and managing childhood illnesses ensures that young patients receive optimal healthcare. Dr. Singh's warm and friendly demeanor, coupled with his commitment to building strong doctor-patient relationships, creates a positive healthcare experience for families.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Neha Verma": "Dr. Aarav Singh is a compassionate and skilled pediatrician. He creates a comfortable and reassuring environment for young patients."
+          },
+          {
+            "Rajat Sharma": "Our family has had positive experiences with Dr. Singh. He is patient, understanding, and provides comprehensive care for children."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Dr. Riya Kapoor",
+        "image": "https://as1.ftcdn.net/v2/jpg/02/15/29/22/1000_F_215292256_xQyNUAhN8fFGqQUIWG9kQRoUFRe74czs.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.8,
+        "fee": 1040,
+        "contact": 9987654489,
+        "about-doctor": "Dr. Riya Kapoor is a compassionate pediatrician with a special interest in developmental pediatrics. Committed to supporting the healthy growth and development of children, Dr. Kapoor provides personalized and empathetic care. Her expertise in addressing developmental milestones and behavioral concerns contributes to a positive healthcare experience for both children and their families.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rahul Mehra": "Dr. Riya Kapoor is an outstanding pediatrician. She is attentive, knowledgeable, and ensures a positive experience for both children and parents."
+          },
+          {
+            "Sneha Singh": "We highly recommend Dr. Kapoor. She is thorough, patient, and provides exceptional care for young patients, making each visit stress-free."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Dr. Alisha Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.6,
+        "fee": 930,
+        "contact": 9987654056,
+        "about-doctor": "Dr. Alisha Kapoor is a dedicated pediatrician with a focus on pediatric cardiology. Committed to the cardiovascular health of children, Dr. Kapoor specializes in diagnosing and managing cardiac conditions in pediatric patients. Her expertise in pediatric cardiology ensures that families receive comprehensive and specialized care for children with heart-related concerns.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Neha Verma": "Dr. Kapoor is a wonderful pediatrician. Her friendly approach and genuine care for children make her highly recommended."
+          },
+          {
+            "Rajat Sharma": "Our experience with Dr. Alisha Kapoor has been great. She is patient, understanding, and ensures thorough care for young patients."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Dr. Siddharth Singh",
+        "image": "https://as2.ftcdn.net/v2/jpg/01/97/48/63/1000_F_197486311_wuiWywgaJpJ3rErejuyifnOVSM27aBaN.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.7,
+        "fee": 940,
+        "contact": 9987654089,
+        "about-doctor": "Dr. Siddharth Singh is a skilled pediatrician with a focus on pediatric gastroenterology. Committed to the digestive health of children, Dr. Singh specializes in diagnosing and managing gastrointestinal conditions in pediatric patients. His expertise in pediatric gastroenterology ensures that families receive comprehensive and specialized care for children with digestive system concerns.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Suman Agarwal": "Dr. Siddharth Singh is an excellent pediatrician. He takes the time to address parent concerns and provides comprehensive care for children."
+          },
+          {
+            "Aryan Kapoor": "Our family is grateful for Dr. Singh's expertise. He is knowledgeable, approachable, and ensures a positive experience for young patients."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Dr. Meera Gupta",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.8,
+        "fee": 950,
+        "contact": 9987654125,
+        "about-doctor": "Dr. Meera Gupta is a compassionate pediatrician dedicated to the health and well-being of children. With a focus on preventive care and comprehensive healthcare for pediatric patients, Dr. Gupta provides personalized and empathetic medical services. Her dedication to building strong doctor-patient relationships ensures that families feel supported and well-informed about their child's health.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Rahul Malhotra": "Dr. Meera Gupta is an exceptional pediatrician. Her dedication to children's health and well-being is evident in every appointment."
+          },
+          {
+            "Nisha Kapoor": "We have had positive experiences with Dr. Gupta. She is thorough, caring, and ensures a comfortable environment for young patients."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Dr. Ananya Sharma",
+        "image": "https://as1.ftcdn.net/v2/jpg/06/30/10/78/1000_F_630107829_a8oQfo2hWRiuk7chNSEJqL44DpLQij45.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.9,
+        "fee": 960,
+        "contact": 9987654167,
+        "about-doctor": "Dr. Ananya Sharma is a dedicated pediatrician with a focus on pediatric neurology. Committed to the neurological health of children, Dr. Sharma specializes in diagnosing and managing neurological conditions in pediatric patients. Her expertise in pediatric neurology ensures that families receive comprehensive and specialized care for children with neurological concerns.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Amit Singh": "Dr. Ananya Sharma is a fantastic pediatrician. She is attentive, patient, and makes each visit a positive experience for children and parents."
+          },
+          {
+            "Sara Patel": "Our family highly recommends Dr. Sharma. She is knowledgeable, approachable, and truly cares about the well-being of young patients."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Dr. Vikram Malhotra",
+        "image": "https://as1.ftcdn.net/v2/jpg/01/94/52/52/1000_F_194525205_HzyzPGx0tM7AKM4GnThXRHcanV4YRrgZ.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.7,
+        "fee": 970,
+        "contact": 9987654203,
+        "about-doctor": "Dr. Vikram Malhotra is a compassionate pediatrician with a special interest in pediatric infectious diseases. Committed to preventing and treating childhood infections, Dr. Malhotra has extensive experience in managing a wide range of infectious conditions affecting pediatric patients. His expertise in infectious diseases ensures that families receive comprehensive and effective care for their children.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Swati Verma": "Dr. Vikram Malhotra is an excellent pediatrician. He is knowledgeable, approachable, and provides compassionate care for children."
+          },
+          {
+            "Rajat Choudhary": "Our experience with Dr. Malhotra has been positive. He takes the time to address concerns and ensures thorough care for young patients."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Dr. Natasha Kapoor",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/07/16/31/1000_F_307163137_zZzqR0NLT5M1w7E4CNrAQEo2gnIYYcAN.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.8,
+        "fee": 980,
+        "contact": 9987654246,
+        "about-doctor": "Dr. Natasha Kapoor is a dedicated pediatrician with a focus on pediatric pulmonology. Committed to the respiratory health of children, Dr. Kapoor specializes in diagnosing and managing respiratory conditions in pediatric patients. Her expertise in pediatric pulmonology ensures that families receive comprehensive and specialized care for children with respiratory concerns.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rahul Mehra": "Dr. Natasha Kapoor is a caring and skilled pediatrician. Her friendly demeanor and expertise make each visit a positive experience for children."
+          },
+          {
+            "Sneha Singh": "We highly recommend Dr. Kapoor. She is thorough, patient, and ensures that parents are well-informed about their child's health."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Dr. Arjun Malhotra",
+        "image": "https://as1.ftcdn.net/v2/jpg/01/94/52/52/1000_F_194525205_HzyzPGx0tM7AKM4GnThXRHcanV4YRrgZ.jpg",
+        "education": "MD, Pediatrics",
+        "rating": 4.9,
+        "fee": 990,
+        "contact": 9987654289,
+        "about-doctor": "Dr. Arjun Malhotra is a skilled pediatrician with a focus on pediatric oncology. Committed to the care of children with cancer, Dr. Malhotra specializes in diagnosing and managing oncological conditions in pediatric patients. His expertise in pediatric oncology ensures that families receive comprehensive and specialized care for children with cancer-related concerns.",
+        "availability": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "reviews": [
+          {
+            "Neha Sharma": "Dr. Arjun Malhotra is an excellent pediatrician. He is knowledgeable, compassionate, and ensures comprehensive care for young patients."
+          },
+          {
+            "Amit Kapoor": "Our family is grateful for Dr. Malhotra's dedication. He takes the time to address concerns and provides valuable guidance on children's health."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Dr. Priya Singh",
+        "image": "https://as2.ftcdn.net/v2/jpg/03/16/45/01/1000_F_316450120_ZFImh7yCLYa4LTdGU68yiYqmFR91RV6r.jpg",
+        "education": "MD, FAAP",
+        "rating": 4.7,
+        "fee": 1000,
+        "contact": 9987654324,
+        "about-doctor": "Dr. Priya Singh is a compassionate pediatrician with a focus on general pediatrics. Committed to the overall health and well-being of children, Dr. Singh provides personalized and empathetic care. Her expertise in general pediatrics ensures that families receive comprehensive and family-centered medical services for their children.",
+        "availability": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "reviews": [
+          {
+            "Rahul Verma": "Dr. Priya Singh is an outstanding pediatrician. She is thorough, patient, and ensures a positive experience for both children and parents."
+          },
+          {
+            "Sara Mehra": "We highly recommend Dr. Singh. She is attentive, knowledgeable, and provides exceptional care for young patients, making each visit stress-free."
+          }
+        ]
+      }
+    ]
+  }
+}
