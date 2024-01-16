@@ -1,0 +1,16 @@
+.n-body {
+  position: relative;
+  background-image: url(src/homepageImages/homeBackGround.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.n-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2f4e44(0, 128, 0, 0.5);
+}

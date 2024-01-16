@@ -1,0 +1,46 @@
+.n-footer-facebookimg {
+  width: 25px;
+  height: 35px;
+}
+
+.n-footer-twitterimg {
+  width: 25px;
+  height: 35px;
+}
+
+.n-footer-instaimg {
+  width: 25px;
+  height: 35px;
+}
+
+.n-footer-grid1 > a,
+p {
+  font-size: 14px;
+}
+.n-footer-grid2 > a,
+p {
+  font-size: 14px;
+}
+.n-footer-grid3 > p {
+  font-size: 14px;
+}
+.n-footer-grid4 > p {
+  font-size: 14px;
+}
+
+.n-footer-grid1 > h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.n-footer-grid2 > h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.n-footer-grid3 > h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.n-footer-grid4 > h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
