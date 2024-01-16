@@ -14,7 +14,7 @@ const Home = () => {
           <Box className="n-body-content px-4 flex flex-col justify-center gap-2">
             <h1
               className="n-body-heading font-bold text-5xl text-bodyColor mb-4"
-              mb={4}
+            
             >
               <span className="n-body-heading-span text-primeGreen text">
                 Your health
