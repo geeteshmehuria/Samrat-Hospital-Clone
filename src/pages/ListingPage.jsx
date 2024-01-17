@@ -1,7 +1,6 @@
 import React from "react";
 import "../Css/listingPage.css";
 import AppointmentVideo from "../assets/AppointmentVideo.mp4";
-import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import {
   Button,
@@ -12,7 +11,6 @@ import {
   SimpleGrid,
   Flex,
   Heading,
-  
 } from "@chakra-ui/react";
 import { ListCard } from "../components/ListCard";
 import Infinite_Carousel from "../components/Infinite_Carousel";
@@ -20,20 +18,18 @@ import Infinite_Carousel from "../components/Infinite_Carousel";
 const ListingPage = () => {
   return (
     <Box bg={"#fafaf1"}>
-      <Navbar/>
       <Infinite_Carousel />
-      {/*  ----------------------search functionality start here-------------------- */}
       <Box
         w="80%"
         m="auto"
         boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
         bg="white"
-        p={20}
       >
         <SimpleGrid
           columns={4}
           minChildWidth={"100px"}
           m={"auto"}
+          mt={"30px"}
           w="50%"
           pr={10}
         >
@@ -98,6 +94,10 @@ const ListingPage = () => {
             </Button>
           </Box>
         </SimpleGrid>
+
+
+ {/*  ----------------------search functionality start here-------------------- */}
+
         <SimpleGrid
           columns={3}
           minChildWidth={"180px"}
@@ -113,17 +113,16 @@ const ListingPage = () => {
             borderRadius={10}
             flexDir="column"
             justify="center"
-            pl={20}
-            py={10}
-            mt={10}
+            px={3}
+            py={2}
           >
             <FormLabel color="#2f4e44">Choose A Speciality</FormLabel>
             <Select
               placeholder="Speciality"
-              outline="none"
-              mt={7}
+              focusBorderColor={"white"}
+              border={"none"}
               color="gray"
-              icon="none"
+              icon={"none"}
             >
               <option value="option1">General</option>
               <option value="option2">Pediatric</option>
@@ -137,12 +136,17 @@ const ListingPage = () => {
             borderRadius={10}
             flexDir="column"
             justify="center"
-            pl={20}
-            py={10}
-            mt={10}
+            px={3}
+            py={2}
           >
             <FormLabel color="#2f4e44">Availability Day</FormLabel>
-            <Select placeholder="Choose Day" outline="none" mt={7} color="gray" icon="none">
+            <Select
+              placeholder="Choose Day"
+              focusBorderColor={"white"}
+              border={"none"}
+              color="gray"
+              icon={"none"}
+            >
               <option value="option1">Monday</option>
               <option value="option2">Tuesday</option>
               <option value="option3">Wednesday</option>
@@ -158,21 +162,25 @@ const ListingPage = () => {
             borderRadius={10}
             flexDir="column"
             justify="center"
-            pl={20}
-            py={10}
-            mt={10}
+            px={3}
+            py={2}
           >
             <FormLabel color="#2f4e44">Search By Name</FormLabel>
-            <Input placeholder="Doctor Name" outline="none" mt={7} />
+            <Input
+              placeholder="Doctor Name"
+              focusBorderColor={"white"}
+              border={"none"}
+              
+            />
           </Flex>
         </SimpleGrid>
         <Flex w="100%" justifyContent="center" alignItems="center">
           <Button
             color="white"
             bg="#658a71"
-            py="10px"
+            py={"25px"}
             px="30px"
-            m={40}
+            m={"40px"}
             borderRadius={10}
             letterSpacing={2}
             fontSize={20}
@@ -188,7 +196,7 @@ const ListingPage = () => {
       </Box>
       {/* ----------------------search functionality end here-------------------- */}
 
-      <Flex w="80%" m="auto" mt="2%" gap="3%">
+      <Flex w="80%" m="auto" mt="2%" pb="3%" gap="3%">
         <Flex
           w="35%"
           bg="#658a71"
@@ -207,7 +215,7 @@ const ListingPage = () => {
 
           {/* --------------------------Video added here ------------------------- */}
           <video
-            style={{ marginTop: "22%" }}
+            style={{ marginTop: "22%"}}
             src={AppointmentVideo}
             autoPlay
             muted
@@ -226,12 +234,12 @@ const ListingPage = () => {
           {/* ---------------------------Buttons for Pagination--------------------- */}
 
           <Flex>
-            <Button
+          <Button
               mt={5}
-              mb={30}
-              mr={20}
-              px={20}
-              py={10}
+              mb={10}
+              mr={10}
+              px={7}
+              py={7}
               fontSize={20}
               color="white"
               borderRadius="50%"
@@ -242,10 +250,10 @@ const ListingPage = () => {
             </Button>
             <Button
               mt={5}
-              mb={30}
-              mr={20}
-              px={20}
-              py={10}
+              mb={10}
+              mr={10}
+              px={7}
+              py={7}
               fontSize={20}
               color="white"
               borderRadius="50%"
@@ -257,7 +265,6 @@ const ListingPage = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Footer/>
     </Box>
   );
 };

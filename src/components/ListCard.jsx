@@ -8,7 +8,7 @@ export const ListCard = () => {
 
   return (
     <Flex
-      mb={30}
+      mb={7}
       bg="white"
       flexDir={isSmallerScreen? "row" : "column"}
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
@@ -16,14 +16,14 @@ export const ListCard = () => {
     >
       <Flex>
         <Image
-          m={40}
-          mx={80}
+          my={12}
+          mx={20}
           boxSize={isSmallerScreen? "100px" : "200px"}
           borderRadius="50%"
           src="https://bit.ly/dan-abramov"
           alt="Dan Abramov"
         />
-        <Flex mt={40} flexDirection="column" gap={8}>
+        <Flex mt={12} flexDirection="column" gap={2}>
           <Heading as="h2" fontSize="20px" letterSpacing={1} color="black">
             Dr. Nardeen Adel
           </Heading>
@@ -53,10 +53,8 @@ export const ListCard = () => {
           bg="#658a71"
           py="10px"
           px="30px"
-          mb={40}
-          ml={80}
-          mt={20}
-          mr={30}
+          mb={10}
+          mx={20}
           borderRadius={10}
           letterSpacing={2}
           fontSize={20}
@@ -69,9 +67,7 @@ export const ListCard = () => {
           border="1px solid #658a71"
           py="10px"
           px="30px"
-          mb={40}
-          mt={20}
-          mr={30}
+          mb={10}
           borderRadius={10}
           letterSpacing={2}
           fontSize={20}
