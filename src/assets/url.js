@@ -1,1 +1,1 @@
-export const url = "https://mock-api-39gi.onrender.com/doctors";
+export const url = "https://mock-api-ho67.onrender.com/doctors";
