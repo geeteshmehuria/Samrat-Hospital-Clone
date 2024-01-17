@@ -10,14 +10,12 @@ import {
   DrawerBody,
   IconButton,
   Link,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-
 const Navbar = () => {
-
   const { isOpen, onOpen, onClose } = useDisclosure();
-
 
   return (
     <Box
@@ -34,7 +32,14 @@ const Navbar = () => {
         margin="0 auto"
       >
         <Box className="text-xl font-bold" color="#2f4e44">
-          <a href="/">HOSPITAL LOGO</a>
+          <a href="/">
+            <Image
+              src="src\homepageImages\Untitleddesign.png"
+              alt="Logo"
+              boxSize="50px"
+              borderRadius="full"
+            />
+          </a>
         </Box>
 
         <IconButton
@@ -68,12 +73,14 @@ const Navbar = () => {
           </Button>
           <Button
             className="font-semibold"
-            _hover={{ bg: "#658a71", color: "#fafaf1" }}
+            _hover={{ bg: "#fafaf1", color: "#658a71" }}
             size="md"
+            color="#fafaf1"
+            bg="#658a71"
             height="38px"
             width="80px"
             border="2px"
-            variant="outline"
+            variant="solid"
             borderColor="#2f4e44"
           >
             Login
