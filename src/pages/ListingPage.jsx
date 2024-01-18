@@ -228,7 +228,7 @@ const ListingPage = () => {
             <ListCard />
             <ListCard />
             <ListCard />
-            <ListCard />
+            {/* <ListCard /> */}
           </SimpleGrid>
 
           {/* ---------------------------Buttons for Pagination--------------------- */}
