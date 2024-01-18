@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import {
-  VStack,
   Box,
   Image,
   Text,
+  VStack,
+  HStack,
+  Badge,
   Stack,
+  Divider,
   Button,
   useColorModeValue,
   Modal,
@@ -15,13 +18,18 @@ import {
   ModalBody,
   ModalCloseButton,
   useToast,
+  Input,
   FormControl,
   FormLabel,
-  Input,
 } from "@chakra-ui/react";
-import { PhoneIcon, CheckCircleIcon, StarIcon } from "@chakra-ui/icons";
-import AppointmentBookingForm from "./AppointmentBookingForm";
-import ReviewSection from "./ReviewSection";
+import {
+  PhoneIcon,
+  CheckCircleIcon,
+  CalendarIcon,
+  StarIcon,
+} from "@chakra-ui/icons";
+import AppointmentBookingForm from "./AppointmentBookingForm"; // Adjust the path as necessary
+import ReviewSection from "./ReviewSection"; // Adjust the path as necessary
 
 const DoctorDetailBox = ({ doctor }) => {
   const [isBooking, setIsBooking] = useState(false);
@@ -31,10 +39,11 @@ const DoctorDetailBox = ({ doctor }) => {
   const color = useColorModeValue("gray.800", "white");
 
   const handleBookingClick = () => {
-    setIsBooking(!isBooking);
+    setIsBooking(!isBooking); // Toggle the booking form
   };
 
   const handlePaymentSubmit = () => {
+    // Placeholder for payment submission logic
     setIsPaymentModalOpen(false);
     toast({
       title: "Appointment booked.",
@@ -47,7 +56,9 @@ const DoctorDetailBox = ({ doctor }) => {
 
   return (
     <>
-      <Box
+      <VStack
+        spacing={4}
+        align="stretch"
         w={["95%", "80%"]}
         mx="auto"
         mt={10}
@@ -57,6 +68,7 @@ const DoctorDetailBox = ({ doctor }) => {
         p={5}
         borderRadius="lg"
       >
+        {/* Doctor's Basic Info Box */}
         <Stack direction={["column", "row"]} spacing={4} align="start">
           <Image
             borderRadius="full"
@@ -69,60 +81,54 @@ const DoctorDetailBox = ({ doctor }) => {
               {doctor.name}
             </Text>
             <Text fontSize="lg">{doctor.education}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
+            <HStack>
               <PhoneIcon />
               <Text fontSize="md">{`Call: ${doctor.contact}`}</Text>
+            </HStack>
+          </VStack>
+          <VStack align="end">
+            <HStack>
               <CheckCircleIcon color="green.500" w={5} h={5} />
               <Text fontSize="md">Verified Profile</Text>
-            </Stack>
-          </VStack>
-          <VStack align="end" spacing={1}>
+            </HStack>
             <Text fontSize="lg">{`Fees: ₹${doctor.fee}`}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
+            <HStack>
               <StarIcon color="yellow.400" />
               <Text fontSize="md">{`${doctor.rating} / 5`}</Text>
-              <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
-            </Stack>
+            </HStack>
+            <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
           </VStack>
         </Stack>
 
+        {/* About Doctor Section */}
         <Box p={4}>
           <Text fontWeight="bold" fontSize="md">
             About Doctor:
           </Text>
           <Text fontSize="md">{doctor["about-doctor"]}</Text>
         </Box>
+      </VStack>
 
-        {!isBooking && (
-          <Button colorScheme="blue" size="sm" onClick={handleBookingClick}>
-            Book An Appointment
-          </Button>
-        )}
-      </Box>
-
-      {isBooking && (
-        <Box
-          w={["95%", "80%"]}
-          mx="auto"
-          mt={4}
-          bg={bg}
-          color={color}
-          boxShadow="lg"
-          p={5}
-          borderRadius="lg"
-        >
-          <AppointmentBookingForm
-            doctor={doctor}
-            onClose={() => setIsBooking(false)}
-            onPayment={() => setIsPaymentModalOpen(true)}
-          />
-        </Box>
+      {/* Booking Button */}
+      {!isBooking && (
+        <Button colorScheme="blue" size="sm" onClick={handleBookingClick}>
+          Book An Appointment
+        </Button>
       )}
 
-      <Box w={["95%", "80%"]} mx="auto" mt={4} bg={bg} color={color} p={5}>
-        <ReviewSection reviews={doctor.reviews} />
-      </Box>
+      {/* Appointment Booking Form */}
+      {isBooking && (
+        <AppointmentBookingForm
+          doctor={doctor}
+          onClose={() => setIsBooking(false)}
+          onPayment={() => setIsPaymentModalOpen(true)}
+        />
+      )}
 
+      {/* Review Section */}
+      <ReviewSection reviews={doctor.reviews} />
+
+      {/* Payment Modal */}
       <Modal
         isOpen={isPaymentModalOpen}
         onClose={() => setIsPaymentModalOpen(false)}
@@ -132,6 +138,7 @@ const DoctorDetailBox = ({ doctor }) => {
           <ModalHeader>Payment Details</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            {/* Dummy payment form */}
             <FormControl isRequired>
               <FormLabel htmlFor="cardNumber">Card Number</FormLabel>
               <Input id="cardNumber" placeholder="1234 1234 1234 1234" />
