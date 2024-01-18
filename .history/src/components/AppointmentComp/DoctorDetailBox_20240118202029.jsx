@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-  VStack,
   Box,
   Image,
   Text,
-  Stack,
+  VStack,
+  HStack,
   Button,
   useColorModeValue,
   Modal,
@@ -15,13 +15,19 @@ import {
   ModalBody,
   ModalCloseButton,
   useToast,
+  Input,
   FormControl,
   FormLabel,
-  Input,
+  Container,
 } from "@chakra-ui/react";
-import { PhoneIcon, CheckCircleIcon, StarIcon } from "@chakra-ui/icons";
-import AppointmentBookingForm from "./AppointmentBookingForm";
-import ReviewSection from "./ReviewSection";
+import {
+  PhoneIcon,
+  CheckCircleIcon,
+  CalendarIcon,
+  StarIcon,
+} from "@chakra-ui/icons";
+import AppointmentBookingForm from "./AppointmentBookingForm"; // Adjust the path as necessary
+import ReviewSection from "./ReviewSection"; // Adjust the path as necessary
 
 const DoctorDetailBox = ({ doctor }) => {
   const [isBooking, setIsBooking] = useState(false);
@@ -31,10 +37,11 @@ const DoctorDetailBox = ({ doctor }) => {
   const color = useColorModeValue("gray.800", "white");
 
   const handleBookingClick = () => {
-    setIsBooking(!isBooking);
+    setIsBooking(!isBooking); // Toggle the booking form
   };
 
   const handlePaymentSubmit = () => {
+    // Placeholder for payment submission logic
     setIsPaymentModalOpen(false);
     toast({
       title: "Appointment booked.",
@@ -46,83 +53,83 @@ const DoctorDetailBox = ({ doctor }) => {
   };
 
   return (
-    <>
-      <Box
-        w={["95%", "80%"]}
-        mx="auto"
-        mt={10}
-        bg={bg}
-        color={color}
-        boxShadow="lg"
-        p={5}
-        borderRadius="lg"
-      >
-        <Stack direction={["column", "row"]} spacing={4} align="start">
-          <Image
-            borderRadius="full"
-            boxSize="150px"
-            src={doctor.image}
-            alt={`Image of ${doctor.name}`}
-          />
-          <VStack align="left" spacing={1} flex={1}>
-            <Text fontSize="2xl" fontWeight="bold">
-              {doctor.name}
-            </Text>
-            <Text fontSize="lg">{doctor.education}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
-              <PhoneIcon />
-              <Text fontSize="md">{`Call: ${doctor.contact}`}</Text>
+    <VStack
+      spacing={4}
+      align="stretch"
+      w={["95%", "80%"]}
+      mx="auto"
+      mt={10}
+      boxShadow="lg"
+      p={5}
+      borderRadius="lg"
+    >
+      <Container bg={bg} color={color} borderRadius="lg" p={5}>
+        {/* Doctor's Basic Info Box */}
+        <VStack spacing={4} align="stretch">
+          <HStack spacing={4}>
+            <Image
+              borderRadius="full"
+              boxSize="150px"
+              src={doctor.image}
+              alt={`Image of ${doctor.name}`}
+            />
+            <VStack align="left" spacing={1} flex={1}>
+              <Text fontSize="2xl" fontWeight="bold">
+                {doctor.name}
+              </Text>
+              <Text fontSize="lg">{doctor.education}</Text>
+              <HStack>
+                <PhoneIcon />
+                <Text fontSize="md">{`Call: ${doctor.contact}`}</Text>
+              </HStack>
+            </VStack>
+          </HStack>
+          <HStack justifyContent="space-between">
+            <HStack>
               <CheckCircleIcon color="green.500" w={5} h={5} />
               <Text fontSize="md">Verified Profile</Text>
-            </Stack>
-          </VStack>
-          <VStack align="end" spacing={1}>
+            </HStack>
             <Text fontSize="lg">{`Fees: ₹${doctor.fee}`}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
+            <HStack>
               <StarIcon color="yellow.400" />
               <Text fontSize="md">{`${doctor.rating} / 5`}</Text>
-              <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
-            </Stack>
-          </VStack>
-        </Stack>
-
-        <Box p={4}>
-          <Text fontWeight="bold" fontSize="md">
-            About Doctor:
-          </Text>
-          <Text fontSize="md">{doctor["about-doctor"]}</Text>
-        </Box>
-
-        {!isBooking && (
-          <Button colorScheme="blue" size="sm" onClick={handleBookingClick}>
-            Book An Appointment
-          </Button>
-        )}
-      </Box>
-
-      {isBooking && (
-        <Box
-          w={["95%", "80%"]}
-          mx="auto"
+            </HStack>
+          </HStack>
+          <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
+        </VStack>
+        <Button
+          colorScheme="blue"
+          size="sm"
+          onClick={handleBookingClick}
           mt={4}
-          bg={bg}
-          color={color}
-          boxShadow="lg"
-          p={5}
-          borderRadius="lg"
         >
+          Book An Appointment
+        </Button>
+      </Container>
+
+      {/* Appointment Booking Form */}
+      {isBooking && (
+        <Container bg={bg} color={color} borderRadius="lg" p={5} mt={4}>
           <AppointmentBookingForm
             doctor={doctor}
             onClose={() => setIsBooking(false)}
             onPayment={() => setIsPaymentModalOpen(true)}
           />
-        </Box>
+        </Container>
       )}
 
-      <Box w={["95%", "80%"]} mx="auto" mt={4} bg={bg} color={color} p={5}>
-        <ReviewSection reviews={doctor.reviews} />
-      </Box>
+      {/* About Doctor Section */}
+      <Container bg={bg} color={color} borderRadius="lg" p={5} mt={4}>
+        <Text fontWeight="bold" fontSize="md">
+          About Doctor:
+        </Text>
+        <Text fontSize="md">{doctor["about-doctor"]}</Text>
+      </Container>
 
+      {/* Review Section */}
+      <ReviewSection reviews={doctor.reviews} />
+
+      {/* Payment Modal */}
       <Modal
         isOpen={isPaymentModalOpen}
         onClose={() => setIsPaymentModalOpen(false)}
@@ -132,6 +139,7 @@ const DoctorDetailBox = ({ doctor }) => {
           <ModalHeader>Payment Details</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            {/* Dummy payment form */}
             <FormControl isRequired>
               <FormLabel htmlFor="cardNumber">Card Number</FormLabel>
               <Input id="cardNumber" placeholder="1234 1234 1234 1234" />
@@ -152,7 +160,7 @@ const DoctorDetailBox = ({ doctor }) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </VStack>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   VStack,
-  Box,
   Image,
   Text,
   Stack,
@@ -18,6 +17,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Center,
 } from "@chakra-ui/react";
 import { PhoneIcon, CheckCircleIcon, StarIcon } from "@chakra-ui/icons";
 import AppointmentBookingForm from "./AppointmentBookingForm";
@@ -46,11 +46,11 @@ const DoctorDetailBox = ({ doctor }) => {
   };
 
   return (
-    <>
-      <Box
-        w={["95%", "80%"]}
-        mx="auto"
-        mt={10}
+    <Center flexDirection="column" w={["95%", "80%"]} mx="auto" mt={10}>
+      {/* Doctor's Basic Info Box */}
+      <VStack
+        spacing={4}
+        align="stretch"
         bg={bg}
         color={color}
         boxShadow="lg"
@@ -69,60 +69,72 @@ const DoctorDetailBox = ({ doctor }) => {
               {doctor.name}
             </Text>
             <Text fontSize="lg">{doctor.education}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
+            <HStack>
               <PhoneIcon />
               <Text fontSize="md">{`Call: ${doctor.contact}`}</Text>
+            </HStack>
+          </VStack>
+          <VStack align="end">
+            <HStack>
               <CheckCircleIcon color="green.500" w={5} h={5} />
               <Text fontSize="md">Verified Profile</Text>
-            </Stack>
-          </VStack>
-          <VStack align="end" spacing={1}>
+            </HStack>
             <Text fontSize="lg">{`Fees: ₹${doctor.fee}`}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
+            <HStack>
               <StarIcon color="yellow.400" />
               <Text fontSize="md">{`${doctor.rating} / 5`}</Text>
-              <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
-            </Stack>
+            </HStack>
+            <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
           </VStack>
         </Stack>
-
         <Box p={4}>
           <Text fontWeight="bold" fontSize="md">
             About Doctor:
           </Text>
           <Text fontSize="md">{doctor["about-doctor"]}</Text>
         </Box>
-
         {!isBooking && (
           <Button colorScheme="blue" size="sm" onClick={handleBookingClick}>
             Book An Appointment
           </Button>
         )}
-      </Box>
+      </VStack>
 
+      {/* Appointment Booking Form */}
       {isBooking && (
-        <Box
+        <VStack
           w={["95%", "80%"]}
-          mx="auto"
-          mt={4}
           bg={bg}
           color={color}
           boxShadow="lg"
           p={5}
           borderRadius="lg"
+          mt={4}
+          align="stretch"
         >
           <AppointmentBookingForm
             doctor={doctor}
             onClose={() => setIsBooking(false)}
             onPayment={() => setIsPaymentModalOpen(true)}
           />
-        </Box>
+        </VStack>
       )}
 
-      <Box w={["95%", "80%"]} mx="auto" mt={4} bg={bg} color={color} p={5}>
+      {/* Review Section */}
+      <VStack
+        w={["95%", "80%"]}
+        bg={bg}
+        color={color}
+        boxShadow="lg"
+        p={5}
+        borderRadius="lg"
+        mt={4}
+        align="stretch"
+      >
         <ReviewSection reviews={doctor.reviews} />
-      </Box>
+      </VStack>
 
+      {/* Payment Modal */}
       <Modal
         isOpen={isPaymentModalOpen}
         onClose={() => setIsPaymentModalOpen(false)}
@@ -152,7 +164,7 @@ const DoctorDetailBox = ({ doctor }) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Center>
   );
 };
 

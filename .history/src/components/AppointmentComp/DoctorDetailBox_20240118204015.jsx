@@ -119,9 +119,17 @@ const DoctorDetailBox = ({ doctor }) => {
         </Box>
       )}
 
-      <Box w={["95%", "80%"]} mx="auto" mt={4} bg={bg} color={color} p={5}>
-        <ReviewSection reviews={doctor.reviews} />
-      </Box>
+      <Box
+        w={["95%", "80%"]}
+        mx="auto"
+        mt={4}
+        bg={bg}
+        color={color}
+        boxShadow="lg"
+        p={5}
+        borderRadius="lg"
+      ></Box>
+      <ReviewSection reviews={doctor.reviews} />
 
       <Modal
         isOpen={isPaymentModalOpen}

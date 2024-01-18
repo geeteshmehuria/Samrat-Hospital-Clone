@@ -22,8 +22,15 @@ const AppointmentBookingForm = ({ doctor, onClose, onPayment }) => {
   };
 
   return (
-    <Box as="form" onSubmit={handleSubmit} bg={bg} color={color} p={4}>
-      <VStack spacing={3}>
+    <Box
+      as="form"
+      onSubmit={handleSubmit}
+      bg={bg}
+      color={color}
+      p={4}
+
+    >
+      < spacing={3}>
         <Text fontSize="lg" fontWeight="bold">
           Book Appointment with {doctor.name}
         </Text>
@@ -43,7 +50,7 @@ const AppointmentBookingForm = ({ doctor, onClose, onPayment }) => {
         <Button type="submit" colorScheme="blue">
           Submit Booking
         </Button>
-      </VStack>
+      </>
     </Box>
   );
 };
