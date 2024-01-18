@@ -54,10 +54,18 @@ const Navbar = () => {
           className="font-medium flex flex-row justify-between items-center gap-4 md:gap-12"
           display={{ base: "none", md: "flex" }}
         >
-          <a href="/">Home</a>
-          <a href="/aboutus">About us</a>
-          <a href="/services">Services</a>
-          <a href="appointment">Appointment</a>
+          <a href="/" >
+            Home
+          </a>
+          <a href="/aboutus" >
+            About us
+          </a>
+          <a href="/services">
+            Services
+          </a>
+          <a href="appointment" >
+            Appointment
+          </a>
 
           <Button
             className="font-semibold"

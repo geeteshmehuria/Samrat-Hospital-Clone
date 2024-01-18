@@ -1,7 +1,7 @@
 import React from "react";
 import "../Css/listingPage.css";
 import AppointmentVideo from "../assets/AppointmentVideo.mp4";
-import Footer from "../components/Footer/Footer";
+// import Footer from "../components/Footer/Footer";
 import {
   Button,
   Box,
@@ -17,7 +17,7 @@ import Infinite_Carousel from "../components/Infinite_Carousel";
 
 const ListingPage = () => {
   return (
-    <Box bg={"#fafaf1"}>
+    <Box bg={"#fafaf1"} mt={2}>
       <Infinite_Carousel />
       <Box
         w="80%"
@@ -41,8 +41,8 @@ const ListingPage = () => {
               m={30}
               _hover={{
                 color: "#2f4e44",
-                transform: "rotateY(35deg)",
-                transition: "all 0.5s ease",
+                // transform: "rotateY(35deg)",
+                // transition: "all 0.5s ease",
               }}
             >
               General
@@ -56,8 +56,8 @@ const ListingPage = () => {
               m={30}
               _hover={{
                 color: "#2f4e44",
-                transform: "rotateY(35deg)",
-                transition: "all 0.5s ease",
+                // transform: "rotateY(35deg)",
+                // transition: "all 0.5s ease",
               }}
             >
               Pediatric
@@ -71,8 +71,8 @@ const ListingPage = () => {
               m={30}
               _hover={{
                 color: "#2f4e44",
-                transform: "rotateY(35deg)",
-                transition: "all 0.5s ease",
+                // transform: "rotateY(35deg)",
+                // transition: "all 0.5s ease",
               }}
             >
               Dentist
@@ -86,8 +86,8 @@ const ListingPage = () => {
               m={30}
               _hover={{
                 color: "#2f4e44",
-                transform: "rotateY(35deg)",
-                transition: "all 0.5s ease",
+                // transform: "rotateY(35deg)",
+                // transition: "all 0.5s ease",
               }}
             >
               Cardiologist
@@ -95,8 +95,7 @@ const ListingPage = () => {
           </Box>
         </SimpleGrid>
 
-
- {/*  ----------------------search functionality start here-------------------- */}
+        {/*  ----------------------search functionality start here-------------------- */}
 
         <SimpleGrid
           columns={3}
@@ -170,7 +169,6 @@ const ListingPage = () => {
               placeholder="Doctor Name"
               focusBorderColor={"white"}
               border={"none"}
-              
             />
           </Flex>
         </SimpleGrid>
@@ -185,9 +183,9 @@ const ListingPage = () => {
             letterSpacing={2}
             fontSize={20}
             _hover={{
-              bg: "linear-gradient(to right, #658a71, #2f4e44)",
-              transform: "rotateX(35deg)",
-              transition: "all 0.5s ease",
+              bg: "#2f4e44",
+              // transform: "rotateX(35deg)",
+              // transition: "all 0.5s ease",
             }}
           >
             Search Doctor
@@ -215,11 +213,12 @@ const ListingPage = () => {
 
           {/* --------------------------Video added here ------------------------- */}
           <video
-            style={{ marginTop: "22%"}}
+            style={{ marginTop: "14%" }}
             src={AppointmentVideo}
             autoPlay
             muted
             loop
+            height={""}
           />
         </Flex>
 
@@ -229,13 +228,14 @@ const ListingPage = () => {
             <ListCard />
             <ListCard />
             <ListCard />
+            <ListCard />
           </SimpleGrid>
 
           {/* ---------------------------Buttons for Pagination--------------------- */}
 
           <Flex>
-          <Button
-              mt={5}
+            <Button
+              mt={3}
               mb={10}
               mr={10}
               px={7}
@@ -249,7 +249,7 @@ const ListingPage = () => {
               1
             </Button>
             <Button
-              mt={5}
+              mt={3}
               mb={10}
               mr={10}
               px={7}
