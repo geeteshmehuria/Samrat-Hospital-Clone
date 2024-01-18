@@ -8,9 +8,9 @@ export const ListCard = () => {
 
   return (
     <Flex
-      mb={7}
+      mb={8}
       bg="white"
-      flexDir={isSmallerScreen? "row" : "column"}
+      flexDir={isSmallerScreen ? "row" : "column"}
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
     >
@@ -18,7 +18,7 @@ export const ListCard = () => {
         <Image
           my={12}
           mx={20}
-          boxSize={isSmallerScreen? "100px" : "200px"}
+          boxSize={isSmallerScreen ? "100px" : "200px"}
           borderRadius="50%"
           src="https://bit.ly/dan-abramov"
           alt="Dan Abramov"
@@ -58,7 +58,11 @@ export const ListCard = () => {
           borderRadius={10}
           letterSpacing={2}
           fontSize={20}
-          _hover={{ bg:"linear-gradient(to right, #658a71, #2f4e44)", transform:"rotateX(35deg)", transition:"all 0.5s ease" }}
+          _hover={{
+            bg: "#2f4e44",
+            // transform: "rotateX(35deg)",
+            // transition: "all 0.5s ease",
+          }}
         >
           Book An Appointment
         </Button>
@@ -71,7 +75,12 @@ export const ListCard = () => {
           borderRadius={10}
           letterSpacing={2}
           fontSize={20}
-          _hover={{bg:"linear-gradient(to right, #658a71, #2f4e44)", color:"white", transform:"rotateX(35deg)", transition:"all 0.5s ease" }}
+          _hover={{
+            bg: "#658a71",
+            color: "white",
+            // transform: "rotateX(35deg)",
+            // transition: "all 0.5s ease",
+          }}
         >
           Details
         </Button>
