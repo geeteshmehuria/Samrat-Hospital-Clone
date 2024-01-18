@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Button, Input, Text } from "@chakra-ui/react";
+import { Box, Button, Input, Image, Heading, Text } from "@chakra-ui/react";
 import "../Css/home.css";
-import { Search2Icon, CalendarIcon } from "@chakra-ui/icons";
+import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
 
 const Home = () => {
@@ -64,124 +64,91 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box className="n-body-review flex flex-row bg-bodyColor" h="400">
-        <Box className="n-body-review-1 bg-yellow" h="400" w="30%"></Box>
-        <Box className="n-body-review-2 bg-red" h="400" w="70%">
-          <div
-            id="default-carousel"
-            class="relative w-full"
-            data-carousel="slide"
+      <Box
+        className="n-body-container-2 flex flex-row justify-center bg-bodyColor"
+        w="100%"
+        h="500"
+      >
+        <Box
+          className="n-body-container-2-inner bg-yellow flex justify-center bg-yellow"
+          h="400"
+          w="80%"
+        >
+          <Box
+            className="n-body-container-2-inner-1 flex justify-center"
+            h="400"
+            w="50%"
           >
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                {/* <img src="/docs/images/carousel/carousel-1.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                {/* <img src="/docs/images/carousel/carousel-2.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                {/* <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                {/* <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                {/* <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
-              </div>
-            </div>
-
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="true"
-                aria-label="Slide 1"
-                data-carousel-slide-to="0"
-              ></button>
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 2"
-                data-carousel-slide-to="1"
-              ></button>
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 3"
-                data-carousel-slide-to="2"
-              ></button>
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 4"
-                data-carousel-slide-to="3"
-              ></button>
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 5"
-                data-carousel-slide-to="4"
-              ></button>
-            </div>
-
-            <button
-              type="button"
-              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
+            <Image
+              src="src\homepageImages\dochands.jpg"
+              alt="doctor hands"
+              h="360"
+              w="100%"
+              mt="30"
+              borderRadius="20"
+            ></Image>
+          </Box>
+          <Box
+            className="n-body-container-2-inner-2 bg-red flex flex-col  justify-center"
+            h="400"
+            w="50%"
+          >
+            <Heading as="b" fontSize="6xl" ml="20" color="#2f4e44">
+              Why Choose
+            </Heading>
+            <Text fontSize="5xl" ml="20" color="#2f4e44">
+              Our Qualified Doctors ?
+            </Text>
+            <Box>
+              <Box>
+                <Text ml="20" color="#2f4e44">
+                  {" "}
+                  <CheckCircleIcon mr="2" />
+                  20+ Years of experience
+                </Text>
+                <Text mt="2" ml="20" color="#2f4e44">
+                  {" "}
+                  <CheckCircleIcon mr="2" />
+                  Multispeaciality hospital
+                </Text>
+              </Box>
+              <Box>
+                <Text mt="2" ml="20" color="#2f4e44">
+                  <CheckCircleIcon mr="2" /> 24 Hours medical service
+                </Text>
+                <Text mt="2" ml="20" color="#2f4e44">
+                  <CheckCircleIcon mr="2" /> Professional expert doctors
+                </Text>
+              </Box>
+            </Box>
+            <Button
+              className="font-semibold"
+              _hover={{ bg: "#fafaf1", color: "#658a71" }}
+              size="md"
+              color="#fafaf1"
+              bg="#658a71"
+              height="38px"
+              width="80"
+              border="2px"
+              variant="solid"
+              borderColor="#2f4e44"
+              ml="20"
+              mt="5"
             >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 1 1 5l4 4"
-                  />
-                </svg>
-                <span class="sr-only">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <span class="sr-only">Next</span>
-              </span>
-            </button>
-          </div>
+              Book An Appointment
+            </Button>
+          </Box>
         </Box>
+      </Box>
+      <Box className="n-body-review flex flex-row bg-bodyColor" h="400">
+        <Box
+          className="n-body-review-1 bg-yellow flex justify-center bg-yellow"
+          h="400"
+          w="40%"
+        >
+          <Image src="src\homepageImages\FemaleDoc.png" alt="docimage"></Image>
+        </Box>
+        <Box className="n-body-review-2 bg-red" h="400" w="60%"></Box>
       </Box>
       <Box
         className="n-body-before-footer flex flex-row justify-center  bg-bodyColor"
