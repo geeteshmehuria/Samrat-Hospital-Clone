@@ -34,12 +34,13 @@ const Navbar = () => {
         <Box className="text-xl font-bold" color="#2f4e44">
           <a href="/">
             <Image
-              src="src\homepageImages\Untitleddesign.png"
+              src="src\homepageImages\Logo1.png"
               alt="Logo"
-              boxSize="50px"
+              w="80px"
+              h="40px"
               borderRadius="full"
-            />
-          </a>
+            />{" "}
+          </a>{" "}
         </Box>
 
         <IconButton
@@ -106,7 +107,7 @@ const Navbar = () => {
               <Link
                 className="hover:bg-primeGreen-600 block py-2"
                 color="#2f4e44"
-                href="#"
+                href="/"
                 onClick={onClose}
               >
                 Home
@@ -114,7 +115,7 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="#"
+                href="/aboutus"
                 onClick={onClose}
               >
                 About us
@@ -122,7 +123,7 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="#"
+                href="/services"
                 onClick={onClose}
               >
                 Services
@@ -130,7 +131,7 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="#"
+                href="/appointment"
                 onClick={onClose}
               >
                 Appointment
