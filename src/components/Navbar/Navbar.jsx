@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <Box
       className="n-navbar font-normal bg-bodyColor"
-      boxShadow="dark-lg"
+      boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
       position="sticky"
       top="0"
       zIndex="1000"
