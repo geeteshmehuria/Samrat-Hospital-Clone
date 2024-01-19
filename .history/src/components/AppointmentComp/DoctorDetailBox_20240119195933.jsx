@@ -154,16 +154,7 @@ const DoctorDetailBox = ({ doctor }) => {
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button
-              mr={3}
-              onClick={handlePaymentSubmit}
-              className="font-semibold"
-              _hover={{ bg: "#658a71", color: "#fafaf1" }}
-              size="md"
-              border="2px"
-              variant="outline"
-              borderColor="#2f4e44"
-            >
+            <Button colorScheme="blue" mr={3} onClick={handlePaymentSubmit}>
               Pay
             </Button>
           </ModalFooter>

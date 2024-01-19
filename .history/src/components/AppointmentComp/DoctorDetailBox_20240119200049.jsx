@@ -155,6 +155,7 @@ const DoctorDetailBox = ({ doctor }) => {
           </ModalBody>
           <ModalFooter>
             <Button
+              colorScheme="blue"
               mr={3}
               onClick={handlePaymentSubmit}
               className="font-semibold"
