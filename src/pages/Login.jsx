@@ -68,8 +68,8 @@ const Login = () => {
 
   
   return (
-    <div  style={{"padding":"50px"}}>
-      <Box margin={"auto"} color={"green"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }} borderRadius={"10px"}>
+    <div  style={{"padding":"50px" ,background:"#fafaf1"}} >
+      <Box margin={"auto"} bg={"white"} color={"#2f4e44"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }} borderRadius={"10px"}>
       <Text textAlign={'center'} fontSize={"1.7rem"}>LOGIN</Text>
 
       <FormControl isRequired>

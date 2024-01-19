@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Box,
   Button,
@@ -6,9 +6,6 @@ import {
   Image,
   Heading,
   Text,
-  InputGroup,
-  InputLeftElement,
-  Icon,
 } from "@chakra-ui/react";
 import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
