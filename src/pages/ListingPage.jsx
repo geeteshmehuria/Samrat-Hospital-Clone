@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import "../Css/listingPage.css";
 import AppointmentVideo from "../assets/AppointmentVideo.mp4";
 // import Footer from "../components/Footer/Footer";
@@ -11,11 +11,73 @@ import {
   SimpleGrid,
   Flex,
   Heading,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  RadioGroup,
+  Radio,
+  Checkbox,
+  Stack,
 } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 import { ListCard } from "../components/ListCard";
 import Infinite_Carousel from "../components/Infinite_Carousel";
+import { pediatricUrl, cardiologistsUrl, dentistsUrl } from "../assets/url";
+import axios from "axios";
+import PaginationButton from '../components/PaginationButton';
 
 const ListingPage = () => {
+  let [currPage, setCurrPage] = useState(1);
+  let [totalPages, setTotalPages] = useState(0);
+  let [currPageData, setCurrData] = useState([]);
+  let [loading, setLoading] = useState(false);
+  const [selectedDays, setSelectedDays] = useState([]);
+  let [currSpecialityData, setCurrSpecialityData] = useState("pediatric");
+
+  useEffect(() => {
+    setLoading(true);
+    let url = "";
+    if (currSpecialityData === "pediatric") url = pediatricUrl;
+    else if (currSpecialityData === "cardiologist") url = cardiologistsUrl;
+    else if (currSpecialityData === "dentist") url = dentistsUrl;
+
+    axios.get(`${url}?_page=${currPage}&_limit=3`).then((res) => {
+      console.log(res.data);
+      console.log(res);
+      setTotalPages(Math.ceil(16 / 3));
+      setCurrData(res.data);
+      setLoading(false);
+    });
+  }, [currPage, currSpecialityData]);
+
+  const pageNumbers = useMemo(() =>
+    Array.from({ length: totalPages }, (_, index) => index + 1)
+  );
+
+  const handleCheckboxChange = useCallback(
+    (day) => {
+      // Check if the day is already in the selectedDays array
+      if (selectedDays.includes(day)) {
+        setSelectedDays(
+          selectedDays.filter((selectedDay) => selectedDay !== day)
+        );
+      } else {
+        setSelectedDays([...selectedDays, day]);
+      }
+    },
+    [selectedDays]
+  );
+
+  
+
+  const findThisSpecialityDoctor = useCallback((speciality) => {
+    if (currSpecialityData !== speciality) {
+      setCurrSpecialityData(speciality);
+    }
+  });
+
   return (
     <Box bg={"#fafaf1"} mt={2}>
       <Infinite_Carousel />
@@ -33,66 +95,42 @@ const ListingPage = () => {
           w="50%"
           pr={10}
         >
-          <Box>
-            <Button
-              color="#658a71"
-              variant="link"
-              fontSize="20px"
-              m={30}
-              _hover={{
-                color: "#2f4e44",
-                // transform: "rotateY(35deg)",
-                // transition: "all 0.5s ease",
-              }}
-            >
-              General
-            </Button>
-          </Box>
-          <Box>
-            <Button
-              color="#658a71"
-              variant="link"
-              fontSize="20px"
-              m={30}
-              _hover={{
-                color: "#2f4e44",
-                // transform: "rotateY(35deg)",
-                // transition: "all 0.5s ease",
-              }}
-            >
-              Pediatric
-            </Button>
-          </Box>
-          <Box>
-            <Button
-              color="#658a71"
-              variant="link"
-              fontSize="20px"
-              m={30}
-              _hover={{
-                color: "#2f4e44",
-                // transform: "rotateY(35deg)",
-                // transition: "all 0.5s ease",
-              }}
-            >
-              Dentist
-            </Button>
-          </Box>
-          <Box>
-            <Button
-              color="#658a71"
-              variant="link"
-              fontSize="20px"
-              m={30}
-              _hover={{
-                color: "#2f4e44",
-                // transform: "rotateY(35deg)",
-                // transition: "all 0.5s ease",
-              }}
-            >
-              Cardiologist
-            </Button>
-          </Box>
+          <Button
+            color="#658a71"
+            variant="link"
+            fontSize="20px"
+            m={30}
+            _hover={{
+              color: "#2f4e44",
+            }}
+            onClick={() => findThisSpecialityDoctor("pediatric")}
+          >
+            Pediatric
+          </Button>
+          <Button
+            color="#658a71"
+            variant="link"
+            fontSize="20px"
+            m={30}
+            _hover={{
+              color: "#2f4e44",
+            }}
+            onClick={() => findThisSpecialityDoctor("dentist")}
+          >
+            Dentist
+          </Button>
+          <Button
+            color="#658a71"
+            variant="link"
+            fontSize="20px"
+            m={30}
+            _hover={{
+              color: "#2f4e44",
+            }}
+            onClick={() => findThisSpecialityDoctor("cardiologist")}
+          >
+            Cardiologist
+          </Button>
         </SimpleGrid>
 
         {/*  ----------------------search functionality start here-------------------- */}
@@ -104,7 +142,7 @@ const ListingPage = () => {
           pl={110}
           pr={110}
           pt={10}
-          spacing={20}
+          spacing={10}
           className="searchInputGrid"
         >
           <Flex
@@ -123,7 +161,6 @@ const ListingPage = () => {
               color="gray"
               icon={"none"}
             >
-              <option value="option1">General</option>
               <option value="option2">Pediatric</option>
               <option value="option3">Dentist</option>
               <option value="option3">Cardiologist</option>
@@ -180,20 +217,18 @@ const ListingPage = () => {
             px="30px"
             m={"40px"}
             borderRadius={10}
-            letterSpacing={2}
+            letterSpacing={1}
             fontSize={20}
             _hover={{
               bg: "#2f4e44",
-              // transform: "rotateX(35deg)",
-              // transition: "all 0.5s ease",
             }}
           >
             Search Doctor
           </Button>
         </Flex>
       </Box>
-      {/* ----------------------search functionality end here-------------------- */}
 
+      {/* ----------------------Filter JSX Part Start here-------------------- */}
       <Flex w="80%" m="auto" mt="2%" pb="3%" gap="3%">
         <Flex
           w="35%"
@@ -205,15 +240,133 @@ const ListingPage = () => {
         >
           <Flex w="80%" h="15vh" justify="center" align="center">
             <Heading as="h2" fontSize="30px" letterSpacing={1} color="white">
-              Filters
+              Find Doctors By:
             </Heading>
           </Flex>
 
-          <Box w="80%" bg="white" h="65vh" border="1px solid white"></Box>
+          <Accordion allowToggle w="90%" bg="white" h="fit-content">
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box fontSize="20px" as="span" flex="1" textAlign="left">
+                    Availability...
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <p>
+                  Explore Doctors' Schedules: Click on a Day to Find Available
+                  Appointments Throughout the Week!
+                </p>
+                <Stack my={5} direction="column" color="#658a71">
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Monday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Tuesday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Wednesday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Thursday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Friday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Saturday
+                  </Checkbox>
+                  <Checkbox
+                    colorScheme="green"
+                    onChange={() => handleCheckboxChange("")}
+                  >
+                    Sunday
+                  </Checkbox>
+                  <Button>Find Doctors</Button>
+                </Stack>
+              </AccordionPanel>
+            </AccordionItem>
+
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box fontSize="20px" as="span" flex="1" textAlign="left">
+                    Rating...
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <p>
+                  Discover Top-rated Healing: Find Your Perfect Match among the
+                  Highest-Rated Doctors!
+                </p>
+
+                <RadioGroup my={5} color="#658a71">
+                  <Stack direction="column">
+                    <Radio value="5">
+                      5 <StarIcon mx={1} fontSize="10px" /> rating
+                    </Radio>
+                    <Radio value="4">
+                      4 <StarIcon mx={1} fontSize="10px" /> rating
+                    </Radio>
+                    <Radio value="3">
+                      3 <StarIcon mx={1} fontSize="10px" /> rating
+                    </Radio>
+                    <Button>Find Doctors</Button>
+                  </Stack>
+                </RadioGroup>
+              </AccordionPanel>
+            </AccordionItem>
+
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box fontSize="20px" as="span" flex="1" textAlign="left">
+                    Appointment Fees...
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <p>
+                  Unlock Your Optimal Health Journey: Find Your Ideal Doctor and
+                  Schedule Appointments Aligned with Your Budgetary Wellness!
+                </p>
+                <RadioGroup my={5} color="#658a71">
+                  <Stack direction="column">
+                    <Radio value="5">Low to High</Radio>
+                    <Radio value="4">High to Low</Radio>
+                    <Button>Find Doctors</Button>
+                  </Stack>
+                </RadioGroup>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
 
           {/* --------------------------Video added here ------------------------- */}
           <video
-            style={{ marginTop: "14%" }}
+            style={{ marginTop: "7%" }}
             src={AppointmentVideo}
             autoPlay
             muted
@@ -224,45 +377,24 @@ const ListingPage = () => {
 
         {/* -------------------------list of doctors start from here------------------------ */}
         <Flex w="62%" flexDir="column">
-          <SimpleGrid column={1}>
-            <ListCard />
-            <ListCard />
-            <ListCard />
-            {/* <ListCard /> */}
-          </SimpleGrid>
+          {loading && <Flex>Loading....</Flex>}
+          {!loading && (
+            <SimpleGrid column={1}>
+              {currPageData.map((doctorObj) => (
+                <ListCard doctorObj={doctorObj} />
+              ))}
+            </SimpleGrid>
+          )}
 
           {/* ---------------------------Buttons for Pagination--------------------- */}
 
-          <Flex>
-            <Button
-              mt={3}
-              mb={10}
-              mr={10}
-              px={7}
-              py={7}
-              fontSize={20}
-              color="white"
-              borderRadius="50%"
-              bg="#658a71"
-              _hover={{ bg: "#2f4e44" }}
-            >
-              1
-            </Button>
-            <Button
-              mt={3}
-              mb={10}
-              mr={10}
-              px={7}
-              py={7}
-              fontSize={20}
-              color="white"
-              borderRadius="50%"
-              bg="#658a71"
-              _hover={{ bg: "#2f4e44" }}
-            >
-              2
-            </Button>
-          </Flex>
+          {!loading && (
+            <Flex>
+              {pageNumbers.map((pageNo) => (
+                <PaginationButton setCurrPage={setCurrPage} pageNo={pageNo}/>
+              ))}
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Box>
