@@ -91,6 +91,7 @@ const Home = () => {
         className="n-body-container-2 flex flex-row justify-center bg-bodyColor"
         w="100%"
         h={{ base: "auto", md: "500" }}
+        mt={"10"}
       >
         <Box
           className="n-body-container-2-inner bg-yellow flex flex-col md:flex-row justify-center bg-yellow"
@@ -176,6 +177,7 @@ const Home = () => {
       <Box
         className="n-body-review flex flex-col md:flex-row bg-bodyColor"
         h={{ base: "auto", md: "500" }}
+        mt={"6"}
       >
         <Box
           className="n-body-review-1 bg-yellow flex justify-center bg-yellow"
@@ -194,6 +196,7 @@ const Home = () => {
               as="b"
               fontSize={{ base: "2xl", md: "4xl", lg: "6xl" }}
               color="#2f4e44"
+              ml="3"
             >
               What Our Patients Say
             </Text>
@@ -201,11 +204,12 @@ const Home = () => {
               fontSize={{ base: "sm", md: "3xl", lg: "3xl" }}
               color="#2f4e44"
               mt={2}
+              ml="3"
             >
               Here are some testimonials from our valued patients.
             </Text>
           </Box>
-          <Box mt="20">
+          <Box mt="20" ml="-12">
             <HomePageCarousel
               mt={{ base: "10px" }}
               boxSize={{ base: "100%", md: "80%" }}
