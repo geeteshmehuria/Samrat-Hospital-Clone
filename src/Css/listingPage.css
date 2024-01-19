@@ -2,7 +2,7 @@
     border: 1px solid green;
 }
 .slideshow {
-    margin: 0 auto;
+    margin: 3% auto;
     overflow: hidden;
     width: 80%;
     
@@ -16,9 +16,10 @@
   
   .slide {
     display: inline-block;
-    height: 50vh;
+    /* background-image: url("../hospital_images/image15.jpg"); */
+    height: 60vh;
     width: 100%;
-
+    border-radius: 10px;
   }
   .slide > img{
     width: 100%;

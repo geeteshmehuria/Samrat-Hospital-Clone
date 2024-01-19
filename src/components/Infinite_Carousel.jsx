@@ -13,10 +13,10 @@ import image10 from "../hospital_images/image10.png";
 import image11 from "../hospital_images/image11.png";
 import image12 from "../hospital_images/image12.png";
 import image13 from "../hospital_images/image13.jpg";
-import image14 from "../hospital_images/image14.jpg";
+import image15 from "../hospital_images/image15.jpg";
 
 const colors = [
-  image1,
+  image15,
   image2,
   image3,
   image4,
@@ -29,7 +29,6 @@ const colors = [
   image11,
   image12,
   image13,
-  image14,
 ];
 const delay = 2500;
 
@@ -62,16 +61,18 @@ export default function Infinite_Carousel() {
     <div className="slideshow">
       <div
         className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)`,  borderRadius: "10px", }}
       >
         {colors.map((imageArr, index) => (
-          <div key={index} className="slide">
-            <img
-              src={imageArr}
-              alt="Dan Abramov"
-              style={{ objectFit: "contain" }}
-            />
-          </div>
+          <div
+            key={index}
+            style={{
+              backgroundImage: `url(${imageArr})`,
+              backgroundSize: "cover",
+             
+            }}
+            className="slide"
+          ></div>
         ))}
       </div>
     </div>
