@@ -13,7 +13,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Navigate } from "react-router";
+
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

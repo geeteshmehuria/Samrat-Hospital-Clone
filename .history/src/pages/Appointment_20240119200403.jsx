@@ -4,7 +4,6 @@ import DoctorDetailBox from "../components/AppointmentComp/DoctorDetailBox";
 import Navbar from "../components/Navbar/navbar"; // Adjust the import path as needed
 import Footer from "../components/Footer/footer"; // Adjust the import path as needed
 import { cardiologistsUrl } from "../assets/url";
-import { Spinner } from "@chakra-ui/react";
 
 const AppointmentPage = () => {
   const [doctorDetails, setDoctorDetails] = useState(null);
@@ -29,18 +28,7 @@ const AppointmentPage = () => {
   }, []);
 
   if (!doctorDetails) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh", // Make the container full height
-        }}
-      >
-        <Spinner size="lg" color="green.500" />
-      </div>
-    );
+    return <div>Loading...</div>; // Or any loading spinner
   }
 
   return (

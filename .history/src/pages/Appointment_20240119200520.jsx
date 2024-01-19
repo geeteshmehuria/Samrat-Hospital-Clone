@@ -38,7 +38,7 @@ const AppointmentPage = () => {
           height: "100vh", // Make the container full height
         }}
       >
-        <Spinner size="lg" color="green.500" />
+        <Spinner size="md" color="green.500" />
       </div>
     );
   }

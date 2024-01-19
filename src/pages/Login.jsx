@@ -68,8 +68,9 @@ const Login = () => {
 
   
   return (
-    <Box margin={"auto"} color={"green"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }}>
-      <Text textAlign={'center'} fontSize={"1.7rem"}>SIGN IN</Text>
+    <div  style={{"padding":"50px"}}>
+      <Box margin={"auto"} color={"green"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }} borderRadius={"10px"}>
+      <Text textAlign={'center'} fontSize={"1.7rem"}>LOGIN</Text>
 
       <FormControl isRequired>
         <FormLabel>Email</FormLabel>
@@ -94,10 +95,27 @@ const Login = () => {
             </Button>
           </InputRightElement>
         </InputGroup>
-        <Button colorScheme='blue' width='full' marginTop={"15px"} onClick={fetchUserData}>SIGN IN</Button>
+        {/* <Button backgroundColor='#658a71' _hover={{backgroundColor:"#63a677"}} color={"white"} width='full' marginTop={"15px"} onClick={fetchUserData}>SIGN IN</Button> */}
+        <Button
+              className="font-semibold"
+              _hover={{ bg: "#fafaf1", color: "#658a71" }}
+              size="md"
+              color="#fafaf1"
+              bg="#658a71"
+              height="38px"
+              width="100%"
+              border="2px"
+              variant="solid"
+              borderColor="#2f4e44"
+              onClick={fetchUserData}
+              marginTop={"15px"}
+            >
+              Login
+            </Button>
         {logintry && !login ? <h1 style={{"color":"red"}}>Credentials Not Found. Please <a href="./SignUp.jsx" style={{"color":"blue"}}>Sign Up</a></h1> : <></>}
       </FormControl>
     </Box>
+    </div>
   );
 };
 
