@@ -4,14 +4,13 @@ import DoctorDetailBox from "../components/AppointmentComp/DoctorDetailBox";
 import Navbar from "../components/Navbar/navbar"; // Adjust the import path as needed
 import Footer from "../components/Footer/footer"; // Adjust the import path as needed
 import { cardiologistsUrl } from "../assets/url";
-import { Spinner } from "@chakra-ui/react";
 
 const AppointmentPage = () => {
   const [doctorDetails, setDoctorDetails] = useState(null);
   const doctorId = 2; // Hardcoded ID
 
   useEffect(() => {
-    fetch(cardiologistsUrl)
+    fetch("cardiologistsUrl")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,7 +19,7 @@ const AppointmentPage = () => {
       })
       .then((data) => {
         // Accessing the cardiologists array and finding the doctor by ID
-        const doctor = data.find((doc) => doc.id === doctorId);
+        const doctor = data.cardiologists.find((doc) => doc.id === doctorId);
         setDoctorDetails(doctor);
       })
       .catch((error) => {
@@ -29,18 +28,7 @@ const AppointmentPage = () => {
   }, []);
 
   if (!doctorDetails) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh", // Make the container full height
-        }}
-      >
-        <Spinner size="lg" color="green.500" />
-      </div>
-    );
+    return <div>Loading...</div>; // Or any loading spinner
   }
 
   return (
