@@ -54,21 +54,30 @@ const Sign = () => {
     )
   }
 
+  
+
   const allFieldHandler = (e) => {
     const AddUser = async () => {
       const res = await axios.post(`https://mock-api-39gi.onrender.com/user`,obj);
     }
     
     e.preventDefault();
+    console.log("beforeValues",allFeild);
     if (Fname.length && Lname.length && email.length && number.length && dob.length && gender.length && pass1.length && pass2.length && passwordChange && document.getElementById("SignUpCheckbox1")?.checked && document.getElementById("SignUpCheckbox2")?.checked) {
       setAllfield(true);
       console.log("vishnurajkr",allFeild);
-    }
-    if(allFeild){
       AddUser();
       AccountCreateToast();
+      setTimeout(() => {
+        window.location.href="./Login"
+      }, 2500);
     }
+    // if(allFeild){
+    //   AddUser();
+    //   AccountCreateToast();
+    // }
     else{
+      console.log("ifFalse",allFeild);
       accountCreateFail()
     }
   }
@@ -88,7 +97,8 @@ const Sign = () => {
 
   
   return (
-    <Box margin={"auto"} color={"green"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }}>
+    <div style={{"padding":"50px"}}>
+      <Box margin={"auto"} color={"green"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} padding={"30px"} width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }} borderRadius={"10px"}>
       <Text textAlign={'center'} fontSize={"1.7rem"}>CREATE ACCOUNT</Text>
       <form >
         <FormControl isRequired>
@@ -137,10 +147,27 @@ const Sign = () => {
           <Checkbox id='SignUpCheckbox2'>I have read and agree to the </Checkbox>
           <Text as={"span"} textDecoration={"underline"} color={"blue"} > <a href='https://getbootstrap.com/docs/5.3/getting-started/vite/'>terms and conditions</a></Text>
           <br />
-          <Button colorScheme='blue' width='full' marginTop={"15px"} onClick={allFieldHandler}>Create New Account</Button>
+          {/* <Button backgroundColor='#658a71' color={"white"} width='full' marginTop={"15px"} onClick={allFieldHandler} _hover={{backgroundColor:"#63a677"}}>Create New Account</Button> */}
+          <Button
+              className="font-semibold"
+              _hover={{ bg: "#fafaf1", color: "#658a71" }}
+              size="md"
+              color="#fafaf1"
+              bg="#658a71"
+              height="38px"
+              width="100%"
+              border="2px"
+              variant="solid"
+              borderColor="#2f4e44"
+              onClick={allFieldHandler}
+              marginTop={"15px"}
+            >
+              Create New Account
+            </Button>
         </FormControl>
       </form>
     </Box>
+    </div>
   );
 };
 
