@@ -1,19 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Input,
-  Image,
-  Heading,
-  Text,
-  InputGroup,
-  InputLeftElement,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Button, Input, Image, Heading, Text } from "@chakra-ui/react";
 import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
 import HomePageCarousel from "../components/homePageCarousel";
 import "../Css/home.css";
+import Responsive from "../components/HomeCarousel2";
 
 const Home = () => {
   return (
@@ -21,7 +12,7 @@ const Home = () => {
       <Box
         className="n-body flex flex-row justify-center "
         w="100%"
-        h={{ base: "auto", md: "500" }}
+        h={{ base: "400", md: "500" }}
       >
         <Box
           className="n-body-inner flex justify-start "
@@ -87,6 +78,37 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
+
+      <Box
+        mt={{ base: "10", md: "20", lg: "20" }}
+        className="n-carousel flex flex-row justify-center"
+        w="100%"
+        h={{ base: "auto", md: "550" }}
+      >
+        <Box
+          className="n-carousel-inner flex flex-col justify-around"
+          w={{ base: "80%", md: "80%" }}
+        >
+          <Heading
+            fontSize={{ base: "xl", md: "6xl" }}
+            color="#2f4e44"
+            textAlign="center"
+          >
+            Our Different Departments
+          </Heading>
+          <Text
+            fontSize={{ base: "lg", md: "4xl" }}
+            color="#2f4e44"
+            textAlign="center"
+          >
+            For Your Better Health
+          </Text>
+          <Box mt="10">
+            <Responsive />
+          </Box>
+        </Box>
+      </Box>
+
       <Box
         className="n-body-container-2 flex flex-row justify-center bg-bodyColor"
         w="100%"
@@ -102,13 +124,13 @@ const Home = () => {
             className="n-body-container-2-inner-1 flex justify-center"
             h={{ base: "auto", md: "400" }}
             w={{ base: "100%", md: "50%" }}
+            mt={{ base: "4", md: "59" }}
           >
             <Image
               src="src\homepageImages\dochands.jpg"
               alt="doctor hands"
               h={{ base: "auto", md: "360" }}
               w="100%"
-              mt={{ base: "4", md: "30" }}
               borderRadius={{ base: "0", md: "20" }}
             />
           </Box>
@@ -116,6 +138,7 @@ const Home = () => {
             className="n-body-container-2-inner-2 bg-red flex flex-col  justify-center"
             h={{ base: "auto", md: "500" }}
             w={{ base: "100%", md: "50%" }}
+            mt={{ base: "4", md: "-5" }}
           >
             <Heading
               as="b"
@@ -187,6 +210,7 @@ const Home = () => {
           <Image src="src\homepageImages\FemaleDoc.png" alt="docimage" />
         </Box>
         <Box
+          mt={{ base: "5", md: "15", lg: "15" }}
           className="n-body-review-2 bg-red"
           h="auto"
           w={{ base: "100%", md: "60%" }}
@@ -196,7 +220,7 @@ const Home = () => {
               as="b"
               fontSize={{ base: "2xl", md: "4xl", lg: "6xl" }}
               color="#2f4e44"
-              ml="3"
+              ml={{ base: "51" }}
             >
               What Our Patients Say
             </Text>
@@ -209,7 +233,10 @@ const Home = () => {
               Here are some testimonials from our valued patients.
             </Text>
           </Box>
-          <Box mt="20" ml="-12">
+          <Box
+            mt={{ base: "5", md: "15", lg: "15" }}
+            ml={{ base: "0", md: "-120", lg: "-250" }}
+          >
             <HomePageCarousel
               mt={{ base: "10px" }}
               boxSize={{ base: "100%", md: "80%" }}
@@ -220,6 +247,7 @@ const Home = () => {
       </Box>
 
       <Box
+        mt={{ base: "5", md: "15", lg: "15" }}
         className="n-body-before-footer flex flex-row justify-center  bg-bodyColor"
         w="100%"
         h={{ base: "auto", md: "400" }}
