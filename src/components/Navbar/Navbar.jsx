@@ -13,6 +13,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Navigate } from "react-router";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,45 +56,42 @@ const Navbar = () => {
           className="font-medium flex flex-row justify-between items-center gap-4 md:gap-12"
           display={{ base: "none", md: "flex" }}
         >
-          <a href="/" >
-            Home
-          </a>
-          <a href="/aboutus" >
-            About us
-          </a>
-          <a href="/services">
-            Services
-          </a>
-          <a href="appointment" >
-            Appointment
-          </a>
+          <a href="/">Home</a>
+          <a href="/aboutus">About us</a>
+          <a href="/services">Services</a>
+          <a href="appointment">Appointment</a>
 
-          <Button
-            className="font-semibold"
-            _hover={{ bg: "#658a71", color: "#fafaf1" }}
-            size="md"
-            height="38px"
-            width="80px"
-            border="2px"
-            variant="outline"
-            borderColor="#2f4e44"
-          >
-            Sign Up
-          </Button>
-          <Button
-            className="font-semibold"
-            _hover={{ bg: "#fafaf1", color: "#658a71" }}
-            size="md"
-            color="#fafaf1"
-            bg="#658a71"
-            height="38px"
-            width="80px"
-            border="2px"
-            variant="solid"
-            borderColor="#2f4e44"
-          >
-            Login
-          </Button>
+          <a href="/signup">
+            <Button
+              href="/login"
+              className="font-semibold"
+              _hover={{ bg: "#658a71", color: "#fafaf1" }}
+              size="md"
+              height="38px"
+              width="80px"
+              border="2px"
+              variant="outline"
+              borderColor="#2f4e44"
+            >
+              Sign Up
+            </Button>
+          </a>
+          <a href="/login">
+            <Button
+              className="font-semibold"
+              _hover={{ bg: "#fafaf1", color: "#658a71" }}
+              size="md"
+              color="#fafaf1"
+              bg="#658a71"
+              height="38px"
+              width="80px"
+              border="2px"
+              variant="solid"
+              borderColor="#2f4e44"
+            >
+              Login
+            </Button>
+          </a>
         </Box>
       </Box>
 
