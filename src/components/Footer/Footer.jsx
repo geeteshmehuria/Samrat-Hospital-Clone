@@ -116,7 +116,7 @@ const Footer = () => {
         w={{ base: "100%", sm: "80%", md: "80%", lg: "80%" }}
         h="10"
       >
-        <p className="Nfooter-Grey2">© Copy right 2023 Hospital Logo</p>
+        <p className="Nfooter-Grey2">© Copy right 2023 Samrat Hospital</p>
       </Box>
     </footer>
   );
