@@ -4,13 +4,14 @@ import Appointment from "../pages/Appointment";
 import Login from "../pages/Login";
 import Sign from "../pages/SignUp";
 import ListingPage from "../pages/ListingPage";
+import AboutUs from "../pages/AboutUs";
 
 const Routers = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/aboutus" element={<Aboutus />} /> */}
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<ListingPage />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/login" element={<Login />} />
