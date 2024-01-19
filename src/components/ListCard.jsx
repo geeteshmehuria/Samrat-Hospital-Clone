@@ -3,88 +3,91 @@ import React from "react";
 import { StarIcon, CopyIcon, PhoneIcon, TimeIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
 
-export const ListCard = () => {
+export const ListCard = React.memo(({ doctorObj }) => {
   const [isSmallerScreen] = useMediaQuery("(max-width: 650px)");
+  const availableDaysArr = doctorObj.available? doctorObj.available : doctorObj.availability
 
   return (
     <Flex
       mb={8}
+      w="100%"
       bg="white"
       flexDir={isSmallerScreen ? "row" : "column"}
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
     >
-      <Flex>
-        <Image
-          my={12}
-          mx={20}
-          boxSize={isSmallerScreen ? "100px" : "200px"}
-          borderRadius="50%"
-          src="https://bit.ly/dan-abramov"
-          alt="Dan Abramov"
-        />
-        <Flex mt={12} flexDirection="column" gap={2}>
+      <Flex w="100%" my={10}>
+        <Flex w="40%" justify="center" align="center" >
+          <Image
+            boxSize={isSmallerScreen ? "100px" : "200px"}
+            borderRadius="50%"
+            src={doctorObj.image}
+            alt="Dan Abramov"
+          />
+        </Flex>
+        <Flex  w="60%" flexDirection="column" gap={2} >
           <Heading as="h2" fontSize="20px" letterSpacing={1} color="black">
-            Dr. Nardeen Adel
+            {doctorObj.name}
           </Heading>
           <Text fontSize="15px" color="gray">
-            Dentist
+            {doctorObj.education}
           </Text>
-          <StarIcon color="green" />
+          <Text>
+            <StarIcon color="green" mr={2} />
+            {doctorObj.rating}/5
+          </Text>
+          <Flex>
+            <Text>Available Days: </Text>
+            {availableDaysArr.map((day) => (
+              <Text>{day}, </Text>
+            ))}
+          </Flex>
+          <Text>
+            <PhoneIcon mr={2} />
+            Contact No. {doctorObj.contact}
+          </Text>
 
           <Text>
-            <CopyIcon mr={10} />
-            Fees: Rs. 500
+            <CopyIcon mr={2} />
+            Fees: Rs. {doctorObj.fee}
           </Text>
-          <Text>
-            <TimeIcon mr={10} />
-            10:00 AM - 12:00 PM
-          </Text>
-          <Text>
-            <PhoneIcon mr={10} />
-            Contact No. 9522972010
-          </Text>
+
+          <Flex>
+            <Button
+              color="white"
+              bg="#658a71"
+              py="10px"
+              px={2}
+              mt={5}
+              mr={5}
+              borderRadius={5}
+              letterSpacing={1}
+              fontSize={20}
+              _hover={{
+                bg: "#2f4e44",
+              }}
+            >
+              Book An Appointment
+            </Button>
+            <Button
+              color="#2f4e44"
+              border="1px solid #658a71"
+              py="10px"
+              px={2}
+              mt={5}
+              borderRadius={5}
+              letterSpacing={1}
+              fontSize={20}
+              _hover={{
+                bg: "#658a71",
+                color: "white",
+              }}
+            >
+              Details
+            </Button>
+          </Flex>
         </Flex>
-      </Flex>
-
-      <Flex>
-        <Button
-          color="white"
-          bg="#658a71"
-          py="10px"
-          px="30px"
-          mb={10}
-          mx={20}
-          borderRadius={10}
-          letterSpacing={2}
-          fontSize={20}
-          _hover={{
-            bg: "#2f4e44",
-            // transform: "rotateX(35deg)",
-            // transition: "all 0.5s ease",
-          }}
-        >
-          Book An Appointment
-        </Button>
-        <Button
-          color="#2f4e44"
-          border="1px solid #658a71"
-          py="10px"
-          px="30px"
-          mb={10}
-          borderRadius={10}
-          letterSpacing={2}
-          fontSize={20}
-          _hover={{
-            bg: "#658a71",
-            color: "white",
-            // transform: "rotateX(35deg)",
-            // transition: "all 0.5s ease",
-          }}
-        >
-          Details
-        </Button>
       </Flex>
     </Flex>
   );
-};
+});
