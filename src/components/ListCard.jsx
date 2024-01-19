@@ -1,12 +1,12 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
 import React from "react";
-import { StarIcon, CopyIcon, PhoneIcon, TimeIcon } from "@chakra-ui/icons";
+import { StarIcon, CopyIcon, PhoneIcon, } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
 
 export const ListCard = React.memo(({ doctorObj }) => {
   const [isSmallerScreen] = useMediaQuery("(max-width: 650px)");
-  const availableDaysArr = doctorObj.available? doctorObj.available : doctorObj.availability
-
+  const availableDaysArr = doctorObj.available? doctorObj.available : doctorObj.availability;
+  
   return (
     <Flex
       mb={8}
@@ -15,6 +15,7 @@ export const ListCard = React.memo(({ doctorObj }) => {
       flexDir={isSmallerScreen ? "row" : "column"}
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
+      borderRadius="10px"
     >
       <Flex w="100%" my={10}>
         <Flex w="40%" justify="center" align="center" >
@@ -55,33 +56,36 @@ export const ListCard = React.memo(({ doctorObj }) => {
 
           <Flex>
             <Button
-              color="white"
+              color="#fafaf1"
               bg="#658a71"
               py="10px"
+              border='2px solid #2f4e44'
               px={2}
               mt={5}
               mr={5}
               borderRadius={5}
               letterSpacing={1}
-              fontSize={20}
+              fontSize={18}
               _hover={{
-                bg: "#2f4e44",
+                bg: "#fafaf1",
+                color: "#658a71",
               }}
             >
               Book An Appointment
             </Button>
             <Button
-              color="#2f4e44"
-              border="1px solid #658a71"
+              color="#658a71"
+              bg="#fafaf1"
+              border="2px solid #658a71"
               py="10px"
               px={2}
               mt={5}
               borderRadius={5}
               letterSpacing={1}
-              fontSize={20}
+              fontSize={18}
               _hover={{
                 bg: "#658a71",
-                color: "white",
+                color:"#fafaf1",
               }}
             >
               Details
