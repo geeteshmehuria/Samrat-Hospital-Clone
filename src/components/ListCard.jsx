@@ -23,6 +23,7 @@ export const ListCard = React.memo(({ doctorObj }) => {
             borderRadius="50%"
             src={doctorObj.image}
             alt="Dan Abramov"
+            objectFit="cover"
           />
         </Flex>
         <Flex  w="60%" flexDirection="column" gap={2} >
