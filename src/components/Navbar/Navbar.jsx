@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   // box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -54,8 +53,9 @@ const Navbar = () => {
         />
 
         <Box
-          className="font-medium flex flex-row justify-between items-center gap-4 md:gap-12"
+          className="font-medium flex flex-row justify-between  items-center gap-4 md:gap-12"
           display={{ base: "none", md: "flex" }}
+          color="#2f4e44"
         >
           <a href="/">Home</a>
           <a href="/aboutus">About us</a>
