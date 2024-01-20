@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from "react";
-import { pediatricUrl, cardiologistsUrl, dentistsUrl } from "../assets/url";
+import React, { useState } from "react";
 import {
   Button,
   Box,
@@ -9,40 +8,17 @@ import {
   Flex,
   Text,
 } from "@chakra-ui/react";
-import axios from "axios";
 
-const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotalPages, setCurrData, setRequestUrl, setCurrPage, currSpeciality}) => {
+import { useNavigate } from "react-router";
+
+function SearchFuntionalityHome() {
   let [doctorName, setDoctorName] = useState("");
   let [speciality, setSpeciality] = useState("");
 
-  const findThisSpecialityDoctor = (speciality) => {
-    setCurrSpeciality(speciality);
-    if (speciality === "Pediatric") setRequestUrl(`${pediatricUrl}?_limit=4&`);
-    else if (speciality === "Cardiologist") setRequestUrl(`${cardiologistsUrl}?_limit=4&`);
-    else if (speciality === "Dentist") setRequestUrl(`${dentistsUrl}?_limit=4&`);
-    setCurrPage(1);
+  const navigate = useNavigate();
+  const redirectToListingPage = () => {
+    navigate("/services", { state: { prop1: doctorName, prop2: speciality } });
   };
-
-  const handleInputSearch = useCallback(() => {
-    setLoading(true);
-    let url = "";
-    if (speciality === "Pediatric") url = pediatricUrl;
-    else if (speciality === "Cardiologist") url = cardiologistsUrl;
-    else if (speciality === "Dentist") url = dentistsUrl;
-
-    if (doctorName !== "") {
-      setTotalPages(1);
-      axios
-        .get(`${url}?name=${doctorName}`)
-        .then((res) => {
-          setLoading(false);
-          console.log(res);
-          setCurrData(res.data);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [doctorName, speciality]);
-
   return (
     <Box
       w="80%"
@@ -50,6 +26,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
       borderRadius="10px"
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       bg="white"
+      h="40"
     >
       <SimpleGrid
         columns={4}
@@ -60,7 +37,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
         pr={10}
       >
         <Button
-          color={currSpeciality==="Pediatric" ? "#2f4e44" : "#658a71"}
+          color="#658a71"
           variant="link"
           fontSize="20px"
           mx={30}
@@ -73,7 +50,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           Pediatric
         </Button>
         <Button
-          color={currSpeciality==="Dentist" ? "#2f4e44" : "#658a71"}
+          color="#658a71"
           variant="link"
           fontSize="20px"
           mx={30}
@@ -86,7 +63,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           Dentist
         </Button>
         <Button
-          color={currSpeciality==="Cardiologist" ? "#2f4e44" : "#658a71"}
+          color="#658a71"
           variant="link"
           fontSize="20px"
           mx={30}
@@ -163,7 +140,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
             bg: "#fafaf1",
             color: "#658a71",
           }}
-          onClick={handleInputSearch}
+          onClick={redirectToListingPage}
           py={"25px"}
           borderRadius={10}
           letterSpacing={1}
@@ -174,6 +151,6 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
       </Flex>
     </Box>
   );
-})
+}
 
-export default SearchFuntionality;
+export default SearchFuntionalityHome;

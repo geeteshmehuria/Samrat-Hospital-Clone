@@ -1,14 +1,73 @@
-
-import React from "react";
-import { Box, Button, Input, Image, Heading, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  Input,
+  Image,
+  Heading,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 
 import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
 import HomePageCarousel from "../components/homePageCarousel";
 import "../Css/home.css";
 import Responsive from "../components/HomeCarousel2";
+import SearchFuntionalityHome from "../components/homepageSearch";
+import { useNavigate } from "react-router";
+import { getInTouch } from "../assets/url";
+import axios from "axios";
 
 const Home = () => {
+  const [review, setFeedback] = useState("");
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const toast = useToast();
+  const redirectToListingPage = () => {
+    navigate("/services");
+    handleInputSearch();
+  };
+  const handleFeedbackSubmit = async () => {
+    try {
+      if (!review.trim() || !name.trim()) {
+        return;
+      }
+      const id = Math.floor(Math.random() * 1000);
+
+      const response = await axios.post(getInTouch, {
+        id,
+        name,
+        review,
+      });
+      console.log("Feedback submitted successfully:", response.data);
+
+      toast({
+        title: "Feedback Submitted",
+        description: "Thank you for your feedback!",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+
+      setFeedback("");
+      setName("");
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      if (error.response) {
+        console.error("Server error response:", error.response.data);
+      }
+
+      toast({
+        title: "Error",
+        description: "Failed to submit feedback. Please try again.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <div>
       <Box
@@ -57,6 +116,7 @@ const Home = () => {
                 border="2px"
                 variant="solid"
                 borderColor="#658a71"
+                onClick={redirectToListingPage}
               >
                 Find doctor
               </Button>
@@ -80,7 +140,9 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-
+      <Box>
+        <SearchFuntionalityHome />
+      </Box>
       <Box
         mt={{ base: "10", md: "20", lg: "20" }}
         className="n-carousel flex flex-row justify-center"
@@ -193,6 +255,7 @@ const Home = () => {
               borderColor="#2f4e44"
               ml={{ base: "4", md: "20" }}
               mt="5"
+              onClick={redirectToListingPage}
             >
               Book An Appointment
             </Button>
@@ -267,6 +330,20 @@ const Home = () => {
             Give Your Valuable Feedback
           </Text>
           <Input
+            type="text"
+            placeholder="Enter your name"
+            mb={4}
+            px={4}
+            py={3}
+            borderRadius="md"
+            borderColor="#2f4e44"
+            borderWidth="2px"
+            width={{ base: "80%", md: "40%" }}
+            mx="auto"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
             type="textarea"
             placeholder="Enter your feedback"
             mb={4}
@@ -278,21 +355,9 @@ const Home = () => {
             width={{ base: "80%", md: "40%" }}
             height="20%"
             mx="auto"
+            value={review}
+            onChange={(e) => setFeedback(e.target.value)}
           />
-
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            mb={4}
-            px={4}
-            py={3}
-            borderRadius="md"
-            borderColor="#2f4e44"
-            borderWidth="2px"
-            width={{ base: "80%", md: "40%" }}
-            mx="auto"
-          />
-
           <Button
             className="font-semibold"
             _hover={{ bg: "#658a71", color: "#fafaf1" }}
@@ -304,6 +369,7 @@ const Home = () => {
             border="2px"
             variant="outline"
             borderColor="#2f4e44"
+            onClick={handleFeedbackSubmit}
           >
             Submit
           </Button>

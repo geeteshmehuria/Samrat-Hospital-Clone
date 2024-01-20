@@ -8,15 +8,16 @@ const PaginationButton = React.memo(({ setCurrPage, isSelected, pageNo}) => {
 
   return (
     <Button
-      mt={3}
-      mb={10}
-      mr={5}
+      my={5}
+      mx={4}
       px={4}
+      py={5}
       fontSize={20}
-      color="white"
+      border={"2px solid #658a71"}
+      color={isSelected ? "#2f4e44" : "#fafaf1"}
       borderRadius="50%"
-      bg={isSelected ? "#2f4e44" : "#658a71"}
-      _hover={{ bg: "#2f4e44" }}
+      bg={isSelected ? "#fafaf1" : "#658a71"}
+      _hover={{ bg: "#fafaf1", color: "#2f4e44" }}
       onClick={() => handlePageChange(pageNo)}
     >
       {pageNo}

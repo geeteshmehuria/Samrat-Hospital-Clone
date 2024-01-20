@@ -11,7 +11,7 @@ const AppointmentPage = () => {
   React.useEffect(() => {
     // Check if doctorDetails is not available
     if (!doctorDetails) {
-      navigate("/services"); // Redirect to home page
+      navigate("/"); // Redirect to home page
     }
   }, [doctorDetails, navigate]);
 

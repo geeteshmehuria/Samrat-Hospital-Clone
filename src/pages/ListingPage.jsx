@@ -10,13 +10,20 @@ import PaginationButton from "../components/PaginationButton";
 import SearchFuntionality from "../components/SearchFuntionality";
 import FilterFunctionality from "../components/FilterFunctionality";
 
+import { useLocation } from "react-router-dom";
 const ListingPage = () => {
+  const location = useLocation();
+  const prop1 = location.state?.prop1;
+  const prop2 = location.state?.prop2;
+  console.log(prop1, prop2, `listingpage`);
+
   let [currPage, setCurrPage] = useState(1);
   let [totalPages, setTotalPages] = useState(0);
   let [currPageData, setCurrData] = useState([]);
   let [loading, setLoading] = useState(false);
   let [currSpeciality, setCurrSpeciality] = useState("Pediatric");
   const [requestUrl, setRequestUrl] = useState(`${pediatricUrl}?_limit=4&`);
+  // const [selectedDays, setSelectedDays] = useState([]);
 
   useEffect(() => {
     // let isMounted = true;
@@ -94,7 +101,7 @@ const ListingPage = () => {
                 <Box><Text fontSize={18} color={"gray"}>{currSpeciality}</Text></Box>
               </Flex>
               {currPageData.map((doctorObj) => (
-                <ListCard doctorObj={doctorObj} />
+                <ListCard key={doctorObj.id} doctorObj={doctorObj} />
               ))}
             </SimpleGrid>
           )}
