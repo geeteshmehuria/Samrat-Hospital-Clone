@@ -21,18 +21,23 @@ import {
 import { StarIcon } from "@chakra-ui/icons";
 import { ListCard } from "../components/ListCard";
 import Infinite_Carousel from "../components/Infinite_Carousel";
-import { pediatricUrl} from "../assets/url";
+import { pediatricUrl } from "../assets/url";
 import axios from "axios";
 import PaginationButton from "../components/PaginationButton";
-import SearchFuntionality from '../components/SearchFuntionality';
-
+import SearchFuntionality from "../components/SearchFuntionality";
+import { useLocation } from "react-router-dom";
 const ListingPage = () => {
+  const location = useLocation();
+  const prop1 = location.state?.prop1;
+  const prop2 = location.state?.prop2;
+  console.log(prop1, prop2, `listingpage`);
+
   let [currPage, setCurrPage] = useState(1);
   let [totalPages, setTotalPages] = useState(0);
   let [currPageData, setCurrData] = useState([]);
   let [loading, setLoading] = useState(false);
   // const [selectedDays, setSelectedDays] = useState([]);
-  
+
   useEffect(() => {
     setLoading(true);
     axios.get(`${pediatricUrl}?_page=${currPage}&_limit=3`).then((res) => {
@@ -65,7 +70,12 @@ const ListingPage = () => {
   return (
     <Box bg={"#fafaf1"} mt={2}>
       <Infinite_Carousel />
-      <SearchFuntionality setLoading={setLoading} setTotalPages={setTotalPages} setCurrData={setCurrData} currPage={currPage}/>
+      <SearchFuntionality
+        setLoading={setLoading}
+        setTotalPages={setTotalPages}
+        setCurrData={setCurrData}
+        currPage={currPage}
+      />
 
       {/* ----------------------Filter JSX Part Start here-------------------- */}
       <Flex w="80%" m="auto" mt="2%" pb="3%" gap="3%">

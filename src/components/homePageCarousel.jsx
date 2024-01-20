@@ -3,12 +3,13 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getInTouch } from "../assets/url";
 
 const HomePageCarousel = () => {
   const [feedbackData, setFeedbackData] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/comments?_limit=4")
+    fetch(`${getInTouch}?_limit=9`)
       .then((response) => response.json())
       .then((data) => setFeedbackData(data))
       .catch((error) => console.error("Error fetching feedback data:", error));
@@ -39,7 +40,7 @@ const HomePageCarousel = () => {
                 {feedback.name}
               </Heading>
               <Text fontSize="md" color="gray.600">
-                {feedback.body}
+                {feedback.review}
               </Text>
             </Box>
           ))}
