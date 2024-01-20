@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 import {
   VStack,
   Box,
@@ -33,7 +33,7 @@ const DoctorDetailBox = ({ doctor }) => {
     cvc: "",
   });
   const toast = useToast();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Create navigate function
   const bg = useColorModeValue("white", "gray.800");
   const color = useColorModeValue("gray.800", "white");
 
@@ -42,19 +42,11 @@ const DoctorDetailBox = ({ doctor }) => {
   };
 
   const handlePaymentDetailsChange = (e) => {
-    if (e.target.id === "cardNumber" && /^\d{0,16}$/.test(e.target.value)) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
-    } else if (
-      e.target.id === "expiry" &&
-      /^(0[1-9]|1[0-2]|0|1)?(\/\d{0,2})?$/.test(e.target.value)
-    ) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
-    } else if (e.target.id === "cvc" && /^\d{0,3}$/.test(e.target.value)) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
-    }
+    setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
   };
 
   const validatePaymentDetails = () => {
+    // Simple validation logic (can be expanded)
     return (
       paymentDetails.cardNumber.length === 16 &&
       paymentDetails.expiry.length === 5 &&
@@ -69,10 +61,10 @@ const DoctorDetailBox = ({ doctor }) => {
         title: "Appointment booked.",
         description: "Your appointment has been successfully booked!",
         status: "success",
-        duration: 3000,
+        duration: 5000,
         isClosable: true,
       });
-      setTimeout(() => navigate("/"), 0);
+      setTimeout(() => navigate("/"), 5000); // Redirect to homepage after 5 seconds
     } else {
       toast({
         title: "Invalid Payment Details",
@@ -182,8 +174,6 @@ const DoctorDetailBox = ({ doctor }) => {
             <FormControl isRequired>
               <FormLabel htmlFor="cardNumber">Card Number</FormLabel>
               <Input
-                type="text"
-                maxLength="16"
                 id="cardNumber"
                 placeholder="1234 1234 1234 1234"
                 value={paymentDetails.cardNumber}
@@ -202,8 +192,6 @@ const DoctorDetailBox = ({ doctor }) => {
             <FormControl isRequired mt={4}>
               <FormLabel htmlFor="cvc">CVC</FormLabel>
               <Input
-                maxLength="3"
-                type="password"
                 id="cvc"
                 placeholder="CVC"
                 value={paymentDetails.cvc}

@@ -25,39 +25,26 @@ import AppointmentBookingForm from "./AppointmentBookingForm";
 import ReviewSection from "./ReviewSection";
 
 const DoctorDetailBox = ({ doctor }) => {
-  const [isBooking, setIsBooking] = useState(false);
-  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
-  const [paymentDetails, setPaymentDetails] = useState({
-    cardNumber: "",
-    expiry: "",
-    cvc: "",
-  });
-  const toast = useToast();
-  const navigate = useNavigate();
-  const bg = useColorModeValue("white", "gray.800");
-  const color = useColorModeValue("gray.800", "white");
-
-  const handleBookingClick = () => {
-    setIsBooking(!isBooking);
-  };
+  // ... existing state and variable declarations
 
   const handlePaymentDetailsChange = (e) => {
-    if (e.target.id === "cardNumber" && /^\d{0,16}$/.test(e.target.value)) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
-    } else if (
-      e.target.id === "expiry" &&
-      /^(0[1-9]|1[0-2]|0|1)?(\/\d{0,2})?$/.test(e.target.value)
-    ) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
-    } else if (e.target.id === "cvc" && /^\d{0,3}$/.test(e.target.value)) {
-      setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
+    const { id, value } = e.target;
+    if (id === "cardNumber" && /^\d{0,16}$/.test(value)) {
+      setPaymentDetails({ ...paymentDetails, [id]: value });
+    } else if (id === "expiry") {
+      if (/^(0?[1-9]|1[0-2])\/?(\d{0,2})?$/.test(value)) {
+        setPaymentDetails({ ...paymentDetails, [id]: value });
+      }
+    } else if (id === "cvc" && /^\d{0,3}$/.test(value)) {
+      setPaymentDetails({ ...paymentDetails, [id]: value });
     }
   };
 
   const validatePaymentDetails = () => {
+    const expiryValid = /^\d{2}\/\d{2}$/.test(paymentDetails.expiry);
     return (
       paymentDetails.cardNumber.length === 16 &&
-      paymentDetails.expiry.length === 5 &&
+      expiryValid &&
       paymentDetails.cvc.length === 3
     );
   };
@@ -69,10 +56,10 @@ const DoctorDetailBox = ({ doctor }) => {
         title: "Appointment booked.",
         description: "Your appointment has been successfully booked!",
         status: "success",
-        duration: 3000,
+        duration: 5000,
         isClosable: true,
       });
-      setTimeout(() => navigate("/"), 0);
+      setTimeout(() => navigate("/"), 5000);
     } else {
       toast({
         title: "Invalid Payment Details",
