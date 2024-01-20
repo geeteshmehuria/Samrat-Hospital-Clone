@@ -11,28 +11,16 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-function SearchFuntionality({
-  setLoading,
-  setTotalPages,
-  setCurrData,
-  currPage,
-}) {
+const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotalPages, setCurrData, setRequestUrl, setCurrPage, currSpeciality}) => {
   let [doctorName, setDoctorName] = useState("");
   let [speciality, setSpeciality] = useState("");
 
   const findThisSpecialityDoctor = (speciality) => {
-    setLoading(true);
-    let url = "";
-    if (speciality === "Pediatric") url = pediatricUrl;
-    else if (speciality === "Cardiologist") url = cardiologistsUrl;
-    else if (speciality === "Dentist") url = dentistsUrl;
-    axios.get(`${url}?_page=${currPage}&_limit=3`).then((res) => {
-      console.log(res.data);
-      console.log(`res   `, res);
-      setTotalPages(Math.ceil(16 / 3));
-      setCurrData(res.data);
-      setLoading(false);
-    });
+    setCurrSpeciality(speciality);
+    if (speciality === "Pediatric") setRequestUrl(`${pediatricUrl}?_limit=4&`);
+    else if (speciality === "Cardiologist") setRequestUrl(`${cardiologistsUrl}?_limit=4&`);
+    else if (speciality === "Dentist") setRequestUrl(`${dentistsUrl}?_limit=4&`);
+    setCurrPage(1);
   };
 
   const handleInputSearch = useCallback(() => {
@@ -72,7 +60,7 @@ function SearchFuntionality({
         pr={10}
       >
         <Button
-          color="#658a71"
+          color={currSpeciality==="Pediatric" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
@@ -85,7 +73,7 @@ function SearchFuntionality({
           Pediatric
         </Button>
         <Button
-          color="#658a71"
+          color={currSpeciality==="Dentist" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
@@ -98,7 +86,7 @@ function SearchFuntionality({
           Dentist
         </Button>
         <Button
-          color="#658a71"
+          color={currSpeciality==="Cardiologist" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
@@ -186,6 +174,6 @@ function SearchFuntionality({
       </Flex>
     </Box>
   );
-}
+})
 
 export default SearchFuntionality;

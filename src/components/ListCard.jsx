@@ -47,9 +47,9 @@ export const ListCard = ({ doctorObj }) => {
           </Text>
           <Text>
             <StarIcon color="green" mr={2} />
-            {doctorObj.rating}/5
+            {doctorObj.rating} / 5
           </Text>
-          <Flex>
+          <Flex gap={2}>
             <Text>Available Days: </Text>
             {availableDaysArr.map((day) => (
               <Text>{day}, </Text>
@@ -73,28 +73,30 @@ export const ListCard = ({ doctorObj }) => {
               px={2}
               mt={5}
               mr={5}
+              border="2px solid #2f4e44"
               borderRadius={5}
               letterSpacing={1}
               fontSize={20}
               _hover={{
-                bg: "#2f4e44",
+                bg: "#fafaf1", color: "#658a71"
               }}
               onClick={() => handleBookAppointment(doctorObj)}
             >
               Book An Appointment
             </Button>
             <Button
-              color="#2f4e44"
-              border="1px solid #658a71"
+              color="#658a71"
+              border="2px solid #2f4e44"
               py="10px"
               px={2}
+              bg={"#fafaf1"}
               mt={5}
               borderRadius={5}
               letterSpacing={1}
               fontSize={20}
               _hover={{
                 bg: "#658a71",
-                color: "white",
+                color: "#fafaf1",
               }}
             >
               Details

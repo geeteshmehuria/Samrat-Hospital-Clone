@@ -1,30 +1,15 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useState} from "react";
 import "../Css/listingPage.css";
 import AppointmentVideo from "../assets/AppointmentVideo.mp4";
-// import Footer from "../components/Footer/Footer";
-import {
-  Button,
-  Box,
-  SimpleGrid,
-  Flex,
-  Heading,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  RadioGroup,
-  Radio,
-  Checkbox,
-  Stack,
-} from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
+import { Box, SimpleGrid, Flex, Heading, Text } from "@chakra-ui/react";
 import { ListCard } from "../components/ListCard";
 import Infinite_Carousel from "../components/Infinite_Carousel";
 import { pediatricUrl } from "../assets/url";
 import axios from "axios";
 import PaginationButton from "../components/PaginationButton";
 import SearchFuntionality from "../components/SearchFuntionality";
+import FilterFunctionality from "../components/FilterFunctionality";
+
 import { useLocation } from "react-router-dom";
 const ListingPage = () => {
   const location = useLocation();
@@ -36,45 +21,38 @@ const ListingPage = () => {
   let [totalPages, setTotalPages] = useState(0);
   let [currPageData, setCurrData] = useState([]);
   let [loading, setLoading] = useState(false);
+  let [currSpeciality, setCurrSpeciality] = useState("Pediatric");
+  const [requestUrl, setRequestUrl] = useState(`${pediatricUrl}?_limit=4&`);
   // const [selectedDays, setSelectedDays] = useState([]);
 
   useEffect(() => {
+    // let isMounted = true;
     setLoading(true);
-    axios.get(`${pediatricUrl}?_page=${currPage}&_limit=3`).then((res) => {
-      console.log(res.data);
-      console.log(`res   `, res);
-      setTotalPages(Math.ceil(16 / 3));
+    axios.get(`${requestUrl}_page=${currPage}`).then((res) => {
+      setTotalPages(Math.ceil(16 / 4));
       setCurrData(res.data);
       setLoading(false);
     });
-  }, [currPage]);
+    // return () => {
+    //   isMounted = false;
+    // };
+  }, [currPage, requestUrl]);
 
   const pageNumbers = useMemo(() =>
     Array.from({ length: totalPages }, (_, index) => index + 1)
   );
-
-  // const handleCheckboxChange = useCallback(
-  //   (day) => {
-  //     // Check if the day is already in the selectedDays array
-  //     if (selectedDays.includes(day)) {
-  //       setSelectedDays(
-  //         selectedDays.filter((selectedDay) => selectedDay !== day)
-  //       );
-  //     } else {
-  //       setSelectedDays([...selectedDays, day]);
-  //     }
-  //   },
-  //   [selectedDays]
-  // );
 
   return (
     <Box bg={"#fafaf1"} mt={2}>
       <Infinite_Carousel />
       <SearchFuntionality
         setLoading={setLoading}
+        setCurrSpeciality={setCurrSpeciality}
         setTotalPages={setTotalPages}
         setCurrData={setCurrData}
-        currPage={currPage}
+        setRequestUrl={setRequestUrl}
+        setCurrPage={setCurrPage}
+        currSpeciality={currSpeciality}
       />
 
       {/* ----------------------Filter JSX Part Start here-------------------- */}
@@ -88,175 +66,15 @@ const ListingPage = () => {
           boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
           h={"fit-content"}
         >
-          <Flex w="100%" flexDir="column" align="center">
-            <Heading
-              as="h2"
-              fontSize="30px"
-              mt={5}
-              letterSpacing={1}
-              color="white"
-            >
-              Find Doctors By:
-            </Heading>
-
-            <Accordion
-              allowToggle
-              w="90%"
-              bg="white"
-              mt={5}
-              h="fit-content"
-              borderRadius="10px"
-            >
-              <AccordionItem borderRadius="10px">
-                <h2>
-                  <AccordionButton>
-                    <Box fontSize="20px" as="span" flex="1" textAlign="left">
-                      Availability...
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>
-                    Explore Doctors' Schedules: Click on a Day to Find Available
-                    Appointments Throughout the Week!
-                  </p>
-                  <Stack my={5} direction="column" color="#658a71">
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Monday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Tuesday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Wednesday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Thursday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Friday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Saturday
-                    </Checkbox>
-                    <Checkbox
-                      colorScheme="green"
-                      onChange={() => handleCheckboxChange("")}
-                    >
-                      Sunday
-                    </Checkbox>
-                    <Button
-                      color="#fafaf1"
-                      bg="#658a71"
-                      border="2px solid #2f4e44"
-                      _hover={{
-                        bg: "#fafaf1",
-                        color: "#658a71",
-                      }}
-                    >
-                      Find Doctors
-                    </Button>
-                  </Stack>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem borderRadius="10px">
-                <h2>
-                  <AccordionButton>
-                    <Box fontSize="20px" as="span" flex="1" textAlign="left">
-                      Rating...
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>
-                    Discover Top-rated Healing: Find Your Perfect Match among
-                    the Highest-Rated Doctors!
-                  </p>
-
-                  <RadioGroup my={5} color="#658a71">
-                    <Stack direction="column">
-                      <Radio value="5">
-                        5 <StarIcon mx={1} fontSize="10px" /> rating
-                      </Radio>
-                      <Radio value="4">
-                        4 <StarIcon mx={1} fontSize="10px" /> rating
-                      </Radio>
-                      <Radio value="3">
-                        3 <StarIcon mx={1} fontSize="10px" /> rating
-                      </Radio>
-                      <Button
-                        color="#fafaf1"
-                        bg="#658a71"
-                        border="2px solid #2f4e44"
-                        _hover={{
-                          bg: "#fafaf1",
-                          color: "#658a71",
-                        }}
-                      >
-                        Find Doctors
-                      </Button>
-                    </Stack>
-                  </RadioGroup>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem borderRadius="10px">
-                <h2>
-                  <AccordionButton>
-                    <Box fontSize="20px" as="span" flex="1" textAlign="left">
-                      Appointment Fees...
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>
-                    Unlock Your Optimal Health Journey: Find Your Ideal Doctor
-                    and Schedule Appointments Aligned with Your Budgetary
-                    Wellness!
-                  </p>
-                  <RadioGroup my={5} color="#658a71">
-                    <Stack direction="column">
-                      <Radio value="5">Low to High</Radio>
-                      <Radio value="4">High to Low</Radio>
-                      <Button
-                        color="#fafaf1"
-                        bg="#658a71"
-                        border="2px solid #2f4e44"
-                        _hover={{
-                          bg: "#fafaf1",
-                          color: "#658a71",
-                        }}
-                      >
-                        Find Doctors
-                      </Button>
-                    </Stack>
-                  </RadioGroup>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
-          </Flex>
+          <FilterFunctionality
+            currSpeciality={currSpeciality}
+            setRequestUrl={setRequestUrl}
+            setCurrPage={setCurrPage}
+            setTotalPages={setTotalPages}
+            setCurrData={setCurrData}
+            setLoading={setLoading}
+            currPage={currPage}
+          />
 
           {/* --------------------------Video added here ------------------------- */}
           <video
@@ -278,6 +96,10 @@ const ListingPage = () => {
           )}
           {!loading && (
             <SimpleGrid column={1}>
+              <Flex my={5} gap={3} letterSpacing={1} >
+                <Box><Heading as={"h3"} size={"md"}>Speciality: </Heading></Box>
+                <Box><Text fontSize={18} color={"gray"}>{currSpeciality}</Text></Box>
+              </Flex>
               {currPageData.map((doctorObj) => (
                 <ListCard key={doctorObj.id} doctorObj={doctorObj} />
               ))}
@@ -289,7 +111,7 @@ const ListingPage = () => {
           {!loading && (
             <Flex>
               {pageNumbers.map((pageNo) => (
-                <PaginationButton key={pageNo} setCurrPage={setCurrPage} pageNo={pageNo} />
+                <PaginationButton setCurrPage={setCurrPage} isSelected={currPage === pageNo} pageNo={pageNo} />
               ))}
             </Flex>
           )}
