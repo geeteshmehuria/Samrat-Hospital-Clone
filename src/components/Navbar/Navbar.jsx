@@ -68,9 +68,9 @@ const Navbar = () => {
           color="#2f4e44"
         >
           <Link to="/">Home</Link>
-          <Link to="/aboutus">About us</Link>
           <Link to="/services">Services</Link>
-          <Link to="appointment">Appointment</Link>
+          <Link to="/aboutus">About us</Link>
+          {/* <Link to="appointment">Appointment</Link> */}
 
           {auth ? (
             <>
