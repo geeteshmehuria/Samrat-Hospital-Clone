@@ -13,13 +13,13 @@ import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { authLinLout, setName } from "../redux/authSlice";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 // import { useHistory} from "react-router-dom";
 // import { Navigate } from "react-router";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth.auth);
 
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
@@ -28,7 +28,7 @@ const Login = () => {
   const [logintry, setLoginTry] = useState(false);
   // const [login, setLogin] = useState(false);
   const toast = useToast();
-  const [fullName, setFullname] = useState("");
+  // const [fullName, setFullname] = useState("");
   const navigate = useNavigate();
   // const history = useHistory();
   // console.log(fullName);
@@ -70,7 +70,7 @@ const Login = () => {
         if (item.email === email && item.password === password) {
           isCredentialCorrect = true;
           // setLogin(true);
-          setFullname(item.firstName + " " + item.lastName);
+          // setFullname(item.firstName + " " + item.lastName);
 
           // Dispatch authLinLout(true) and then dispatch setName inside the then block
           await Promise.all([

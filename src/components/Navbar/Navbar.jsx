@@ -19,8 +19,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const auth = useSelector((state) => state.auth);
-  const name = useSelector((state) => state.name);
+  const auth = useSelector((state) => state.auth.auth);
+  const name = useSelector((state) => state.auth.name);
 
   const dispach = useDispatch();
   const handleLogOut = () => {

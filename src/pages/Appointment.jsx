@@ -1,14 +1,15 @@
 // src/pages/appointment.jsx
 import React, { useState, useEffect } from "react";
 import DoctorDetailBox from "../components/AppointmentComp/DoctorDetailBox";
-import Navbar from "../components/Navbar/navbar"; // Adjust the import path as needed
-import Footer from "../components/Footer/footer"; // Adjust the import path as needed
 import { cardiologistsUrl } from "../assets/url";
 import { Spinner } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 const AppointmentPage = () => {
   const [doctorDetails, setDoctorDetails] = useState(null);
   const doctorId = 2; // Hardcoded ID
+  const doctorData=useSelector((state)=>state.doctor.data)
+console.log(doctorData);
 
   useEffect(() => {
     fetch(cardiologistsUrl)
