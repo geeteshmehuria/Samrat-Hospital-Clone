@@ -269,7 +269,7 @@ const ListingPage = () => {
           {!loading && (
             <SimpleGrid column={1}>
               {currPageData.map((doctorObj) => (
-                <ListCard doctorObj={doctorObj} />
+                <ListCard key={doctorObj.id} doctorObj={doctorObj} />
               ))}
             </SimpleGrid>
           )}
@@ -279,7 +279,7 @@ const ListingPage = () => {
           {!loading && (
             <Flex>
               {pageNumbers.map((pageNo) => (
-                <PaginationButton setCurrPage={setCurrPage} pageNo={pageNo} />
+                <PaginationButton key={pageNo} setCurrPage={setCurrPage} pageNo={pageNo} />
               ))}
             </Flex>
           )}

@@ -1,12 +1,25 @@
 import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
 import React from "react";
-import { StarIcon, CopyIcon, PhoneIcon, } from "@chakra-ui/icons";
+import { StarIcon, CopyIcon, PhoneIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { setDoctorData } from "../redux/docterSlice";
+import { useNavigate } from "react-router";
 
-export const ListCard = React.memo(({ doctorObj }) => {
+export const ListCard = ({ doctorObj }) => {
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
   const [isSmallerScreen] = useMediaQuery("(max-width: 650px)");
-  const availableDaysArr = doctorObj.available? doctorObj.available : doctorObj.availability;
-  
+  const availableDaysArr = doctorObj.available
+    ? doctorObj.available
+    : doctorObj.availability;
+ 
+
+  const handleBookAppointment=(doctorObj)=>{
+      dispatch(setDoctorData(doctorObj))
+      navigate("/appointment")
+      // console.log(">>>>>>>>>>>",doctorObj);
+    }
   return (
     <Flex
       mb={8}
@@ -15,10 +28,9 @@ export const ListCard = React.memo(({ doctorObj }) => {
       flexDir={isSmallerScreen ? "row" : "column"}
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
-      borderRadius="10px"
     >
       <Flex w="100%" my={10}>
-        <Flex w="40%" justify="center" align="center" >
+        <Flex w="40%" justify="center" align="center">
           <Image
             boxSize={isSmallerScreen ? "100px" : "200px"}
             borderRadius="50%"
@@ -27,7 +39,7 @@ export const ListCard = React.memo(({ doctorObj }) => {
             objectFit="cover"
           />
         </Flex>
-        <Flex  w="60%" flexDirection="column" gap={2} >
+        <Flex w="60%" flexDirection="column" gap={2}>
           <Heading as="h2" fontSize="20px" letterSpacing={1} color="black">
             {doctorObj.name}
           </Heading>
@@ -41,7 +53,7 @@ export const ListCard = React.memo(({ doctorObj }) => {
           <Flex>
             <Text>Available Days: </Text>
             {availableDaysArr.map((day) => (
-              <Text>{day}, </Text>
+              <Text >{day}, </Text>
             ))}
           </Flex>
           <Text>
@@ -56,36 +68,34 @@ export const ListCard = React.memo(({ doctorObj }) => {
 
           <Flex>
             <Button
-              color="#fafaf1"
+              color="white"
               bg="#658a71"
               py="10px"
-              border='2px solid #2f4e44'
               px={2}
               mt={5}
               mr={5}
               borderRadius={5}
               letterSpacing={1}
-              fontSize={18}
+              fontSize={20}
               _hover={{
-                bg: "#fafaf1",
-                color: "#658a71",
+                bg: "#2f4e44",
               }}
+              onClick={() => handleBookAppointment(doctorObj)}
             >
               Book An Appointment
             </Button>
             <Button
-              color="#658a71"
-              bg="#fafaf1"
-              border="2px solid #658a71"
+              color="#2f4e44"
+              border="1px solid #658a71"
               py="10px"
               px={2}
               mt={5}
               borderRadius={5}
               letterSpacing={1}
-              fontSize={18}
+              fontSize={20}
               _hover={{
                 bg: "#658a71",
-                color:"#fafaf1",
+                color: "white",
               }}
             >
               Details
@@ -95,4 +105,6 @@ export const ListCard = React.memo(({ doctorObj }) => {
       </Flex>
     </Flex>
   );
-});
+};
+
+// export default React.memo(ListCard);
