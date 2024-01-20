@@ -16,7 +16,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { authLinLout } from "../../redux/authSlice";
 import { Link } from "react-router-dom";
 
-
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const auth = useSelector((state) => state.auth.auth);
@@ -68,9 +67,9 @@ const Navbar = () => {
           color="#2f4e44"
         >
           <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
           <Link to="/aboutus">About us</Link>
-          {/* <Link to="appointment">Appointment</Link> */}
+          <Link to="/services">Services</Link>
+          <Link to="appointment">Appointment</Link>
 
           {auth ? (
             <>
