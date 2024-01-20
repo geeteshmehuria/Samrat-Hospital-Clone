@@ -79,6 +79,7 @@ const Responsive = () => {
       <Slider {...settings}>
         {hospitalDepartments.map((item) => (
           <Box
+            border="4px solid rgba(0, 0, 0, 0.5)"
             p="2"
             key={item.id}
             bg="#fafaf1"
@@ -88,22 +89,23 @@ const Responsive = () => {
             mb={5}
             h="350px"
             display="flex"
+            gap="10px"
             flexDirection="column"
           >
             <Image
               mt="10"
               borderRadius="50%"
-              alignSelf="center" // Align the image in the center
-              w="100px" // Increase the width
-              h="100px" // Increase the height
-              ml={{ base: "25%", md: "35%" }}
+              alignSelf="center"
+              w={{ base: "50px", md: "100px" }}
+              h={{ base: "50px", md: "100px" }}
+              ml={{ base: "36%", md: "35%" }}
               src={item.image}
               alt={item.name}
             />
             <Text color="#2f4e44" fontSize="2xl" fontWeight="bold" mb={2}>
               {item.name}
             </Text>
-            <Text color="#2f4e44" fontSize="md">
+            <Text color="#2f4e44" fontSize={{ base: "sm", md: "md" }}>
               {item.description}
             </Text>
           </Box>

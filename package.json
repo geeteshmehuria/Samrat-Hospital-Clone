@@ -30,7 +30,7 @@
     "react-router-dom": "^6.21.2",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.8",
-    "react-toastify": "^10.0.1",
+    "react-toastify": "^10.0.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5"
   },

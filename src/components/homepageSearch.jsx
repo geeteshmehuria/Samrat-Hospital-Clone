@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from "react";
-import { pediatricUrl, cardiologistsUrl, dentistsUrl } from "../assets/url";
+import React, { useState } from "react";
 import {
   Button,
   Box,
@@ -9,52 +8,17 @@ import {
   Flex,
   Text,
 } from "@chakra-ui/react";
-import axios from "axios";
 
-function SearchFuntionality({
-  setLoading,
-  setTotalPages,
-  setCurrData,
-  currPage,
-}) {
+import { useNavigate } from "react-router";
+
+function SearchFuntionalityHome() {
   let [doctorName, setDoctorName] = useState("");
   let [speciality, setSpeciality] = useState("");
 
-  const findThisSpecialityDoctor = (speciality) => {
-    setLoading(true);
-    let url = "";
-    if (speciality === "Pediatric") url = pediatricUrl;
-    else if (speciality === "Cardiologist") url = cardiologistsUrl;
-    else if (speciality === "Dentist") url = dentistsUrl;
-    axios.get(`${url}?_page=${currPage}&_limit=3`).then((res) => {
-      console.log(res.data);
-      console.log(`res   `, res);
-      setTotalPages(Math.ceil(16 / 3));
-      setCurrData(res.data);
-      setLoading(false);
-    });
+  const navigate = useNavigate();
+  const redirectToListingPage = () => {
+    navigate("/services", { state: { prop1: doctorName, prop2: speciality } });
   };
-
-  const handleInputSearch = useCallback(() => {
-    setLoading(true);
-    let url = "";
-    if (speciality === "Pediatric") url = pediatricUrl;
-    else if (speciality === "Cardiologist") url = cardiologistsUrl;
-    else if (speciality === "Dentist") url = dentistsUrl;
-
-    if (doctorName !== "") {
-      setTotalPages(1);
-      axios
-        .get(`${url}?name=${doctorName}`)
-        .then((res) => {
-          setLoading(false);
-          console.log(res);
-          setCurrData(res.data);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [doctorName, speciality]);
-
   return (
     <Box
       w="80%"
@@ -62,6 +26,7 @@ function SearchFuntionality({
       borderRadius="10px"
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       bg="white"
+      h="40"
     >
       <SimpleGrid
         columns={4}
@@ -175,7 +140,7 @@ function SearchFuntionality({
             bg: "#fafaf1",
             color: "#658a71",
           }}
-          onClick={handleInputSearch}
+          onClick={redirectToListingPage}
           py={"25px"}
           borderRadius={10}
           letterSpacing={1}
@@ -188,4 +153,4 @@ function SearchFuntionality({
   );
 }
 
-export default SearchFuntionality;
+export default SearchFuntionalityHome;
