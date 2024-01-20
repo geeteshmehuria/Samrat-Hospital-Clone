@@ -14,7 +14,7 @@ import { StarIcon } from "@chakra-ui/icons";
 const Review = ({ review }) => {
   const { email, review: content } = review; // Destructuring to get email and review text.
   return (
-    <VStack align="stretch" spacing={4}>
+    <>
       <HStack justifyContent="space-between">
         <HStack spacing={4}>
           <Avatar
@@ -37,7 +37,7 @@ const Review = ({ review }) => {
         </Box>
       </HStack>
       <Divider />
-    </VStack>
+    </>
   );
 };
 
@@ -45,7 +45,7 @@ const ReviewSection = ({ reviews }) => {
   const bg = useColorModeValue("white", "gray.800");
 
   return (
-    <>
+    <Box bg={bg} p={6} boxShadow="lg" borderRadius="lg" my={4}>
       <Text fontSize="2xl" mb={4} fontWeight="bold">
         Doctor Review
       </Text>
@@ -54,7 +54,7 @@ const ReviewSection = ({ reviews }) => {
           <Review key={index} review={review} />
         ))}
       </Stack>
-    </>
+    </Box>
   );
 };
 

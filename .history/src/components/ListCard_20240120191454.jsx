@@ -7,18 +7,19 @@ import { setDoctorData } from "../redux/docterSlice";
 import { useNavigate } from "react-router";
 
 export const ListCard = ({ doctorObj }) => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch=useDispatch()Å
+  const navigate=useNavigate()
   const [isSmallerScreen] = useMediaQuery("(max-width: 650px)");
   const availableDaysArr = doctorObj.available
     ? doctorObj.available
     : doctorObj.availability;
+ 
 
-  const handleBookAppointment = (doctorObj) => {
-    dispatch(setDoctorData(doctorObj));
-    navigate("/appointment");
-    // console.log(">>>>>>>>>>>",doctorObj);
-  };
+  const handleBookAppointment=(doctorObj)=>{
+      dispatch(setDoctorData(doctorObj))
+      navigate("/appointment")
+      // console.log(">>>>>>>>>>>",doctorObj);
+    }
   return (
     <Flex
       mb={8}
@@ -52,7 +53,7 @@ export const ListCard = ({ doctorObj }) => {
           <Flex>
             <Text>Available Days: </Text>
             {availableDaysArr.map((day) => (
-              <Text>{day}, </Text>
+              <Text >{day}, </Text>
             ))}
           </Flex>
           <Text>

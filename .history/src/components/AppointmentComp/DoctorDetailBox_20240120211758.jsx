@@ -69,7 +69,7 @@ const DoctorDetailBox = ({ doctor }) => {
         title: "Appointment booked.",
         description: "Your appointment has been successfully booked!",
         status: "success",
-        duration: 3000,
+        duration: 2000,
         isClosable: true,
       });
       setTimeout(() => navigate("/"), 0);

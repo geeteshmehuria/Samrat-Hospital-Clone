@@ -69,16 +69,16 @@ const DoctorDetailBox = ({ doctor }) => {
         title: "Appointment booked.",
         description: "Your appointment has been successfully booked!",
         status: "success",
-        duration: 3000,
+        duration: 2000,
         isClosable: true,
       });
-      setTimeout(() => navigate("/"), 0);
+      setTimeout(() => navigate("/"), 5000);
     } else {
       toast({
         title: "Invalid Payment Details",
         description: "Please check your card details.",
         status: "error",
-        duration: 5000,
+        duration: 0,
         isClosable: true,
       });
     }

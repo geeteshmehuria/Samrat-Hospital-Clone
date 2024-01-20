@@ -46,7 +46,7 @@ const DoctorDetailBox = ({ doctor }) => {
       setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
     } else if (
       e.target.id === "expiry" &&
-      /^(0[1-9]|1[0-2]|0|1)?(\/\d{0,2})?$/.test(e.target.value)
+      /^\d{0,2}\/\d{0,2}$/.test(e.target.value)
     ) {
       setPaymentDetails({ ...paymentDetails, [e.target.id]: e.target.value });
     } else if (e.target.id === "cvc" && /^\d{0,3}$/.test(e.target.value)) {
@@ -69,10 +69,10 @@ const DoctorDetailBox = ({ doctor }) => {
         title: "Appointment booked.",
         description: "Your appointment has been successfully booked!",
         status: "success",
-        duration: 3000,
+        duration: 5000,
         isClosable: true,
       });
-      setTimeout(() => navigate("/"), 0);
+      setTimeout(() => navigate("/"), 5000);
     } else {
       toast({
         title: "Invalid Payment Details",
