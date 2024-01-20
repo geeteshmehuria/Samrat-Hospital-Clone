@@ -1,13 +1,10 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import { Button } from "@chakra-ui/react";
 
-const PaginationButton = React.memo(({ setCurrPage, pageNo }) => {
-  const handlePageChange = useCallback(
-    (pageNo) => {
-      setCurrPage(pageNo);
-    },
-    [setCurrPage]
-  );
+const PaginationButton = React.memo(({ setCurrPage, isSelected, pageNo}) => {
+  const handlePageChange = (pageNo) => {
+    setCurrPage(pageNo);
+  };
 
   return (
     <Button
@@ -18,7 +15,7 @@ const PaginationButton = React.memo(({ setCurrPage, pageNo }) => {
       fontSize={20}
       color="white"
       borderRadius="50%"
-      bg="#658a71"
+      bg={isSelected ? "#2f4e44" : "#658a71"}
       _hover={{ bg: "#2f4e44" }}
       onClick={() => handlePageChange(pageNo)}
     >

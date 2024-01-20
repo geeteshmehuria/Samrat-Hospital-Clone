@@ -36,9 +36,9 @@ export const ListCard = React.memo(({ doctorObj }) => {
           </Text>
           <Text>
             <StarIcon color="green" mr={2} />
-            {doctorObj.rating}/5
+            {doctorObj.rating} / 5
           </Text>
-          <Flex>
+          <Flex gap={2}>
             <Text>Available Days: </Text>
             {availableDaysArr.map((day) => (
               <Text>{day}, </Text>
