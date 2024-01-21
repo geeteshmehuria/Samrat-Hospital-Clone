@@ -14,6 +14,7 @@ import { useToast } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { authLinLout, setName } from "../redux/authSlice";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 // import { useHistory} from "react-router-dom";
 // import { Navigate } from "react-router";
 
@@ -80,7 +81,7 @@ const Login = () => {
           AccountCreateToast();
           dispatch(authLinLout(true));
           // history.push("/");
-            navigate("/")
+          navigate("/");
           break;
         }
       }
@@ -149,16 +150,13 @@ const Login = () => {
           >
             Login
           </Button>
-          {logintry && !auth ? (
-            <h1 style={{ color: "red" }}>
-              Credentials Not Found. Please{" "}
-              <a href="/signup" style={{ color: "blue" }}>
-                Sign Up
-              </a>
-            </h1>
-          ) : (
-            <></>
-          )}
+
+          <h1 style={{ color: "#658a71",marginTop:'0.5rem',textAlign:"right" } }>
+          Don't have an account? {" "}
+            <Link to="/signup" style={{ color: "#2f4e44" ,fontWeight:"600"}}>
+              Sign Up
+            </Link>
+          </h1>
         </FormControl>
       </Box>
     </div>
