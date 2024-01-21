@@ -10,6 +10,7 @@ import {
   DrawerBody,
   IconButton,
   Image,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -140,7 +141,7 @@ const Navbar = () => {
               <Link
                 className="hover:bg-primeGreen-600 block py-2"
                 color="#2f4e44"
-                href="/"
+                to="/"
                 onClick={onClose}
               >
                 Home
@@ -148,7 +149,7 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="/aboutus"
+                to="/aboutus"
                 onClick={onClose}
               >
                 About us
@@ -156,7 +157,7 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="/services"
+                to="/services"
                 onClick={onClose}
               >
                 Services
@@ -164,29 +165,52 @@ const Navbar = () => {
               <Link
                 className="block py-2"
                 color="#2f4e44"
-                href="/appointment"
+                to="/appointment"
                 onClick={onClose}
               >
                 Appointment
               </Link>
             </Box>
-
-            <Link
-              className="font-semibold block mt-4 hover:bg-primeGreen-600 py-2"
-              color="#2f4e44"
-              href="#"
-              onClick={onClose}
-            >
-              Sign Up
-            </Link>
-            <Link
-              className="font-semibold block mt-2 hover:bg-primeGreen-600 py-2"
-              color="#2f4e44"
-              href="#"
-              onClick={onClose}
-            >
-              Login
-            </Link>
+            {auth ? (
+              <>
+                <Text className="block py-2">
+                  Welcome{" "}
+                  <Text display={"inline"} color={"#2f4e44"} fontWeight={"600"}>
+                    {name}
+                  </Text>
+                </Text>
+                <Link
+                  className="font-semibold block  hover:bg-primeGreen-600 py-2"
+                  color="#2f4e44"
+                  to="/signup"
+                  onClick={() => {
+                    onClose;
+                    handleLogOut;
+                  }}
+                >
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  className="font-semibold block mt-4 hover:bg-primeGreen-600 py-2"
+                  color="#2f4e44"
+                  to="/signup"
+                  onClick={onClose}
+                >
+                  Sign Up
+                </Link>
+                <Link
+                  className="font-semibold block mt-2 hover:bg-primeGreen-600 py-2"
+                  color="#2f4e44"
+                  to="/login"
+                  onClick={onClose}
+                >
+                  Login
+                </Link>
+              </>
+            )}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
