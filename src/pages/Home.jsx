@@ -8,6 +8,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
+import ChatWithUs from "../components/ChatModal";
 
 import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
@@ -120,22 +121,7 @@ const Home = () => {
               >
                 Find doctor
               </Button>
-              <Button
-                className="n-bodyButton-2 font-semibold"
-                _hover={{
-                  bg: "#658a71",
-                  color: "#fafaf1",
-                  borderColor: "#658a71",
-                }}
-                size="md"
-                height="38px"
-                width="120px"
-                border="2px"
-                variant="outline"
-                borderColor="#fafaf1"
-              >
-                Let's talk
-              </Button>
+              <ChatWithUs />
             </Box>
           </Box>
         </Box>
