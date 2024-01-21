@@ -14,16 +14,17 @@ import { StarIcon } from "@chakra-ui/icons";
 const Review = ({ review }) => {
   const { email, review: content } = review; // Destructuring to get email and review text.
   return (
-    <VStack align="stretch" spacing={4}>
-      <HStack justifyContent="space-between">
+    <VStack align="stretch" spacing={4} > 
+      <HStack justifyContent="space-between" spacing={{ base: 2, md: 4 }}>
         <HStack spacing={4}>
           <Avatar
+          size={{ base: "sm", md: "md" }}
             name={email}
             src={`https://ui-avatars.com/api/?name=${email}&background=random&color=fff`}
           />
           <VStack align="start">
-            <Text fontWeight="medium">{email}</Text>
-            <Text color="gray.500" fontSize="sm">
+            <Text fontWeight="medium" fontSize={{ base: "md", md: "lg" }}>{email}</Text>
+            <Text color={"#658a71"} fontWeight={"400"}  fontSize={{ base: "sm", md: "md" }}>
               {content}
             </Text>
           </VStack>
@@ -32,7 +33,7 @@ const Review = ({ review }) => {
           {Array(5)
             .fill("")
             .map((_, i) => (
-              <StarIcon key={i} color={i < 5 ? "yellow.400" : "gray.300"} />
+              <StarIcon key={i} color={i < 5 ? "yellow.400" : "gray.300"} boxSize={{ base: 4, md: 5 }}/>
             ))}
         </Box>
       </HStack>
