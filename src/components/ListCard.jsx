@@ -1,10 +1,16 @@
-import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { Flex, Image, Heading, Text, Button, extendTheme } from "@chakra-ui/react";
 import React from "react";
 import { StarIcon, CopyIcon, PhoneIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { setDoctorData } from "../redux/docterSlice";
 import { useNavigate } from "react-router";
+
+const breakpoints = {
+  sm: "320px",
+  lg: "650px",
+};
+const theme = extendTheme({ breakpoints });
 
 export const ListCard = ({ doctorObj }) => {
   const dispatch = useDispatch();
@@ -21,15 +27,16 @@ export const ListCard = ({ doctorObj }) => {
   };
   return (
     <Flex
-      mb={8}
+      mb={6}
       w="100%"
       bg="white"
-      flexDir={isSmallerScreen ? "row" : "column"}
+      borderRadius="10px"
+      
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
     >
-      <Flex w="100%" my={10}>
-        <Flex w="40%" justify="center" align="center">
+      <Flex w="100%" my={{base: "15px", md: "40px"}} flexDir={{base: "column", md: "row"}}>
+        <Flex w={{base: "100%", md:"40%"}} justify="center" align="center">
           <Image
             boxSize={isSmallerScreen ? "100px" : "200px"}
             borderRadius="50%"
@@ -38,7 +45,7 @@ export const ListCard = ({ doctorObj }) => {
             objectFit="cover"
           />
         </Flex>
-        <Flex w="60%" flexDirection="column" gap={2}>
+        <Flex w={{base: "100%", md:"60%"}} flexDirection="column" align={{base: "center", md: "flex-start"}} gap={{base: "5px", md:"10px"}}>
           <Heading as="h2" fontSize="20px" letterSpacing={1} color="black">
             {doctorObj.name}
           </Heading>
@@ -47,9 +54,9 @@ export const ListCard = ({ doctorObj }) => {
           </Text>
           <Text>
             <StarIcon color="green" mr={2} />
-            {doctorObj.rating}/5
+            {doctorObj.rating} / 5
           </Text>
-          <Flex>
+          <Flex gap={2}>
             <Text>Available Days: </Text>
             {availableDaysArr.map((day) => (
               <Text>{day}, </Text>
@@ -73,28 +80,30 @@ export const ListCard = ({ doctorObj }) => {
               px={2}
               mt={5}
               mr={5}
+              border="2px solid #2f4e44"
               borderRadius={5}
               letterSpacing={1}
               fontSize={20}
               _hover={{
-                bg: "#2f4e44",
+                bg: "#fafaf1", color: "#658a71"
               }}
               onClick={() => handleBookAppointment(doctorObj)}
             >
               Book An Appointment
             </Button>
             <Button
-              color="#2f4e44"
-              border="1px solid #658a71"
+              color="#658a71"
+              border="2px solid #2f4e44"
               py="10px"
               px={2}
+              bg={"#fafaf1"}
               mt={5}
               borderRadius={5}
               letterSpacing={1}
               fontSize={20}
               _hover={{
                 bg: "#658a71",
-                color: "white",
+                color: "#fafaf1",
               }}
             >
               Details

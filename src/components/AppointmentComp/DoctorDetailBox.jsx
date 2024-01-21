@@ -19,6 +19,8 @@ import {
   FormControl,
   FormLabel,
   Input,
+  HStack,
+  Flex,
 } from "@chakra-ui/react";
 import { PhoneIcon, CheckCircleIcon, StarIcon } from "@chakra-ui/icons";
 import AppointmentBookingForm from "./AppointmentBookingForm";
@@ -87,7 +89,7 @@ const DoctorDetailBox = ({ doctor }) => {
   return (
     <>
       <Box
-        w={["95%", "80%"]}
+        maxW={{ base: "100%", md: "95%", lg: "80%" }}
         mx="auto"
         mt={10}
         bg={bg}
@@ -96,51 +98,108 @@ const DoctorDetailBox = ({ doctor }) => {
         p={5}
         borderRadius="lg"
       >
-        <Stack direction={["column", "row"]} spacing={4} align="start">
-          <Image
-            borderRadius="full"
-            boxSize="150px"
-            src={doctor.image}
-            alt={`Image of ${doctor.name}`}
-          />
-          <VStack align="left" spacing={1} flex={1}>
-            <Text fontSize="2xl" fontWeight="bold">
+        <Stack
+          direction={["column", "row"]}
+          spacing={5}
+          align="start"
+          W={"100%"}
+        >
+          <Flex>
+            <Image
+              objectFit="cover"
+              borderRadius="full"
+              boxSize={{ base: "200px", md: "150px" }}
+              src={doctor.image}
+              alt={`Image of ${doctor.name}`}
+            />
+          </Flex>
+          <VStack align="left" spacing={1}>
+            <Text
+              color={"#2f4e44"}
+              fontSize={{ base: "xl", md: "2xl" }}
+              fontWeight="bold"
+            >
               {doctor.name}
             </Text>
-            <Text fontSize="lg">{doctor.education}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
-              <PhoneIcon />
-              <Text fontSize="md">{`Call: ${doctor.contact}`}</Text>
-              <CheckCircleIcon color="green.500" w={5} h={5} />
-              <Text fontSize="md">Verified Profile</Text>
-            </Stack>
+            <Text
+              color={"#658a71"}
+              fontWeight={"600"}
+              fontSize={{ base: "md", md: "lg" }}
+              mb={{ base: 3 }}
+            >
+              {doctor.education}
+            </Text>
+            <Flex
+              direction={{ base: "column", md: "row" }}
+              align={{ base: "start", md: "center" }}
+              spacing={{ base: 2, md: 4 }}
+            >
+              <Flex align={"center"} mb={{ base: 2 }}>
+                <PhoneIcon color={"#2f4e44"} />
+                <Text
+                  color={"#658a71"}
+                  fontWeight={"600"}
+                  fontSize="md"
+                  mr={3}
+                  ml={2}
+                >{`Call: ${doctor.contact}`}</Text>
+              </Flex>
+              <Flex align={"center"}>
+                <CheckCircleIcon color="green.500" w={5} h={5} />
+                <Text color={"#658a71"} fontWeight={"600"} fontSize="md" ml={2}>
+                  Verified Profile
+                </Text>
+              </Flex>
+            </Flex>
           </VStack>
-          <VStack align="end" spacing={1}>
-            <Text fontSize="lg">{`Fees: ₹${doctor.fee}`}</Text>
-            <Stack direction={["column", "row"]} spacing={4} align="center">
-              <StarIcon color="yellow.400" />
-              <Text fontSize="md">{`${doctor.rating} / 5`}</Text>
-              <Text fontSize="sm">{`(${doctor.reviews.length} reviews)`}</Text>
-            </Stack>
+          <VStack
+            align={{ base: "start", lg: "end" }}
+            spacing={2}
+            ml={{ base: 0, lg: "auto" }}
+          >
+            <Text
+              color={"#2f4e44"}
+              fontWeight={"600"}
+              fontSize={{ base: "md", md: "lg" }}
+            >{`Fees: ₹${doctor.fee}`}</Text>
+
+            <Flex alignItems={"center"} gap={2}>
+              <StarIcon color="yellow.400" boxSize={{ base: 4, md: 5 }} />
+              <Text
+                color={"#658a71"}
+                fontWeight={"600"}
+                fontSize={{ base: "md", md: "lg" }}
+              >{`${doctor.rating} / 5`}</Text>
+
+              <Text
+                color={"#658a71"}
+                fontWeight={"600"}
+                fontSize="sm"
+              >{`(${doctor.reviews.length} reviews)`}</Text>
+            </Flex>
           </VStack>
         </Stack>
 
-        <Box p={4}>
-          <Text fontWeight="bold" fontSize="md">
+        <Box p={{ base: "0", lg: 4 }} pt={{ base: 2 }} pb={{ base: 2 }} mt={4}>
+          <Text color={"#2f4e44"} fontWeight="bold" fontSize="md">
             About Doctor:
           </Text>
-          <Text fontSize="md">{doctor["about-doctor"]}</Text>
+          <Text color={"#658a71"} fontWeight={"600"} fontSize="md">
+            {doctor["about-doctor"]}
+          </Text>
         </Box>
 
         {!isBooking && (
           <Button
             className="font-semibold"
+            color={"#2f4e44"}
             _hover={{ bg: "#658a71", color: "#fafaf1" }}
-            size="md"
+            size={{ base: "sm", md: "md" }}
             border="2px"
             variant="outline"
             borderColor="#2f4e44"
             onClick={handleBookingClick}
+            ml={{ lg: 4 }}
           >
             Book An Appointment
           </Button>
@@ -166,7 +225,17 @@ const DoctorDetailBox = ({ doctor }) => {
         </Box>
       )}
 
-      <Box w={["95%", "80%"]} mx="auto" mt={4} bg={bg} color={color} p={5}>
+      <Box
+        w={["95%", "80%"]}
+        mx="auto"
+        // mt={4}
+        bg={bg}
+        color={"#2f4e44"}
+        marginTop={"1rem"}
+        marginBottom={"2rem"}
+        boxShadow="lg"
+        p={5}
+      >
         <ReviewSection reviews={doctor.reviews} />
       </Box>
 

@@ -10,29 +10,27 @@ import {
   Text,
 } from "@chakra-ui/react";
 import axios from "axios";
+// import { extendTheme } from "@chakra-ui/react";
 
-function SearchFuntionality({
-  setLoading,
-  setTotalPages,
-  setCurrData,
-  currPage,
-}) {
+// 2. Update the breakpoints as key-value pairs
+// const breakpoints = {
+//   sm: "320px",
+//   lg: "650px",
+// };
+
+// 3. Extend the theme
+// const theme = extendTheme({ breakpoints });
+
+const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotalPages, setCurrData, setRequestUrl, setCurrPage, currSpeciality}) => {
   let [doctorName, setDoctorName] = useState("");
   let [speciality, setSpeciality] = useState("");
 
   const findThisSpecialityDoctor = (speciality) => {
-    setLoading(true);
-    let url = "";
-    if (speciality === "Pediatric") url = pediatricUrl;
-    else if (speciality === "Cardiologist") url = cardiologistsUrl;
-    else if (speciality === "Dentist") url = dentistsUrl;
-    axios.get(`${url}?_page=${currPage}&_limit=3`).then((res) => {
-      console.log(res.data);
-      console.log(`res   `, res);
-      setTotalPages(Math.ceil(16 / 3));
-      setCurrData(res.data);
-      setLoading(false);
-    });
+    setCurrSpeciality(speciality);
+    if (speciality === "Pediatric") setRequestUrl(`${pediatricUrl}?_limit=4&`);
+    else if (speciality === "Cardiologist") setRequestUrl(`${cardiologistsUrl}?_limit=4&`);
+    else if (speciality === "Dentist") setRequestUrl(`${dentistsUrl}?_limit=4&`);
+    setCurrPage(1);
   };
 
   const handleInputSearch = useCallback(() => {
@@ -57,14 +55,15 @@ function SearchFuntionality({
 
   return (
     <Box
-      w="80%"
+      w={{base: "90%", md: "80%"}}
       m="auto"
+      h={"fit-content"}
       borderRadius="10px"
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       bg="white"
     >
       <SimpleGrid
-        columns={4}
+        columns={3}
         minChildWidth={"100px"}
         m={"auto"}
         mt={"30px"}
@@ -72,11 +71,11 @@ function SearchFuntionality({
         pr={10}
       >
         <Button
-          color="#658a71"
+          color={currSpeciality==="Pediatric" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -85,11 +84,11 @@ function SearchFuntionality({
           Pediatric
         </Button>
         <Button
-          color="#658a71"
+          color={currSpeciality==="Dentist" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -98,11 +97,11 @@ function SearchFuntionality({
           Dentist
         </Button>
         <Button
-          color="#658a71"
+          color={currSpeciality==="Cardiologist" ? "#2f4e44" : "#658a71"}
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -113,12 +112,13 @@ function SearchFuntionality({
       </SimpleGrid>
 
       <Flex
-        minChildWidth={"180px"}
+        flexDirection={{base: "column", sm: "row", md: "row"}}
         w="100%"
-        px={20}
-        gap={8}
+        px={{base: "10px", md: "40px"}}
+        gap={{base: "10px", sm: "10px", md: "20px"}}
         py={5}
         align="center"
+        justify="center"
         className="searchInputGrid"
       >
         <Flex
@@ -128,7 +128,7 @@ function SearchFuntionality({
           flexDir="column"
           px="10px"
           py={1}
-          w="40%"
+          w={{base: "90%", md: "40%"}}
         >
           <Text color="#2f4e44" fontSize="15px">
             Choose Speciality
@@ -154,7 +154,7 @@ function SearchFuntionality({
           flexDir="column"
           px="10px"
           py={1}
-          w="40%"
+          w={{base: "90%", md: "40%"}}
         >
           <Text color="#2f4e44" fontSize="15px">
             Search By Name
@@ -176,7 +176,8 @@ function SearchFuntionality({
             color: "#658a71",
           }}
           onClick={handleInputSearch}
-          py={"25px"}
+          w={{base: "90%", md: "20%"}}
+          py={{base: "15px", md:"25px"}}
           borderRadius={10}
           letterSpacing={1}
           fontSize={20}
@@ -186,6 +187,6 @@ function SearchFuntionality({
       </Flex>
     </Box>
   );
-}
+})
 
 export default SearchFuntionality;

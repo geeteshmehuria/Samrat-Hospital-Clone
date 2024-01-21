@@ -110,16 +110,16 @@ const Sign = () => {
       setPasswordChange(true);
     }
   };
-
+  // style={{ padding: "50px", background: "#fafaf1" }}
   return (
-    <div style={{ padding: "50px", background: "#fafaf1" }}>
+    <Box mt={{ base: "2rem" }} mb={{ base: "2rem" }}>
       <Box
         margin={"auto"}
         bg="white"
         color="#2f4e44"
         boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
-        padding={"30px"}
-        width={{ base: "90%", sm: "60%", md: "60%", lg: "50%", xl: "40%" }}
+        padding={{ base: "20px", lg: "30px" }}
+        width={{ base: "95%", sm: "95%", md: "60%", lg: "40%" }}
         borderRadius={"10px"}
       >
         <Text textAlign={"center"} fontSize={"1.7rem"}>
@@ -241,7 +241,7 @@ const Sign = () => {
           </FormControl>
         </form>
       </Box>
-    </div>
+    </Box>
   );
 };
 
