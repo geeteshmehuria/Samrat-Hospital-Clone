@@ -4,42 +4,54 @@ import AppointmentVideo from "../assets/AppointmentVideo.mp4";
 import { Box, SimpleGrid, Flex, Heading, Text } from "@chakra-ui/react";
 import { ListCard } from "../components/ListCard";
 import Infinite_Carousel from "../components/Infinite_Carousel";
-import { pediatricUrl } from "../assets/url";
+import { pediatricUrl, cardiologistsUrl, dentistsUrl } from "../assets/url";
 import axios from "axios";
 import PaginationButton from "../components/PaginationButton";
 import SearchFuntionality from "../components/SearchFuntionality";
 import FilterFunctionality from "../components/FilterFunctionality";
-
-import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { setDocDataFromHome } from "../redux/homeSlice";
+import { useDispatch } from "react-redux";
 
 const ListingPage = () => {
-  const location = useLocation();
-  const prop1 = location.state?.prop1;
-  const prop2 = location.state?.prop2;
-  console.log(prop1, prop2, `listingpage`);
-
+  const doctorData = useSelector((state) => state.homeDoc);
   let [currPage, setCurrPage] = useState(1);
   let [totalPages, setTotalPages] = useState(0);
   let [currPageData, setCurrData] = useState([]);
   let [loading, setLoading] = useState(false);
   let [currSpeciality, setCurrSpeciality] = useState("Pediatric");
   const [requestUrl, setRequestUrl] = useState(`${pediatricUrl}?_limit=4&`);
-  // const [selectedDays, setSelectedDays] = useState([]);
-  const doctorsomthing = useSelector((state) => state.homeDoc);
-  console.log(doctorsomthing);
+  const dispatch = useDispatch();
+  
   useEffect(() => {
-    // let isMounted = true;
     setLoading(true);
-    axios.get(`${requestUrl}_page=${currPage}`).then((res) => {
-      setTotalPages(Math.ceil(16 / 4));
-      setCurrData(res.data);
-      setLoading(false);
-    });
-    // return () => {
-    //   isMounted = false;
-    // };
-  }, [currPage, requestUrl]);
+    if (doctorData.docName !== "" && doctorData.docSpecialization !== "") {
+      let url = "";
+      if (doctorData.docSpecialization === "Pediatric")
+        url = `${pediatricUrl}?name=${doctorData.docName}`;
+      else if (doctorData.docSpecialization === "Cardiologist")
+        url = `${cardiologistsUrl}?name=${doctorData.docName}`;
+      else if (doctorData.docSpecialization === "Dentist")
+        url = `${dentistsUrl}?name=${doctorData.docName}`;
+
+        axios.get(url).then((res) => {
+          setTotalPages(1);
+          setCurrData(res.data);
+          setLoading(false);
+        }).catch((err) => console.error(err));
+
+        const obj = { docSpecialization: "", docName: "" };
+    dispatch(setDocDataFromHome(obj));
+
+      console.log(doctorData);
+    } else {
+      axios.get(`${requestUrl}_page=${currPage}`).then((res) => {
+        setTotalPages(Math.ceil(16 / 4));
+        setCurrData(res.data);
+        setLoading(false);
+      });
+    }
+  }, [currPage, requestUrl, doctorData]);
 
   const pageNumbers = useMemo(() =>
     Array.from({ length: totalPages }, (_, index) => index + 1)
@@ -129,11 +141,12 @@ const ListingPage = () => {
 
           {!loading && (
             <Flex>
-              {pageNumbers.map((pageNo) => (
+              {pageNumbers.map((pageNo, index) => (
                 <PaginationButton
                   setCurrPage={setCurrPage}
                   isSelected={currPage === pageNo}
                   pageNo={pageNo}
+                  key={index}
                 />
               ))}
             </Flex>
