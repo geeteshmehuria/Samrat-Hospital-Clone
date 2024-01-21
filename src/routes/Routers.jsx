@@ -15,9 +15,9 @@ const Routers = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Sign />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/services" element={<ListingPage />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/appointment" element={<Appointment />} />
-          <Route path="/services" element={<ListingPage />} />
         </Route>
       </Routes>
     </>
