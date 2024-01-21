@@ -94,7 +94,6 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-            // If not authenticated, show signup and login buttons
             <>
               <Link to="/signup">
                 <Button
@@ -184,8 +183,8 @@ const Navbar = () => {
                   color="#2f4e44"
                   to="/signup"
                   onClick={() => {
-                    onClose;
-                    handleLogOut;
+                    handleLogOut();
+                    onClose();
                   }}
                 >
                   Logout

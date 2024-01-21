@@ -1,8 +1,9 @@
-import { Box, Container, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
 
 const AboutUs = () => {
   return (
-    <Box margin={"auto"}
+    <Box
+      margin={"auto"}
       bg="#fafaf1"
       width={{ base: "95%", sm: "100%", md: "60%", lg: "50%" }}
     >
@@ -15,7 +16,6 @@ const AboutUs = () => {
         bg="white"
         color="clack"
         borderRadius="0.6rem"
-      
       >
         <Heading
           as="h2"
@@ -26,6 +26,7 @@ const AboutUs = () => {
         >
           About Us
         </Heading>
+
         <Stack spacing={7} mt="1rem" mb="1rem">
           <Text textAlign="justify" fontSize="1.3rem">
             Welcome to Samrat Hospital, where compassionate care meets
