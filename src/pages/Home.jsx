@@ -285,7 +285,7 @@ const Home = () => {
               as="b"
               fontSize={{ base: "2xl", md: "4xl", lg: "6xl" }}
               color="#2f4e44"
-              ml={{ base: "51" }}
+              ml={{ base: "51",lg:"-1.9rem" }}
             >
               What Our Patients Say
             </Text>
@@ -293,7 +293,7 @@ const Home = () => {
               fontSize={{ base: "sm", md: "3xl", lg: "3xl" }}
               color="#2f4e44"
               mt={2}
-              ml="3"
+              ml={{base:"3",lg:"-1.9rem"}}
             >
               Here are some testimonials from our valued patients.
             </Text>
@@ -326,7 +326,7 @@ const Home = () => {
           <Text textAlign="center" as="b" fontSize="5xl" color="#2f4e44">
             Get In Touch
           </Text>
-          <Text textAlign="center" as="b" fontSize="3xl" color="#2f4e44">
+          <Text textAlign="center" as="b" fontSize="3xl" color="#2f4e44" mb={{base:"1rem"}}>
             Give Your Valuable Feedback
           </Text>
           <Input
