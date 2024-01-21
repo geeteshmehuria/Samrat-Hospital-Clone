@@ -12,36 +12,30 @@ import {
 import { useNavigate } from "react-router";
 
 function SearchFuntionalityHome() {
-  let [doctorName, setDoctorName] = useState("");
-  let [speciality, setSpeciality] = useState("");
-
+  const [doctorName, setDoctorName] = useState("");
+  const [speciality, setSpeciality] = useState("");
   const navigate = useNavigate();
+
   const redirectToListingPage = () => {
     navigate("/services", { state: { prop1: doctorName, prop2: speciality } });
   };
+
   return (
     <Box
-      w="80%"
+      w={{ base: "100%", md: "80%" }}
       m="auto"
       borderRadius="10px"
-      boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
+      boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
       bg="white"
-      h="40"
+      p={{ base: 4, md: 8 }}
     >
-      <SimpleGrid
-        columns={4}
-        minChildWidth={"100px"}
-        m={"auto"}
-        mt={"30px"}
-        w="50%"
-        pr={10}
-      >
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5} textAlign="center">
         <Button
           color="#658a71"
           variant="link"
-          fontSize="20px"
-          mx={30}
-          mt={5}
+          fontSize={{ base: "16px", md: "20px" }}
+          mx={2}
+          mt={2}
           _hover={{
             color: "#2f4e44",
           }}
@@ -52,9 +46,9 @@ function SearchFuntionalityHome() {
         <Button
           color="#658a71"
           variant="link"
-          fontSize="20px"
-          mx={30}
-          mt={5}
+          fontSize={{ base: "16px", md: "20px" }}
+          mx={2}
+          mt={2}
           _hover={{
             color: "#2f4e44",
           }}
@@ -65,9 +59,9 @@ function SearchFuntionalityHome() {
         <Button
           color="#658a71"
           variant="link"
-          fontSize="20px"
-          mx={30}
-          mt={5}
+          fontSize={{ base: "16px", md: "20px" }}
+          mx={2}
+          mt={2}
           _hover={{
             color: "#2f4e44",
           }}
@@ -78,30 +72,27 @@ function SearchFuntionalityHome() {
       </SimpleGrid>
 
       <Flex
-        minChildWidth={"180px"}
-        w="100%"
-        px={20}
-        gap={8}
-        py={5}
+        direction={{ base: "column", md: "row" }}
         align="center"
-        className="searchInputGrid"
+        justify="space-between"
+        mt={{ base: 4, md: 8 }}
       >
         <Flex
           border="1px solid #658a71"
           borderRadius={10}
-          justify="center"
-          flexDir="column"
-          px="10px"
+          direction="column"
+          px={2}
           py={1}
-          w="40%"
+          mb={{ base: 4, md: 0 }}
+          w={{ base: "100%", md: "40%" }}
         >
-          <Text color="#2f4e44" fontSize="15px">
+          <Text color="#2f4e44" fontSize={{ base: "14px", md: "15px" }} mb={1}>
             Choose Speciality
           </Text>
           <Select
             placeholder="Speciality"
-            focusBorderColor={"white"}
-            border={"none"}
+            focusBorderColor="white"
+            border="none"
             color="gray"
             onChange={(e) => setSpeciality(e.target.value)}
             size="sm"
@@ -115,19 +106,18 @@ function SearchFuntionalityHome() {
         <Flex
           border="1px solid #658a71"
           borderRadius={10}
-          justify="center"
-          flexDir="column"
-          px="10px"
+          direction="column"
+          px={2}
           py={1}
-          w="40%"
+          w={{ base: "100%", md: "40%" }}
         >
-          <Text color="#2f4e44" fontSize="15px">
+          <Text color="#2f4e44" fontSize={{ base: "14px", md: "15px" }} mb={1}>
             Search By Name
           </Text>
           <Input
             placeholder="Doctor Name"
-            focusBorderColor={"white"}
-            border={"none"}
+            focusBorderColor="white"
+            border="none"
             size="sm"
             onChange={(e) => setDoctorName(e.target.value)}
           />
@@ -141,10 +131,12 @@ function SearchFuntionalityHome() {
             color: "#658a71",
           }}
           onClick={redirectToListingPage}
-          py={"25px"}
+          py={{ base: "20px", md: "25px" }}
           borderRadius={10}
           letterSpacing={1}
-          fontSize={20}
+          fontSize={{ base: "16px", md: "20px" }}
+          mt={{ base: 4, md: 0 }}
+          w={{ base: "100%", md: "18%" }}
         >
           Search Doctor
         </Button>
