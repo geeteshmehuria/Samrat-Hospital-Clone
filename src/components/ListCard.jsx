@@ -1,10 +1,16 @@
-import { Flex, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { Flex, Image, Heading, Text, Button, extendTheme } from "@chakra-ui/react";
 import React from "react";
 import { StarIcon, CopyIcon, PhoneIcon } from "@chakra-ui/icons";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { setDoctorData } from "../redux/docterSlice";
 import { useNavigate } from "react-router";
+
+const breakpoints = {
+  sm: "320px",
+  lg: "650px",
+};
+const theme = extendTheme({ breakpoints });
 
 export const ListCard = ({ doctorObj }) => {
   const dispatch = useDispatch();
@@ -21,15 +27,16 @@ export const ListCard = ({ doctorObj }) => {
   };
   return (
     <Flex
-      mb={8}
+      mb={6}
       w="100%"
       bg="white"
-      flexDir={isSmallerScreen ? "row" : "column"}
+      borderRadius="10px"
+      
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       className="card"
     >
-      <Flex w="100%" my={10}>
-        <Flex w="40%" justify="center" align="center">
+      <Flex w="100%" my={{base: "15px", md: "40px"}} flexDir={{base: "column", md: "row"}}>
+        <Flex w={{base: "100%", md:"40%"}} justify="center" align="center">
           <Image
             boxSize={isSmallerScreen ? "100px" : "200px"}
             borderRadius="50%"
@@ -38,7 +45,7 @@ export const ListCard = ({ doctorObj }) => {
             objectFit="cover"
           />
         </Flex>
-        <Flex w="60%" flexDirection="column" gap={2}>
+        <Flex w={{base: "100%", md:"60%"}} flexDirection="column" align={{base: "center", md: "flex-start"}} gap={{base: "5px", md:"10px"}}>
           <Heading as="h2" fontSize="20px" letterSpacing={1} color="black">
             {doctorObj.name}
           </Heading>
