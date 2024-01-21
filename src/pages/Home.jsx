@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   Button,
@@ -8,7 +9,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-
+import ChatWithUs from "../components/ChatModal";
 import { Search2Icon, CheckCircleIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FaUserDoctor } from "react-icons/fa6";
 import HomePageCarousel from "../components/homePageCarousel";
@@ -120,7 +121,7 @@ const Home = () => {
               >
                 Find doctor
               </Button>
-              <Button
+              {/* <Button
                 className="n-bodyButton-2 font-semibold"
                 _hover={{
                   bg: "#658a71",
@@ -135,7 +136,8 @@ const Home = () => {
                 borderColor="#fafaf1"
               >
                 Let's talk
-              </Button>
+              </Button> */}
+              <ChatWithUs />
             </Box>
           </Box>
         </Box>
