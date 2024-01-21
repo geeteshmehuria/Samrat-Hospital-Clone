@@ -89,7 +89,7 @@ const Navbar = () => {
                   borderColor="#2f4e44"
                   onClick={handleLogOut}
                 >
-                  LogOut
+                  Log out
                 </Button>
               </Link>
             </>
