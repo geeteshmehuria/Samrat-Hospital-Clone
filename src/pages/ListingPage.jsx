@@ -56,9 +56,9 @@ const ListingPage = () => {
       />
 
       {/* ----------------------Filter JSX Part Start here-------------------- */}
-      <Flex w="80%" m="auto" mt="2%" pb="3%" gap="3%">
+      <Flex w={{base: "90%", md: "80%"}} m="auto" mt="2%" pb="2%" gap="3%" flexDir={{base: "column-reverse", md: "row"}}>
         <Flex
-          w="35%"
+          w={{base: "100%", md: "35%"}}
           bg="#658a71"
           flexDir="column"
           align="center"
@@ -79,6 +79,7 @@ const ListingPage = () => {
           {/* --------------------------Video added here ------------------------- */}
           <video
             style={{ marginTop: "7%", borderRadius: "10px" }}
+            className="servicePageVideo"
             src={AppointmentVideo}
             autoPlay
             muted
@@ -88,14 +89,14 @@ const ListingPage = () => {
         </Flex>
 
         {/* -------------------------list of doctors start from here------------------------ */}
-        <Flex w="62%" flexDir="column">
+        <Flex w={{base: "100%", md: "62%"}} flexDir="column">
           {loading && (
             <Flex justify="center" fontSize="40px">
               Loading....
             </Flex>
           )}
           {!loading && (
-            <SimpleGrid column={1}>
+            <SimpleGrid column={1} w={"100%"}>
               <Flex my={5} gap={3} letterSpacing={1} >
                 <Box><Heading as={"h3"} size={"md"}>Speciality: </Heading></Box>
                 <Box><Text fontSize={18} color={"gray"}>{currSpeciality}</Text></Box>

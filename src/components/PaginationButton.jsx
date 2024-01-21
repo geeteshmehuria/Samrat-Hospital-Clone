@@ -8,7 +8,8 @@ const PaginationButton = React.memo(({ setCurrPage, isSelected, pageNo}) => {
 
   return (
     <Button
-      my={5}
+      my={{base: "5px", md: "10px"}}
+      mb={{base: "50px", md: "0px"}}
       mx={4}
       px={4}
       py={5}

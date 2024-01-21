@@ -10,6 +10,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import axios from "axios";
+// import { extendTheme } from "@chakra-ui/react";
+
+// 2. Update the breakpoints as key-value pairs
+// const breakpoints = {
+//   sm: "320px",
+//   lg: "650px",
+// };
+
+// 3. Extend the theme
+// const theme = extendTheme({ breakpoints });
 
 const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotalPages, setCurrData, setRequestUrl, setCurrPage, currSpeciality}) => {
   let [doctorName, setDoctorName] = useState("");
@@ -45,14 +55,15 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
 
   return (
     <Box
-      w="80%"
+      w={{base: "90%", md: "80%"}}
       m="auto"
+      h={"fit-content"}
       borderRadius="10px"
       boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"}
       bg="white"
     >
       <SimpleGrid
-        columns={4}
+        columns={3}
         minChildWidth={"100px"}
         m={"auto"}
         mt={"30px"}
@@ -64,7 +75,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -77,7 +88,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -90,7 +101,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           variant="link"
           fontSize="20px"
           mx={30}
-          mt={5}
+          mt={{base: "10px", md: "15px"}}
           _hover={{
             color: "#2f4e44",
           }}
@@ -101,12 +112,13 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
       </SimpleGrid>
 
       <Flex
-        minChildWidth={"180px"}
+        flexDirection={{base: "column", sm: "row", md: "row"}}
         w="100%"
-        px={20}
-        gap={8}
+        px={{base: "10px", md: "40px"}}
+        gap={{base: "10px", sm: "10px", md: "20px"}}
         py={5}
         align="center"
+        justify="center"
         className="searchInputGrid"
       >
         <Flex
@@ -116,7 +128,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           flexDir="column"
           px="10px"
           py={1}
-          w="40%"
+          w={{base: "90%", md: "40%"}}
         >
           <Text color="#2f4e44" fontSize="15px">
             Choose Speciality
@@ -142,7 +154,7 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
           flexDir="column"
           px="10px"
           py={1}
-          w="40%"
+          w={{base: "90%", md: "40%"}}
         >
           <Text color="#2f4e44" fontSize="15px">
             Search By Name
@@ -164,7 +176,8 @@ const SearchFuntionality = React.memo(({ setLoading, setCurrSpeciality, setTotal
             color: "#658a71",
           }}
           onClick={handleInputSearch}
-          py={"25px"}
+          w={{base: "90%", md: "20%"}}
+          py={{base: "15px", md:"25px"}}
           borderRadius={10}
           letterSpacing={1}
           fontSize={20}

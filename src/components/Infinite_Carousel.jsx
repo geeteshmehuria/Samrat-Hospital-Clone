@@ -58,16 +58,12 @@ const Infinite_Carousel = React.memo(() => {
     <div className="slideshow">
       <div
         className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)`,  borderRadius: "10px", }}
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)`}}
       >
         {colors.map((imageArr, index) => (
           <div
             key={index}
-            style={{
-              backgroundImage: `url(${imageArr})`,
-              backgroundSize: "cover",
-              backgroundPosition: 'center'
-            }}
+            style={{backgroundImage: `url(${imageArr})`}}
             className="slide"
           ></div>
         ))}
