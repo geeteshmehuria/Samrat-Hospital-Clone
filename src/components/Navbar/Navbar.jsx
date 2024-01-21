@@ -44,11 +44,11 @@ const Navbar = () => {
         <Box className="text-xl font-bold" color="#2f4e44">
           <Link href="/">
             <Image
-              src="src\homepageImages\Logo1.png"
+              src="src\homepageImages\logoimg.png"
               alt="Logo"
-              w="80px"
-              h="40px"
-              borderRadius="full"
+              w="40px"
+              h="30px"
+              // borderRadius="full"
             />{" "}
           </Link>{" "}
         </Box>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/aboutus">About us</Link>
           <Link to="/services">Services</Link>
-          <Link to="appointment">Appointment</Link>
+          <Link to="/appointment">Appointment</Link>
 
           {auth ? (
             <>

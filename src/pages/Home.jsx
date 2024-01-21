@@ -140,7 +140,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box>
+      <Box mt="10">
         <SearchFuntionalityHome />
       </Box>
       <Box
@@ -285,7 +285,7 @@ const Home = () => {
               as="b"
               fontSize={{ base: "2xl", md: "4xl", lg: "6xl" }}
               color="#2f4e44"
-              ml={{ base: "51" }}
+              ml={{ base: "51", md: "-10" }}
             >
               What Our Patients Say
             </Text>
@@ -293,7 +293,7 @@ const Home = () => {
               fontSize={{ base: "sm", md: "3xl", lg: "3xl" }}
               color="#2f4e44"
               mt={2}
-              ml="3"
+              ml={{ base: "51", md: "-10" }}
             >
               Here are some testimonials from our valued patients.
             </Text>
