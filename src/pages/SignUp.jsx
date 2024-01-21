@@ -14,7 +14,9 @@ import {
 import { FormControl, FormLabel } from "@chakra-ui/react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 const Sign = () => {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [Fname, setFname] = useState("");
@@ -90,7 +92,7 @@ const Sign = () => {
       AddUser();
       AccountCreateToast();
       setTimeout(() => {
-        window.location.href = "./Login";
+        navigate("/login");
       }, 2500);
     }
     // if(allFeild){
