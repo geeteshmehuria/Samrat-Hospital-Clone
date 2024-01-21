@@ -10,14 +10,19 @@ import {
 } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { setDocDataFromHome } from "../redux/homeSlice";
 
 function SearchFuntionalityHome() {
   const [doctorName, setDoctorName] = useState("");
   const [speciality, setSpeciality] = useState("");
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const redirectToListingPage = () => {
-    navigate("/services", { state: { prop1: doctorName, prop2: speciality } });
+    // navigate("/services", { state: { prop1: doctorName, prop2: speciality } });
+    const obj = { docSpecialization: speciality, docName: doctorName };
+    dispatch(setDocDataFromHome(obj));
+    navigate("/services");
   };
 
   return (

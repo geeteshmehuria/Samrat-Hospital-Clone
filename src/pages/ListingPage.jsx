@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState} from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "../Css/listingPage.css";
 import AppointmentVideo from "../assets/AppointmentVideo.mp4";
 import { Box, SimpleGrid, Flex, Heading, Text } from "@chakra-ui/react";
@@ -11,6 +11,8 @@ import SearchFuntionality from "../components/SearchFuntionality";
 import FilterFunctionality from "../components/FilterFunctionality";
 
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const ListingPage = () => {
   const location = useLocation();
   const prop1 = location.state?.prop1;
@@ -24,7 +26,8 @@ const ListingPage = () => {
   let [currSpeciality, setCurrSpeciality] = useState("Pediatric");
   const [requestUrl, setRequestUrl] = useState(`${pediatricUrl}?_limit=4&`);
   // const [selectedDays, setSelectedDays] = useState([]);
-
+  const doctorsomthing = useSelector((state) => state.homeDoc);
+  console.log(doctorsomthing);
   useEffect(() => {
     // let isMounted = true;
     setLoading(true);
@@ -56,9 +59,16 @@ const ListingPage = () => {
       />
 
       {/* ----------------------Filter JSX Part Start here-------------------- */}
-      <Flex w={{base: "90%", md: "80%"}} m="auto" mt="2%" pb="2%" gap="3%" flexDir={{base: "column-reverse", md: "row"}}>
+      <Flex
+        w={{ base: "90%", md: "80%" }}
+        m="auto"
+        mt="2%"
+        pb="2%"
+        gap="3%"
+        flexDir={{ base: "column-reverse", md: "row" }}
+      >
         <Flex
-          w={{base: "100%", md: "35%"}}
+          w={{ base: "100%", md: "35%" }}
           bg="#658a71"
           flexDir="column"
           align="center"
@@ -89,7 +99,7 @@ const ListingPage = () => {
         </Flex>
 
         {/* -------------------------list of doctors start from here------------------------ */}
-        <Flex w={{base: "100%", md: "62%"}} flexDir="column">
+        <Flex w={{ base: "100%", md: "62%" }} flexDir="column">
           {loading && (
             <Flex justify="center" fontSize="40px">
               Loading....
@@ -97,9 +107,17 @@ const ListingPage = () => {
           )}
           {!loading && (
             <SimpleGrid column={1} w={"100%"}>
-              <Flex my={5} gap={3} letterSpacing={1} >
-                <Box><Heading as={"h3"} size={"md"}>Speciality: </Heading></Box>
-                <Box><Text fontSize={18} color={"gray"}>{currSpeciality}</Text></Box>
+              <Flex my={5} gap={3} letterSpacing={1}>
+                <Box>
+                  <Heading as={"h3"} size={"md"}>
+                    Speciality:{" "}
+                  </Heading>
+                </Box>
+                <Box>
+                  <Text fontSize={18} color={"gray"}>
+                    {currSpeciality}
+                  </Text>
+                </Box>
               </Flex>
               {currPageData.map((doctorObj) => (
                 <ListCard key={doctorObj.id} doctorObj={doctorObj} />
@@ -112,7 +130,11 @@ const ListingPage = () => {
           {!loading && (
             <Flex>
               {pageNumbers.map((pageNo) => (
-                <PaginationButton setCurrPage={setCurrPage} isSelected={currPage === pageNo} pageNo={pageNo} />
+                <PaginationButton
+                  setCurrPage={setCurrPage}
+                  isSelected={currPage === pageNo}
+                  pageNo={pageNo}
+                />
               ))}
             </Flex>
           )}
