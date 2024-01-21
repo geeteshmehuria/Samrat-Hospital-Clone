@@ -22,7 +22,7 @@ const ListingPage = () => {
   let [currSpeciality, setCurrSpeciality] = useState("Pediatric");
   const [requestUrl, setRequestUrl] = useState(`${pediatricUrl}?_limit=4&`);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     setLoading(true);
     if (doctorData.docName !== "" && doctorData.docSpecialization !== "") {
@@ -34,14 +34,17 @@ const ListingPage = () => {
       else if (doctorData.docSpecialization === "Dentist")
         url = `${dentistsUrl}?name=${doctorData.docName}`;
 
-        axios.get(url).then((res) => {
+      axios
+        .get(url)
+        .then((res) => {
           setTotalPages(1);
           setCurrData(res.data);
           setLoading(false);
-        }).catch((err) => console.error(err));
-
-        const obj = { docSpecialization: "", docName: "" };
-    dispatch(setDocDataFromHome(obj));
+          const obj = { docSpecialization: "", docName: "" };
+          dispatch(setDocDataFromHome(obj));
+          setCurrSpeciality(doctorData.docSpecialization);
+        })
+        .catch((err) => console.error(err));
 
       console.log(doctorData);
     } else {
@@ -51,7 +54,7 @@ const ListingPage = () => {
         setLoading(false);
       });
     }
-  }, [currPage, requestUrl, doctorData]);
+  }, [currPage, requestUrl]);
 
   const pageNumbers = useMemo(() =>
     Array.from({ length: totalPages }, (_, index) => index + 1)
