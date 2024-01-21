@@ -1,6 +1,6 @@
 .n-body {
   position: relative;
-  background-image: url(src/homepageImages/homeBackGround.jpg);
+  background-image: url("../assets/homeBackGround.jpg");
   background-position: center;
   background-size: cover;
 }
