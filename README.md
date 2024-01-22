@@ -2,6 +2,17 @@
 
 **Welcome to Samrat Hospital!** We are dedicated to delivering unparalleled healthcare services with a compassionate touch. Our state-of-the-art facility combines cutting-edge medical technology with a commitment to patient well-being. At Samrat Hospital, we believe in healing not just the body, but also the spirit.
 
+## Live Link
+<a href="https://c-sharp-samrat.vercel.app/">Samrat Hospital link</a>
+
+## Team Members
+
+- Geetesh Mehuria (Team Leader)
+- Nishant Bhargava
+- Surbhi Haldar
+- Vishnuraj K R
+- Mohd Asif
+
 ## Table of Contents
 
 - [About Samrat Hospital](#about-samrat-hospital)
@@ -41,6 +52,25 @@ Our website is built using cutting-edge technologies to ensure a robust and user
 
 Samrat Hospital's website is designed to provide visitors with easy access to information about our services, facilities, and medical professionals. The intuitive design ensures a smooth navigation experience for users.
 
+## Project Screenshots 
+# Home
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/5c4304de-6ada-44f6-a074-3be63d9df3b3">
+<br></br>
+# Sign Up
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/f729bca4-1a53-4cc8-aed9-c4547d9f37a4">
+<br></br>
+# Log In
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/798ee332-b302-4198-83ad-cbaa58701ab1">
+<br></br>
+# Services
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/34375dab-3af3-409f-95bc-203871a6d799">
+<br></br>
+# Appointment 
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/868f24ee-7fa6-4fd5-bd27-65ba27597517">
+<br></br>
+# About Us
+<img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/b5888795-db5e-4cb0-a0cf-9afa0079caf0">
+<br></br>
 ## Project Features
 
 1. **About Samrat Hospital:** Explore our mission, values, and commitment to delivering world-class healthcare services.
@@ -57,6 +87,6 @@ Samrat Hospital's website is designed to provide visitors with easy access to in
 
 We extend our heartfelt gratitude to our project mentor, Sir Mohammad Ayaz Noori, for providing invaluable guidance and support throughout the development process.
 
-[Visit our GitHub repository]([https://github.com/YourUsername/Samrat-Hospital](https://github.com/geeteshmehuria/c-sharp-samrat-2345) for additional details and project updates.
+[Visit our GitHub repository](https://github.com/geeteshmehuria/c-sharp-samrat-2345) for additional details and project updates.
 
 Thank you for choosing Samrat Hospital for your healthcare needs. We look forward to serving you with excellence and compassion.
