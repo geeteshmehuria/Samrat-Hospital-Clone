@@ -56,21 +56,27 @@ Samrat Hospital's website is designed to provide visitors with easy access to in
 # Home
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/5c4304de-6ada-44f6-a074-3be63d9df3b3">
 <br></br>
+
 # Sign Up
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/f729bca4-1a53-4cc8-aed9-c4547d9f37a4">
 <br></br>
+
 # Log In
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/798ee332-b302-4198-83ad-cbaa58701ab1">
 <br></br>
+
 # Services
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/34375dab-3af3-409f-95bc-203871a6d799">
 <br></br>
+
 # Appointment 
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/868f24ee-7fa6-4fd5-bd27-65ba27597517">
 <br></br>
+
 # About Us
 <img src="https://github.com/geeteshmehuria/c-sharp-samrat-2345/assets/70647591/b5888795-db5e-4cb0-a0cf-9afa0079caf0">
 <br></br>
+
 ## Project Features
 
 1. **About Samrat Hospital:** Explore our mission, values, and commitment to delivering world-class healthcare services.
