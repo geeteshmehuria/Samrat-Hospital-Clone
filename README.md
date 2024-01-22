@@ -48,6 +48,14 @@ Our website is built using cutting-edge technologies to ensure a robust and user
   - Chakra UI
   - Tailwind CSS
 
+- **Backend and Server**
+  - Our website utilizes a JSON Server as the backend to handle data storage and retrieval. This server is responsible for managing dynamic data, such as doctor appointments and user 
+    information. The JSON Server allows for a simplified and efficient way to mock a backend API during the development phase.
+
+### JSON Server
+
+We have implemented [JSON Server](https://mock-api-39gi.onrender.com/) to simulate a RESTful API. This lightweight server is easy to set up and provides a convenient way to manage data without the need for a full-fledged backend.
+
 ## Project Overview
 
 Samrat Hospital's website is designed to provide visitors with easy access to information about our services, facilities, and medical professionals. The intuitive design ensures a smooth navigation experience for users.
