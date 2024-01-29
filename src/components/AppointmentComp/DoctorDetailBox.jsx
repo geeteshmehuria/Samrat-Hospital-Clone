@@ -269,12 +269,12 @@ const DoctorDetailBox = ({ doctor }) => {
               />
             </FormControl>
             <FormControl isRequired mt={4}>
-              <FormLabel htmlFor="cvc">CVC</FormLabel>
+              <FormLabel htmlFor="cvc">CVV</FormLabel>
               <Input
                 maxLength="3"
                 type="password"
                 id="cvc"
-                placeholder="CVC"
+                placeholder="CVV"
                 value={paymentDetails.cvc}
                 onChange={handlePaymentDetailsChange}
               />
