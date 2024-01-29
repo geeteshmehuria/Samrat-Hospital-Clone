@@ -3,7 +3,7 @@
 **Welcome to Samrat Hospital!** We are dedicated to delivering unparalleled healthcare services with a compassionate touch. Our state-of-the-art facility combines cutting-edge medical technology with a commitment to patient well-being. At Samrat Hospital, we believe in healing not just the body, but also the spirit.
 
 ## Live Link
-<a href="https://c-sharp-samrat.vercel.app/">Samrat Hospital link</a>
+<a href="https://c-sharp-sam.vercel.app/">Samrat Hospital link</a>
 
 ## Team Members
 
