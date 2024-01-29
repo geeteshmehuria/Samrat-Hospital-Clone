@@ -19,6 +19,8 @@ import SearchFuntionalityHome from "../components/homepageSearch";
 import { useNavigate } from "react-router";
 import { getInTouch } from "../assets/url";
 import axios from "axios";
+import femaleDocImage from '../assets/FemaleDoc.png';
+import dochands from '../assets/dochands.jpg';
 
 const Home = () => {
   const [review, setFeedback] = useState("");
@@ -193,7 +195,7 @@ const Home = () => {
             mt={{ base: "4", md: "59" }}
           >
             <Image
-              src="src\homepageImages\dochands.jpg"
+              src={dochands}
               alt="doctor hands"
               h={{ base: "auto", md: "360" }}
               w="100%"
@@ -274,7 +276,7 @@ const Home = () => {
           h="auto"
           w={{ base: "100%", md: "40%" }}
         >
-          <Image src="src\homepageImages\FemaleDoc.png" alt="docimage" />
+          <Image src={femaleDocImage} alt="docimage" />
         </Box>
         <Box
           mt={{ base: "5", md: "15", lg: "15" }}

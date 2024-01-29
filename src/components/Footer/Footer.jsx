@@ -23,10 +23,10 @@ const Footer = () => {
           h={{ base: "40", sm: "60", md: "40", lg: "60" }}
         >
           <h1>Menu</h1>
-          <a href="#">Home</a>
-          <a href="#">About us</a>
-          <a href="#">Services</a>
-          <a href="#">Appointment</a>
+          <a href="/">Home</a>
+          <a href="/aboutus">About us</a>
+          <a href="/services">Services</a>
+          <a href="/appointment">Appointment</a>
         </GridItem>
         <GridItem
           className="n-footer-grid2 flex flex-col justify-start mt-4 gap-2 mt-8"
@@ -35,9 +35,15 @@ const Footer = () => {
         >
           <h1>Need Help ?</h1>
           <a href="#">Medical Q&A's</a>
-          <a href="#">Terms of use</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Doctor's privacy policy</a>
+          <a href="https://www.termsfeed.com/blog/terms-conditions-url/">
+            Terms of use
+          </a>
+          <a href="https://www.termsfeed.com/blog/terms-conditions-url/">
+            Privacy Policy
+          </a>
+          <a href="https://www.termsfeed.com/blog/terms-conditions-url/">
+            Doctor's privacy policy
+          </a>
         </GridItem>
         <GridItem
           className="n-footer-grid3 flex flex-col justify-start mt-4 gap-2 mt-8"
@@ -56,7 +62,7 @@ const Footer = () => {
         >
           <h1>Follow us on</h1>
           <Box className="n-footer-social flex gap-4 justify-start">
-            <a href="#">
+            <a href="https://www.facebook.com/OfficialSGRH">
               <svg
                 class="n-footer-facebookimg"
                 fill="none"
@@ -70,7 +76,7 @@ const Footer = () => {
                 ></path>
               </svg>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/sgrhindia">
               {" "}
               <svg
                 class="n-footer-twitterimg"
@@ -89,7 +95,7 @@ const Footer = () => {
                 ></path>
               </svg>
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/sgrhindia/">
               {" "}
               <svg
                 class="n-footer-instaimg"

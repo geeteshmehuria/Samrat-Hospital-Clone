@@ -16,6 +16,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { authLinLout } from "../../redux/authSlice";
 import { Link } from "react-router-dom";
+import logo from "./logoimg.png";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,13 +45,7 @@ const Navbar = () => {
       >
         <Box className="text-xl font-bold" color="#2f4e44">
           <Link href="/">
-            <Image
-              src="src\homepageImages\logoimg.png"
-              alt="Logo"
-              w="40px"
-              h="30px"
-              // borderRadius="full"
-            />{" "}
+            <Image src={logo} alt="Logo" w="40px" h="30px" />{" "}
           </Link>{" "}
         </Box>
 
@@ -89,7 +84,7 @@ const Navbar = () => {
                   borderColor="#2f4e44"
                   onClick={handleLogOut}
                 >
-                  LogOut
+                  Log out
                 </Button>
               </Link>
             </>
