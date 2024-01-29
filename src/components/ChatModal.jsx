@@ -54,38 +54,42 @@ function ChatWithUs() {
     </Text>
   );
 //   =======================
-    const ChatComponent = (message) => {
-        console.log("vishnu");
-        const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
-        console.log("vishnu",openaiApiKey);
-        const handleSendMessage = async () => {
-            // Make a request to the ChatGPT API with the user input
-            const response = await axios.post(
-                'https://api.openai.com/v1/chat/completions',
-                {
-                    respmsg: [
-                        { role: 'system', content: 'You are a helpful assistant.' },
-                        { role: 'user', content: { message } },
-                    ],
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${openaiApiKey}`,
-                    },
-                }
-            );
+const ChatComponent = (message) => {
+  const openaiApiKey = "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";
+  
+  const handleSendMessage = async () => {
+      try {
+          const response = await axios.post(
+              'https://api.openai.com/v1/engines/davinci-codex/completions',
+              {
+                  messages: [
+                      { role: 'system', content: 'You are a helpful assistant.' },
+                      { role: 'user', content: message },
+                  ],
+              },
+              {
+                  headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: `Bearer ${openaiApiKey}`,
+                  },
+              }
+          );
 
-            // Update the conversation history with the response from ChatGPT
-            setRespMsg([...respmsg, { role: 'assistant', content: response.data.choices[0].message.content }]);
+          console.log("Response from OpenAI:", response.data);
 
-            // Clear the input field
-            setMessage('');
-        };
-        handleSendMessage()
-        // You might want to call handleSendMessage under some condition
-        // For example, when the user clicks a "Send" button or presses Enter in the input field
-    };
+          // Update the conversation history with the response from ChatGPT
+          setRespMsg([...respmsg, { role: 'assistant', content: response.data.choices[0].message.content }]);
+
+          // Clear the input field
+          setMessage('');
+      } catch (error) {
+          console.error("Error from OpenAI:", error);
+      }
+  };
+
+  handleSendMessage();
+};
+
     
 // =========================
 
